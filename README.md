@@ -3,6 +3,7 @@
 ## Prerequisites
 
 - [node.js & npm](https://nodejs.org/)
+- [composer](https://getcomposer.org/)
 - [laravel](http://laravel.com/)
 
 ## Installation
