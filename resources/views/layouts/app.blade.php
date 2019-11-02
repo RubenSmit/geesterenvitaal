@@ -10,6 +10,44 @@
     <title>Geesteren Vitaal - @yield('title')</title>
 </head>
 <body>
+<nav>
+    <div class="nav-container">
+        <a href="/">
+            <img class="nav-brand" src="img/temp.bmp"/>
+        </a>
+        <div class="nav-menu">
+            <a class="nav-item" href="/">Activiteiten</a>
+            <a class="nav-item" href="/">Spaaracties</a>
+            <a class="nav-item" href="/">Nieuws</a>
+            <a class="nav-item nav-pill" href="/">SamenGezond</a>
+        </div>
+    </div>
+</nav>
 @yield('content')
+<footer>
+    <div class="footer-container">
+        <div class="footer-column">
+            <h5 class="footer-title">Contactgegevens</h5>
+            <p class="footer-text">
+                Straatweg 12<br>
+                Geesteren
+            </p>
+        </div>
+        <div class="footer-column">
+            <h5 class="footer-title">Contactgegevens</h5>
+            <p class="footer-text">
+                Straatweg 12<br>
+                Geesteren
+            </p>
+        </div>
+        <div class="footer-column">
+            <h5 class="footer-title">Contactgegevens</h5>
+            <p class="footer-text">
+                Straatweg 12<br>
+                Geesteren
+            </p>
+        </div>
+    </div>
+</footer>
 </body>
 </html>

@@ -15,3 +15,11 @@ Route::get('/', function () {
     return view('index');
 });
 Route::get('pagina/{id}', 'PageController@show');
+
+Route::prefix('admin')->group(function () {
+    Route::get('pagina', 'PageController@index');
+    Route::post('pagina/new', 'PageController@create');
+    Route::get('pagina/new', 'PageController@new');
+    Route::patch('pagina/{id}', 'PageController@update');
+    Route::get('pagina/{id}', 'PageController@edit');
+});
