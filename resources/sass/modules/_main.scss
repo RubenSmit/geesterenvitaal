@@ -103,8 +103,10 @@ header {
 }
 
 main {
-    max-width: $content-width;
-    margin: 20px auto;
+    .container {
+        max-width: $content-width;
+        margin: 20px auto;
+    }
 
     .main-colums {
         display: flex;
@@ -129,7 +131,7 @@ footer {
         max-width: $content-width;
         margin: 50px auto 0;
         display: flex;
-        padding: 20px 10px 40px;
+        padding: 40px 10px 80px;
 
         .footer-column {
             flex-grow: 1;

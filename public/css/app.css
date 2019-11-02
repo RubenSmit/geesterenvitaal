@@ -112,7 +112,7 @@ header .header-link:active {
   color: #000;
 }
 
-main {
+main .container {
   max-width: 1000px;
   margin: 20px auto;
 }
@@ -141,7 +141,7 @@ footer .footer-container {
   margin: 50px auto 0;
   display: -webkit-box;
   display: flex;
-  padding: 20px 10px 40px;
+  padding: 40px 10px 80px;
 }
 
 footer .footer-container .footer-column {

@@ -13,7 +13,7 @@
 <nav>
     <div class="nav-container">
         <a href="/">
-            <img class="nav-brand" src="img/temp.bmp"/>
+            <img class="nav-brand" src="{{url('img/temp.bmp')}}" alt="Geesteren Vitaal - Home"/>
         </a>
         <div class="nav-menu">
             <a class="nav-item" href="/">Activiteiten</a>
