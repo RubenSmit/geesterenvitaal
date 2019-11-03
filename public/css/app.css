@@ -112,6 +112,10 @@ header .header-link:active {
   color: #000;
 }
 
+main {
+  min-height: 80vh;
+}
+
 main .container {
   max-width: 1000px;
   margin: 20px auto;
@@ -126,6 +130,10 @@ main .main-column {
   -webkit-box-flex: 1;
           flex-grow: 1;
   padding: 0 10px;
+}
+
+article .article-date {
+  color: #1ca756;
 }
 
 aside .aside-title {

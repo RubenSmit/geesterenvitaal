@@ -27,24 +27,24 @@
 <footer>
     <div class="footer-container">
         <div class="footer-column">
-            <h5 class="footer-title">Contactgegevens</h5>
+            <h5 class="footer-title">Contact</h5>
             <p class="footer-text">
                 Straatweg 12<br>
                 Geesteren
             </p>
         </div>
         <div class="footer-column">
-            <h5 class="footer-title">Contactgegevens</h5>
+            <h5 class="footer-title">Info</h5>
             <p class="footer-text">
-                Straatweg 12<br>
-                Geesteren
+                Balu des amerco<br>
+                Curabitur fringilla turpis augue
             </p>
         </div>
         <div class="footer-column">
-            <h5 class="footer-title">Contactgegevens</h5>
+            <h5 class="footer-title">Privacy</h5>
             <p class="footer-text">
-                Straatweg 12<br>
-                Geesteren
+                Duis sed ornare enim<br>
+                Quisque pellentesque porta libero
             </p>
         </div>
     </div>

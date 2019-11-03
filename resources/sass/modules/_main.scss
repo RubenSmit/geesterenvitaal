@@ -103,6 +103,8 @@ header {
 }
 
 main {
+    min-height: 80vh;
+
     .container {
         max-width: $content-width;
         margin: 20px auto;
@@ -115,6 +117,12 @@ main {
     .main-column {
         flex-grow: 1;
         padding: 0 10px;
+    }
+}
+
+article {
+    .article-date {
+        color: $brand_primary;
     }
 }
 

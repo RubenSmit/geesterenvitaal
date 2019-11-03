@@ -12,8 +12,10 @@
                 </div>
             </header>
             <div class="container">
-                <small>{{$page->created_at}}</small>
-                <p>{{$page->content}}</p>
+                <small class="article-date">Gepubliceerd op {{$page->created_at}}</small>
+                <div class="content">
+                    @markdown($page->content)
+                </div>
             </div>
         </article>
     </main>
