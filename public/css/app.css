@@ -134,6 +134,11 @@ main .main-column {
 
 article .article-date {
   color: #1ca756;
+  padding: 0 10px;
+}
+
+article .content {
+  padding: 0 10px;
 }
 
 aside .aside-title {

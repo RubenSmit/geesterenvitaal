@@ -123,6 +123,11 @@ main {
 article {
     .article-date {
         color: $brand_primary;
+        padding: 0 10px;
+    }
+
+    .content {
+        padding: 0 10px;
     }
 }
 
