@@ -2,13 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Page;
+use App\Activity;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use function Psy\debug;
 
-class PageController extends Controller
+class ActivityController extends Controller
 {
     const VALIDATION_RULES = [
         'title' => 'required|max:255|min:3',
@@ -23,17 +23,17 @@ class PageController extends Controller
 
     public function index()
     {
-        return view('page.index', ['pages' => Page::all()]);
+        return view('activity.index', ['activities' => Activity::all()]);
     }
 
     public function show($id)
     {
-        return view('page.show', ['page' => Page::findOrFail($id)]);
+        return view('activity.show', ['activity' => Activity::findOrFail($id)]);
     }
 
     public function edit($id)
     {
-        return view('page.edit', ['page' => Page::findOrFail($id)]);
+        return view('activity.edit', ['activity' => Activity::findOrFail($id)]);
     }
 
     public function update($id, Request $request)
@@ -42,24 +42,24 @@ class PageController extends Controller
 
         if ($validator->fails()) {
             return redirect()
-                ->action('PageController@edit', ['id' => $id])
+                ->action('ActivityController@edit', ['id' => $id])
                 ->withErrors($validator)
                 ->withInput();
         } else {
-            Page::findOrFail($id)
+            Activity::findOrFail($id)
                 ->update([
                     'title' => $request->input('title'),
                     'content' => $request->input('content')
                 ]);
             return redirect()
-                ->action('PageController@edit', ['id' => $id]);
+                ->action('ActivityController@edit', ['id' => $id]);
         }
 
     }
 
     public function new()
     {
-        return view('page.new', ['page' => null]);
+        return view('activity.new', ['activity' => null]);
     }
 
     public function create(Request $request)
@@ -68,16 +68,16 @@ class PageController extends Controller
 
         if ($validator->fails()) {
             return redirect()
-                ->action('PageController@new')
+                ->action('ActivityController@new')
                 ->withErrors($validator)
                 ->withInput();
         } else {
-            $page = Page::create([
+            $activity = Activity::create([
                 'title' => $request->input('title'),
                 'content' => $request->input('content')
             ]);
             return redirect()
-                ->action('PageController@edit', ['id' => $page->id]);
+                ->action('ActivityController@edit', ['id' => $activity->id]);
         }
     }
 }
