@@ -1,0 +1,30 @@
+.admin {
+    nav {
+        background-color: $brand_primary;
+
+        .nav-brand {
+            font-size: 20px;
+            color: $light;
+            width: unset;
+            height: unset;
+            text-decoration: none;
+        }
+
+        .nav-item {
+            color: $light;
+
+            &:hover {
+                color: $dark;
+            }
+
+            &.nav-pill {
+                background-color: $light;
+                color: $dark;
+
+                &:hover {
+                    color: $brand_primary;
+                }
+            }
+        }
+    }
+}

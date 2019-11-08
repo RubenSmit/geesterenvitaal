@@ -132,6 +132,52 @@ main .main-column {
   padding: 0 10px;
 }
 
+main .main-highlight {
+  background-color: #1ca756;
+}
+
+main .main-highlight > .container {
+  margin: 0 auto;
+  padding: 30px 0;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+          justify-content: space-between;
+}
+
+main .main-highlight > .container > * {
+  margin: 0 10px;
+}
+
+main .main-highlight .main-highlight-title {
+  color: #000;
+  font-size: 40px;
+  margin: 0;
+}
+
+main .main-highlight .main-highlight-subtitle {
+  color: #fff;
+  font-size: 20px;
+  margin: 0;
+}
+
+main .main-highlight .main-highlight-link {
+  padding: 5px 10px;
+  border-radius: 5px;
+  background-color: #fff;
+  text-decoration: none;
+}
+
+main .main-highlight .main-highlight-link:hover {
+  color: #1ca756;
+}
+
+main .main-highlight .main-highlight-link:active {
+  color: #000;
+}
+
 article .article-date {
   color: #1ca756;
   padding: 0 10px;
@@ -172,5 +218,39 @@ footer .footer-title {
 footer .footer-text {
   margin: 3px 0;
   color: #fff;
+}
+
+.admin nav {
+  background-color: #1ca756;
+}
+
+.admin nav .nav-brand {
+  font-size: 20px;
+  color: #fff;
+  width: unset;
+  height: unset;
+  text-decoration: none;
+}
+
+.admin nav .nav-item {
+  color: #fff;
+}
+
+.admin nav .nav-item:hover {
+  color: #000;
+}
+
+.admin nav .nav-item.nav-pill {
+  background-color: #fff;
+  color: #000;
+}
+
+.admin nav .nav-item.nav-pill:hover {
+  color: #1ca756;
+}
+
+form input,
+form textarea {
+  width: 100%;
 }
 

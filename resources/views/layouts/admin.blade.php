@@ -9,42 +9,23 @@
 
     <title>Geesteren Vitaal - Admin - @yield('title')</title>
 </head>
-<body>
+<body class="admin">
 <nav>
     <div class="nav-container">
-        <a href="/admin">
-            <img class="nav-brand" src="{{url('img/temp.bmp')}}" alt="Geesteren Vitaal - Home"/>
+        <a href="/admin" class="nav-brand">
+            Admin
         </a>
         <div class="nav-menu">
+            <a class="nav-item" href="/admin/pagina">Pagina's</a>
+            <a class="nav-item" href="/admin/activiteit">Activiteiten</a>
             <a class="nav-item nav-pill" href="/">Uitloggen</a>
         </div>
     </div>
 </nav>
-@yield('content')
-<footer>
-    <div class="footer-container">
-        <div class="footer-column">
-            <h5 class="footer-title">Contact</h5>
-            <p class="footer-text">
-                Straatweg 12<br>
-                Geesteren
-            </p>
-        </div>
-        <div class="footer-column">
-            <h5 class="footer-title">Info</h5>
-            <p class="footer-text">
-                Balu des amerco<br>
-                Curabitur fringilla turpis augue
-            </p>
-        </div>
-        <div class="footer-column">
-            <h5 class="footer-title">Privacy</h5>
-            <p class="footer-text">
-                Duis sed ornare enim<br>
-                Quisque pellentesque porta libero
-            </p>
-        </div>
+<main>
+    <div class="container">
+        @yield('content')
     </div>
-</footer>
+</main>
 </body>
 </html>

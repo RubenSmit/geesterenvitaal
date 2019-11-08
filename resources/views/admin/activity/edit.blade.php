@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.admin')
 
 @section('title', $activity->title)
 
@@ -7,7 +7,7 @@
 
     <form action="/admin/activiteit/{{$activity->id}}" method="POST">
         @method('PATCH')
-        @include('activity.form')
+        @include('admin.activity.form')
         <button type="submit">Opslaan</button>
     </form>
 

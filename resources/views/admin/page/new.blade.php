@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.admin')
 
 @section('title', 'Nieuwe pagina')
 
@@ -6,7 +6,7 @@
     <h1>Nieuwe pagina</h1>
     <form action="/admin/pagina/new" method="POST">
         @method('POST')
-        @include('page.form')
+        @include('admin.page.form')
         <button type="submit">Aanmaken</button>
     </form>
 @endsection

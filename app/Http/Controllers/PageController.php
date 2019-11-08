@@ -13,17 +13,12 @@ class PageController extends Controller
     const VALIDATION_RULES = [
         'title' => 'required|max:255|min:3',
         'subtitle' => 'required|max:255|min:3',
-        'content' => 'required|min:10',
-        'start_time' => 'required|date',
-        'end_time' => 'required|date|after:start_time',
-        'location_name' => 'required',
-        'location_address' => 'nullable',
-        'registration_url' => 'nullable'
+        'content' => 'required|min:10'
     ];
 
-    public function index()
+    public function admin()
     {
-        return view('page.index', ['pages' => Page::all()]);
+        return view('admin.page.index', ['pages' => Page::all()]);
     }
 
     public function show($id)
@@ -33,7 +28,7 @@ class PageController extends Controller
 
     public function edit($id)
     {
-        return view('page.edit', ['page' => Page::findOrFail($id)]);
+        return view('admin.page.edit', ['page' => Page::findOrFail($id)]);
     }
 
     public function update($id, Request $request)
@@ -49,6 +44,7 @@ class PageController extends Controller
             Page::findOrFail($id)
                 ->update([
                     'title' => $request->input('title'),
+                    'subtitle' => $request->input('subtitle'),
                     'content' => $request->input('content')
                 ]);
             return redirect()
@@ -59,7 +55,7 @@ class PageController extends Controller
 
     public function new()
     {
-        return view('page.new', ['page' => null]);
+        return view('admin.page.new', ['page' => null]);
     }
 
     public function create(Request $request)
@@ -74,6 +70,7 @@ class PageController extends Controller
         } else {
             $page = Page::create([
                 'title' => $request->input('title'),
+                'subtitle' => $request->input('subtitle'),
                 'content' => $request->input('content')
             ]);
             return redirect()

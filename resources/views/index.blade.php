@@ -6,11 +6,21 @@
     <main>
         <header style="background-image: url('img/blubel-ffmkD8dm7Zw-unsplash.jpg')">
             <div class="header-overlay">
-                <h1 class="header-title">activiteit</h1>
-                <p class="header-subtitle">trek die sportieve stappers aan</p>
-                <a class="header-link" href="/">lees meer</a>
+                <h1 class="header-title">Geesteren Vitaal</h1>
+                <p class="header-subtitle">Hier komt een mooie pakkende tekst</p>
+                <a class="header-link" href="/">Meer over vitaal leven</a>
             </div>
         </header>
+        <aside class="main-highlight">
+            <div class="container">
+                <div class="main-highlight-content">
+                    <h2 class="main-highlight-title">Activiteit</h2>
+                    <p class="main-highlight-subtitle">Curabitur et tempus lacus</p>
+                </div>
+                <p class="main-highlight-content">dinsdag 12 september<br>erve holtkamp</p>
+                <a class="main-highlight-link" href="/">Lees meer</a>
+            </div>
+        </aside>
         <div class="container">
             <div class="main-colums">
                 <aside class="main-column">

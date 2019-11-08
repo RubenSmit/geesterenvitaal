@@ -18,15 +18,19 @@ Route::get('activiteit/{id}', 'ActivityController@show');
 Route::prefix('admin')->group(function () {
     Route::view('/', 'admin.index');
 
-    Route::get('pagina', 'PageController@index');
-    Route::post('pagina/new', 'PageController@create');
-    Route::get('pagina/new', 'PageController@new');
-    Route::patch('pagina/{id}', 'PageController@update');
-    Route::get('pagina/{id}', 'PageController@edit');
+    Route::prefix('pagina')->group(function () {
+        Route::get('/', 'PageController@admin');
+        Route::post('new', 'PageController@create');
+        Route::get('new', 'PageController@new');
+        Route::patch('{id}', 'PageController@update');
+        Route::get('{id}', 'PageController@edit');
+    });
 
-    Route::get('activiteit', 'ActivityController@index');
-    Route::post('activiteit/new', 'ActivityController@create');
-    Route::get('activiteit/new', 'ActivityController@new');
-    Route::patch('activiteit/{id}', 'ActivityController@update');
-    Route::get('activiteit/{id}', 'ActivityController@edit');
+    Route::prefix('activiteit')->group(function () {
+        Route::get('/', 'ActivityController@admin');
+        Route::post('new', 'ActivityController@create');
+        Route::get('new', 'ActivityController@new');
+        Route::patch('{id}', 'ActivityController@update');
+        Route::get('{id}', 'ActivityController@edit');
+    });
 });

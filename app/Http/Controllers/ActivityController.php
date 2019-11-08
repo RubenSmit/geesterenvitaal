@@ -26,6 +26,11 @@ class ActivityController extends Controller
         return view('activity.index', ['activities' => Activity::all()]);
     }
 
+    public function admin()
+    {
+        return view('admin.activity.index', ['activities' => Activity::all()]);
+    }
+
     public function show($id)
     {
         return view('activity.show', ['activity' => Activity::findOrFail($id)]);
@@ -33,7 +38,7 @@ class ActivityController extends Controller
 
     public function edit($id)
     {
-        return view('activity.edit', ['activity' => Activity::findOrFail($id)]);
+        return view('admin.activity.edit', ['activity' => Activity::findOrFail($id)]);
     }
 
     public function update($id, Request $request)
@@ -59,7 +64,7 @@ class ActivityController extends Controller
 
     public function new()
     {
-        return view('activity.new', ['activity' => null]);
+        return view('admin.activity.new', ['activity' => null]);
     }
 
     public function create(Request $request)

@@ -1,0 +1,23 @@
+@csrf
+@component('components.form.input', [
+    'name' => 'title',
+    'label' => 'Titel',
+    'placeholder' => 'Titel van de pagina',
+    'model' => $page,
+])@endcomponent
+@component('components.form.input', [
+    'name' => 'subtitle',
+    'label' => 'Ondertitel',
+    'placeholder' => 'Ondertitel van de pagina',
+    'model' => $page,
+])@endcomponent
+@component('components.form.textarea', [
+    'name' => 'content',
+    'label' => 'Inhoud',
+    'placeholder' => 'Inhoud van de pagina',
+    'model' => $page,
+])@endcomponent
+
+@foreach ($errors->all() as $error)
+    <div>{{ $error }}</div>
+@endforeach

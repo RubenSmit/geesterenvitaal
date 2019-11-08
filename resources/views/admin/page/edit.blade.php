@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.admin')
 
 @section('title', $page->title)
 
@@ -7,7 +7,7 @@
 
     <form action="/admin/pagina/{{$page->id}}" method="POST">
         @method('PATCH')
-        @include('page.form')
+        @include('admin.page.form')
         <button type="submit">Opslaan</button>
     </form>
 

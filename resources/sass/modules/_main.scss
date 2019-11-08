@@ -118,6 +118,49 @@ main {
         flex-grow: 1;
         padding: 0 10px;
     }
+
+    .main-highlight {
+        background-color: $brand_primary;
+
+        > .container {
+            margin: 0 auto;
+            padding: 30px 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            > * {
+                margin: 0 10px;
+            }
+        }
+
+        .main-highlight-title {
+            color: $dark;
+            font-size: 40px;
+            margin: 0;
+        }
+
+        .main-highlight-subtitle {
+            color: $light;
+            font-size: 20px;
+            margin: 0;
+        }
+
+        .main-highlight-link {
+            padding: 5px 10px;
+            border-radius: $border-radius;
+            background-color: $light;
+            text-decoration: none;
+
+            &:hover {
+                color: $brand_primary;
+            }
+
+            &:active {
+                color: $dark;
+            }
+        }
+    }
 }
 
 article {
