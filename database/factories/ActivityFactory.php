@@ -7,7 +7,7 @@ use App\Activity;
 use Faker\Generator as Faker;
 
 $factory->define(Activity::class, function (Faker $faker) {
-    $from = Carbon::now()->addDays($faker->numberBetween(0, 6));
+    $from = Carbon::now()->addDays($faker->numberBetween(0, 6))->addMinutes($faker->numberBetween(0, 1440));
     $to = $from->copy()->addMinutes($faker->numberBetween(120, 240));
 
     return [

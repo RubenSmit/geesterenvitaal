@@ -11,7 +11,7 @@
             <th>Id</th>
             <th>Titel</th>
             <th>Subtitel</th>
-            <th>Datum</th>
+            <th>Aangemaakt op</th>
             <th></th>
         </tr>
         </thead>

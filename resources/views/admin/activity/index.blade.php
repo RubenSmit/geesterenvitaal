@@ -4,9 +4,29 @@
 
 @section('content')
     <h1>Alle activiteiten</h1>
-    @foreach ($activities as $activity)
-        <p>
-            <a href="/admin/activiteit/{{$activity->id}}">{{$activity->title}}</a>
-        </p>
-    @endforeach
+    <a href="/admin/activiteit/new">Nieuwe activiteit maken</a>
+    <table>
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>Titel</th>
+            <th>Subtitel</th>
+            <th>Starttijd</th>
+            <th>Eindtijd</th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach ($activities as $activity)
+            <tr>
+                <th scope="row"><a href="/activiteit/{{$activity->id}}" target="_blank">{{$activity->id}}</a></th>
+                <td>{{$activity->title}}</td>
+                <td>{{$activity->subtitle}}</td>
+                <td>{{$activity->start_time}}</td>
+                <td>{{$activity->end_time}}</td>
+                <td><a href="/admin/activiteit/{{$activity->id}}">Bewerken</a></td>
+            </tr>
+        @endforeach
+        </tbody>
+    </table>
 @endsection
