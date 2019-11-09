@@ -48,7 +48,7 @@ class PageController extends Controller
                     'content' => $request->input('content')
                 ]);
             return redirect()
-                ->action('PageController@edit', ['id' => $id]);
+                ->action('PageController@admin');
         }
 
     }
@@ -74,7 +74,7 @@ class PageController extends Controller
                 'content' => $request->input('content')
             ]);
             return redirect()
-                ->action('PageController@edit', ['id' => $page->id]);
+                ->action('PageController@admin');
         }
     }
 }

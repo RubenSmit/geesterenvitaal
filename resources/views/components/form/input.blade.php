@@ -15,7 +15,7 @@
 
     @if ($errors->has($name))
         <span class="form-item-help">
-            <strong>{{ $errors->first($name) }}</strong>
+            {{ $errors->first($name) }}
         </span>
     @endif
 </div>

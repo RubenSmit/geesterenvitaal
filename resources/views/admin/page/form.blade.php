@@ -17,7 +17,3 @@
     'placeholder' => 'Inhoud van de pagina',
     'model' => $page,
 ])@endcomponent
-
-@foreach ($errors->all() as $error)
-    <div>{{ $error }}</div>
-@endforeach
