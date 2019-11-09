@@ -57,7 +57,7 @@ class ActivityController extends Controller
                     'content' => $request->input('content')
                 ]);
             return redirect()
-                ->action('ActivityController@edit', ['id' => $id]);
+                ->action('ActivityController@admin');
         }
 
     }
@@ -82,7 +82,7 @@ class ActivityController extends Controller
                 'content' => $request->input('content')
             ]);
             return redirect()
-                ->action('ActivityController@edit', ['id' => $activity->id]);
+                ->action('ActivityController@admin');
         }
     }
 }

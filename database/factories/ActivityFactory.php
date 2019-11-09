@@ -17,7 +17,7 @@ $factory->define(Activity::class, function (Faker $faker) {
         'start_time' => $from,
         'end_time' => $to,
         'location_name' => 'Erve Kampboer',
-        'location_address' => 'Kampboerlaan 4, 7678 VV Geesteren, Nederland',
+        'location_address' => 'Kampboerlaan 13, 7678 VV Geesteren, Nederland',
         'registration_url' => 'https://google.com'
     ];
 });
