@@ -13,6 +13,7 @@
 
 Route::view('/', 'index');
 Route::get('pagina/{id}', 'PageController@show');
+Route::get('activiteit/', 'ActivityController@index');
 Route::get('activiteit/{id}', 'ActivityController@show');
 
 Route::prefix('admin')->group(function () {

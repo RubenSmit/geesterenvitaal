@@ -16,7 +16,7 @@
             <img class="nav-brand" src="{{url('img/temp.bmp')}}" alt="Geesteren Vitaal - Home"/>
         </a>
         <div class="nav-menu">
-            <a class="nav-item" href="/">Activiteiten</a>
+            <a class="nav-item" href="/activiteit">Activiteiten</a>
             <a class="nav-item" href="/">Spaaracties</a>
             <a class="nav-item" href="/">Nieuws</a>
             <a class="nav-item nav-pill" href="/">SamenGezond</a>
