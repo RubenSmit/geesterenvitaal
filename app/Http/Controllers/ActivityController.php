@@ -18,7 +18,7 @@ class ActivityController extends Controller
         'end_time' => 'required|date|after:start_time',
         'location_name' => 'required',
         'location_address' => 'nullable',
-        'registration_url' => 'nullable'
+        'registration_url' => 'nullable|url'
     ];
 
     public function index()

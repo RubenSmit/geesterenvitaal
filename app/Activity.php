@@ -21,4 +21,8 @@ class Activity extends Model
         'location_address',
         'registration_url'
     ];
+
+    public function scopeUpcoming($query) {
+        return $query->where('start_time', '>=', date("Y-m-d H:i:s"))->orderBy('start_time');
+    }
 }

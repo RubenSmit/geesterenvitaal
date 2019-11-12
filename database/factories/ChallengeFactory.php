@@ -3,7 +3,7 @@
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
 
 use Carbon\Carbon;
-use App\Activity;
+use App\Challenge;
 use Faker\Generator as Faker;
 
 $factory->define(Challenge::class, function (Faker $faker) {
@@ -18,7 +18,6 @@ $factory->define(Challenge::class, function (Faker $faker) {
         'end_time' => $to,
         'location_name' => 'Erve Kampboer',
         'location_address' => 'Kampboerlaan 13, 7678 VV Geesteren, Nederland',
-        'registration_url' => 'https://google.com',
         'latitude' => 52.4217347,
         'longitude' => 6.7339456,
     ];
