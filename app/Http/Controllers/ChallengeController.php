@@ -22,12 +22,6 @@ class ChallengeController extends Controller
         'registration_url' => 'nullable',
         'latitude' => 'nullable',
         'longitude' => 'nullable'
-//        'latitude' => 'nullable|regex:/^[-]?(([0-8]?[0-9])\.(\d+))|(90(\.0+)?)$/',
-//        'longitude' => 'nullable|regex:/^[-]?((((1[0-7][0-9])|([0-9]?[0-9]))\.(\d+))|180(\.0+)?)$/',
-    ];
-    const VALIDATION_ERRORS = [
-        'lat.regex' => 'De latitude lijkt in een incorrect format te zijn.',
-        'long.regex' => 'De longitude lijkt in een incorrect format te zijn.'
     ];
 
     public function index()
