@@ -57,6 +57,15 @@ header {
     background-size: cover;
     height: 50vh;
 
+    &.header-narrow {
+        height: 25vh;
+
+        .header-title {
+            color: $light;
+            font-size: 75px;
+        }
+    }
+
     .header-overlay {
         background-color: $brand_primary_overlay;
         width: 100%;
