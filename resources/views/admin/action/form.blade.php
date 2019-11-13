@@ -1,0 +1,64 @@
+@csrf
+@component('components.form.input', [
+    'name' => 'title',
+    'label' => 'Titel',
+    'placeholder' => 'Titel van de actie',
+    'model' => $action,
+])@endcomponent
+
+@component('components.form.textarea', [
+    'name' => 'content',
+    'label' => 'Inhoud',
+    'placeholder' => 'Inhoud van de actie',
+    'model' => $action,
+])@endcomponent
+
+{{--TODO: DATETIME componenten maken voor firefox support--}}
+@component('components.form.input', [
+    'name' => 'start_time',
+    'label' => 'Start tijd',
+    'model' => $action,
+    'type' => 'datetime-local'
+])@endcomponent
+@component('components.form.input', [
+    'name' => 'end_time',
+    'label' => 'Eind tijd',
+    'model' => $action,
+    'type' => 'datetime-local'
+])@endcomponent
+
+@component('components.form.input', [
+    'name' => 'points_required',
+    'label' => 'Benodigd aantal punten',
+    'placeholder' => 'Benodigd aantal punten',
+    'model' => $action,
+])@endcomponent
+
+@component('components.form.input', [
+    'name' => 'old_price',
+    'label' => 'Oude prijs',
+    'placeholder' => 'Oude prijs',
+    'model' => $action,
+])@endcomponent
+
+@component('components.form.input', [
+    'name' => 'discount',
+    'label' => 'Korting',
+    'placeholder' => 'Korting',
+    'model' => $action,
+])@endcomponent
+
+@component('components.form.input', [
+    'name' => 'new_price',
+    'label' => 'Nieuwe prijs',
+    'placeholder' => 'Nieuwe prijs',
+    'model' => $action,
+])@endcomponent
+
+@component('components.form.input', [
+    'name' => 'samengezond_url',
+    'label' => 'SamenGezond URL',
+    'placeholder' => 'SamenGezond URL',
+    'model' => $action,
+])@endcomponent
+
