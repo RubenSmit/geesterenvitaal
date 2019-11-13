@@ -22,7 +22,14 @@
                 <td>{{$page->title}}</td>
                 <td>{{$page->subtitle}}</td>
                 <td>{{$page->created_at}}</td>
-                <td><a href="/admin/pagina/{{$page->id}}">Bewerken</a></td>
+                <td>
+                    <a href="/admin/pagina/{{$page->id}}">Bewerken</a>
+                    <form action="/admin/pagina/{{$page->id}}" method="POST">
+                        @method('DELETE')
+                        @csrf
+                        <button type="submit" onclick="return confirm('Weet je zeker dat je de pagina \'{{$page->title}}\' wilt verwijderen?')">Verwijderen</button>
+                    </form>
+                </td>
             </tr>
         @endforeach
         </tbody>

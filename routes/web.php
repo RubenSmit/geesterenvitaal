@@ -30,6 +30,7 @@ Route::prefix('admin')->group(function () {
         Route::get('/', 'PageController@admin');
         Route::post('new', 'PageController@create');
         Route::get('new', 'PageController@new');
+        Route::delete('{id}', 'PageController@destroy');
         Route::patch('{id}', 'PageController@update');
         Route::get('{id}', 'PageController@edit');
     });
@@ -38,6 +39,7 @@ Route::prefix('admin')->group(function () {
         Route::get('/', 'ActivityController@admin');
         Route::post('new', 'ActivityController@create');
         Route::get('new', 'ActivityController@new');
+        Route::delete('{id}', 'ActivityController@destroy');
         Route::patch('{id}', 'ActivityController@update');
         Route::get('{id}', 'ActivityController@edit');
     });
@@ -46,6 +48,7 @@ Route::prefix('admin')->group(function () {
         Route::get('/', 'ActionController@admin');
         Route::post('new', 'ActionController@create');
         Route::get('new', 'ActionController@new');
+        Route::delete('{id}', 'ActionController@destroy');
         Route::patch('{id}', 'ActionController@update');
         Route::get('{id}', 'ActionController@edit');
     });

@@ -24,7 +24,14 @@
                 <td>{{$activity->subtitle}}</td>
                 <td>{{$activity->start_time}}</td>
                 <td>{{$activity->end_time}}</td>
-                <td><a href="/admin/activiteit/{{$activity->id}}">Bewerken</a></td>
+                <td>
+                    <a href="/admin/activiteit/{{$activity->id}}">Bewerken</a>
+                    <form action="/admin/activiteit/{{$activity->id}}" method="POST">
+                        @method('DELETE')
+                        @csrf
+                        <button type="submit" onclick="return confirm('Weet je zeker dat je de activiteit \'{{$activity->title}}\' wilt verwijderen?')">Verwijderen</button>
+                    </form>
+                </td>
             </tr>
         @endforeach
         </tbody>

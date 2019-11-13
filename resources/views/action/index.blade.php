@@ -6,7 +6,7 @@
     <main>
         <header class="header-narrow" style="background-image: url('img/blubel-ffmkD8dm7Zw-unsplash.jpg')">
             <div class="header-overlay">
-                <h1 class="header-title">Acties</h1>
+                <h1 class="header-title">acties</h1>
             </div>
         </header>
         <div class="container actions">
