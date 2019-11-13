@@ -43,6 +43,11 @@ class ActivityController extends Controller
 
     public function update($id, Request $request)
     {
+        $request->merge(array(
+            'start_time' => ($request->input('start_time_date') . " " . $request->input('start_time_time')),
+            'end_time' => ($request->input('end_time_date') . " " . $request->input('end_time_time')),
+        ));
+
         $validator = Validator::make($request->all(), self::VALIDATION_RULES);
 
         if ($validator->fails()) {
@@ -54,7 +59,13 @@ class ActivityController extends Controller
             Activity::findOrFail($id)
                 ->update([
                     'title' => $request->input('title'),
-                    'content' => $request->input('content')
+                    'subtitle' => $request->input('subtitle'),
+                    'content' => $request->input('content'),
+                    'start_time' => $request->input('start_time'),
+                    'end_time' => $request->input('end_time'),
+                    'location_name' => $request->input('location_name'),
+                    'location_address' => $request->input('location_address'),
+                    'registration_url' => $request->input('registration_url'),
                 ]);
             return redirect()
                 ->action('ActivityController@admin');
@@ -69,6 +80,11 @@ class ActivityController extends Controller
 
     public function create(Request $request)
     {
+        $request->merge(array(
+            'start_time' => ($request->input('start_time_date') . " " . $request->input('start_time_time')),
+            'end_time' => ($request->input('end_time_date') . " " . $request->input('end_time_time')),
+        ));
+
         $validator = Validator::make($request->all(), self::VALIDATION_RULES);
 
         if ($validator->fails()) {
@@ -77,9 +93,15 @@ class ActivityController extends Controller
                 ->withErrors($validator)
                 ->withInput();
         } else {
-            $activity = Activity::create([
+            Activity::create([
                 'title' => $request->input('title'),
-                'content' => $request->input('content')
+                'subtitle' => $request->input('subtitle'),
+                'content' => $request->input('content'),
+                'start_time' => $request->input('start_time'),
+                'end_time' => $request->input('end_time'),
+                'location_name' => $request->input('location_name'),
+                'location_address' => $request->input('location_address'),
+                'registration_url' => $request->input('registration_url'),
             ]);
             return redirect()
                 ->action('ActivityController@admin');

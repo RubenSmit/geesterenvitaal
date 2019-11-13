@@ -18,18 +18,15 @@
     'model' => $activity,
 ])@endcomponent
 
-{{--TODO: DATETIME componenten maken voor firefox support--}}
-@component('components.form.input', [
+@component('components.form.datetime', [
     'name' => 'start_time',
     'label' => 'Start tijd',
-    'model' => $activity,
-    'type' => 'datetime-local'
+    'model' => $activity
 ])@endcomponent
-@component('components.form.input', [
+@component('components.form.datetime', [
     'name' => 'end_time',
     'label' => 'Eind tijd',
     'model' => $activity,
-    'type' => 'datetime-local'
 ])@endcomponent
 
 @component('components.form.input', [
