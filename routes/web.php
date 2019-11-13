@@ -13,8 +13,12 @@
 
 Route::view('/', 'index');
 Route::get('pagina/{id}', 'PageController@show');
+
 Route::get('activiteit/', 'ActivityController@index');
 Route::get('activiteit/{id}', 'ActivityController@show');
+
+Route::get('actie/', 'ActionController@index');
+Route::get('actie/{id}', 'ActionController@show');
 
 Route::prefix('admin')->group(function () {
     Route::view('/', 'admin.index');
@@ -33,5 +37,13 @@ Route::prefix('admin')->group(function () {
         Route::get('new', 'ActivityController@new');
         Route::patch('{id}', 'ActivityController@update');
         Route::get('{id}', 'ActivityController@edit');
+    });
+
+    Route::prefix('actie')->group(function () {
+        Route::get('/', 'ActionController@admin');
+        Route::post('new', 'ActionController@create');
+        Route::get('new', 'ActionController@new');
+        Route::patch('{id}', 'ActionController@update');
+        Route::get('{id}', 'ActionController@edit');
     });
 });
