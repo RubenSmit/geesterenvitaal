@@ -15,8 +15,6 @@
             <th>Oude prijs</th>
             <th>Nieuwe prijs</th>
             <th>Benodigd aantal punten</th>
-
-
             <th></th>
         </tr>
         </thead>
@@ -30,7 +28,6 @@
                 <td>{{$action->old_price}}</td>
                 <td>{{$action->new_price}}</td>
                 <td>{{$action->points_required}}</td>
-
                 <td><a href="/admin/actie/{{$action->id}}">Bewerken</a></td>
             </tr>
         @endforeach

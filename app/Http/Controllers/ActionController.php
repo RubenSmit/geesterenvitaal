@@ -68,7 +68,6 @@ class ActionController extends Controller
             return redirect()
                 ->action('ActionController@admin');
         }
-
     }
 
     public function new()
