@@ -9,12 +9,19 @@
                 <h1 class="header-title">Acties</h1>
             </div>
         </header>
-        <div class="container">
+        <div class="container actions">
             @foreach ($actions as $action)
-                <aside>
-                    <h2><a href="/actie/{{$action->id}}">{{$action->title}}</a></h2>
-                    <small>Vanaf €{{number_format($action->new_price/100, 2, ',', '')}} + {{$action->points_required}} punten!</small>
+                <aside class="action">
+                    <a href="/actie/{{$action->id}}">
+                        <img class="action-image" src="img/blubel-ffmkD8dm7Zw-unsplash.jpg"/>
+                        <div>
+                            <h2 class="action-title">{{$action->title}}</h2>
+                            <small class="action-subtitle">Vanaf €{{number_format($action->new_price/100, 2, ',', '')}}
+                                + {{$action->points_required}} punten!</small>
+                        </div>
+                    </a>
                 </aside>
+
             @endforeach
         </div>
     </main>

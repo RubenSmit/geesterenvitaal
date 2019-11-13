@@ -11,12 +11,9 @@ nav {
 nav .nav-container {
   max-width: 1000px;
   margin: 0 auto;
-  display: -webkit-box;
   display: flex;
-  -webkit-box-align: center;
-          align-items: center;
-  -webkit-box-pack: justify;
-          justify-content: space-between;
+  align-items: center;
+  justify-content: space-between;
   height: 100%;
 }
 
@@ -66,15 +63,10 @@ header .header-overlay {
   background-color: rgba(28, 167, 86, 0.5);
   width: 100%;
   height: 100%;
-  display: -webkit-box;
   display: flex;
-  -webkit-box-pack: center;
-          justify-content: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-          flex-direction: column;
-  -webkit-box-align: center;
-          align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
 
 header .header-subtitle,
@@ -122,13 +114,11 @@ main .container {
 }
 
 main .main-colums {
-  display: -webkit-box;
   display: flex;
 }
 
 main .main-column {
-  -webkit-box-flex: 1;
-          flex-grow: 1;
+  flex-grow: 1;
   padding: 0 10px;
 }
 
@@ -139,12 +129,9 @@ main .main-highlight {
 main .main-highlight > .container {
   margin: 0 auto;
   padding: 30px 0;
-  display: -webkit-box;
   display: flex;
-  -webkit-box-align: center;
-          align-items: center;
-  -webkit-box-pack: justify;
-          justify-content: space-between;
+  align-items: center;
+  justify-content: space-between;
 }
 
 main .main-highlight > .container > * {
@@ -198,14 +185,12 @@ footer {
 footer .footer-container {
   max-width: 1000px;
   margin: 50px auto 0;
-  display: -webkit-box;
   display: flex;
   padding: 40px 10px 80px;
 }
 
 footer .footer-container .footer-column {
-  -webkit-box-flex: 1;
-          flex-grow: 1;
+  flex-grow: 1;
   padding: 0 10px;
 }
 
@@ -252,5 +237,46 @@ footer .footer-text {
 form input,
 form textarea {
   width: 100%;
+}
+
+.actions {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.action {
+  width: 30%;
+  margin: 10px;
+  margin-bottom: 30px;
+}
+
+.action .action-image {
+  width: 100%;
+  height: 350px;
+  border: solid 3px #1ca756;
+  border-radius: 20px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.action a {
+  text-decoration: none;
+  color: #000;
+}
+
+.action a:hover {
+  color: #1ca756;
+}
+
+.action .action-title {
+  margin: 0;
+  padding: 0 20px;
+}
+
+.action .action-subtitle {
+  margin: 0px 20px;
+  display: inline-block;
 }
 
