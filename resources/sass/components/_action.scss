@@ -1,0 +1,40 @@
+.actions {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.action {
+    width: 30%;
+    margin: 10px;
+    margin-bottom: 30px;
+
+    .action-image {
+        width: 100%;
+        height: 350px;
+        border: solid 3px $brand_primary;
+        border-radius: 20px;
+        object-fit: cover;
+    }
+
+    a {
+        text-decoration: none;
+        color: $dark;
+
+        &:hover {
+            color: $brand_primary;
+        }
+    }
+
+    .action-title {
+        margin: 0;
+        padding: 0 20px;
+    }
+
+    .action-subtitle {
+        margin: 0px 20px;
+        display: inline-block;
+
+    }
+}
