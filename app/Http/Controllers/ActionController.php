@@ -45,6 +45,11 @@ class ActionController extends Controller
 
     public function update($id, Request $request)
     {
+        $request->merge(array(
+            'start_time' => ($request->input('start_time_date') . " " . $request->input('start_time_time')),
+            'end_time' => ($request->input('end_time_date') . " " . $request->input('end_time_time')),
+        ));
+
         $validator = Validator::make($request->all(), self::VALIDATION_RULES);
 
         if ($validator->fails()) {
@@ -77,6 +82,11 @@ class ActionController extends Controller
 
     public function create(Request $request)
     {
+        $request->merge(array(
+            'start_time' => ($request->input('start_time_date') . " " . $request->input('start_time_time')),
+            'end_time' => ($request->input('end_time_date') . " " . $request->input('end_time_time')),
+        ));
+
         $validator = Validator::make($request->all(), self::VALIDATION_RULES);
 
         if ($validator->fails()) {

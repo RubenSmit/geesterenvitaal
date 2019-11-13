@@ -3,4 +3,13 @@ form {
     input, textarea {
         width: 100%;
     }
+
+    .form-item-holder {
+        display: flex;
+        flex-direction: row;
+
+        > * {
+            flex-grow: 1;
+        }
+    }
 }
