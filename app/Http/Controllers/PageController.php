@@ -77,4 +77,10 @@ class PageController extends Controller
                 ->action('PageController@admin');
         }
     }
+
+    public function destroy($id) {
+        Page::destroy($id);
+        return redirect()
+            ->action('PageController@admin');
+    }
 }

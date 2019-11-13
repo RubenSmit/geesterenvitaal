@@ -85,4 +85,10 @@ class ActivityController extends Controller
                 ->action('ActivityController@admin');
         }
     }
+
+    public function destroy($id) {
+        Activity::destroy($id);
+        return redirect()
+            ->action('ActivityController@admin');
+    }
 }

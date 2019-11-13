@@ -24,6 +24,7 @@ class CreateActivitiesTable extends Migration
             $table->text('location_address');
             $table->text('registration_url');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
