@@ -19,6 +19,8 @@
             <a class="nav-item" href="/admin/pagina">Pagina's</a>
             <a class="nav-item" href="/admin/actie">Acties</a>
             <a class="nav-item" href="/admin/activiteit">Activiteiten</a>
+            <a class="nav-item" href="/admin/uitdaging">Uitdagingen</a>
+
             <a class="nav-item nav-pill" href="/">Uitloggen</a>
         </div>
     </div>

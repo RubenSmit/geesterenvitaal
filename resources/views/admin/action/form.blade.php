@@ -16,12 +16,12 @@
 @component('components.form.datetime', [
     'name' => 'start_time',
     'label' => 'Start tijd',
-    'model' => $activity
+    'model' => $action
 ])@endcomponent
 @component('components.form.datetime', [
     'name' => 'end_time',
     'label' => 'Eind tijd',
-    'model' => $activity,
+    'model' => $action,
 ])@endcomponent
 
 @component('components.form.input', [
