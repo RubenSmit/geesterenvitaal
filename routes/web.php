@@ -11,7 +11,7 @@
 |
 */
 
-Route::view('/', 'index');
+Route::get('/', 'DashboardController@index');
 Route::get('pagina/{id}', 'PageController@show');
 
 Route::get('activiteit/', 'ActivityController@index');
@@ -19,6 +19,9 @@ Route::get('activiteit/{id}', 'ActivityController@show');
 
 Route::get('actie/', 'ActionController@index');
 Route::get('actie/{id}', 'ActionController@show');
+
+Route::get('uitdaging/', 'ChallengeController@index');
+Route::get('uitdaging/{id}', 'ChallengeController@show');
 
 Route::prefix('admin')->group(function () {
     Route::view('/', 'admin.index');

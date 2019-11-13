@@ -11,9 +11,12 @@ nav {
 nav .nav-container {
   max-width: 1000px;
   margin: 0 auto;
+  display: -webkit-box;
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  -webkit-box-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+          justify-content: space-between;
   height: 100%;
 }
 
@@ -59,14 +62,28 @@ header {
   height: 50vh;
 }
 
+header.header-narrow {
+  height: 25vh;
+}
+
+header.header-narrow .header-title {
+  color: #fff;
+  font-size: 75px;
+}
+
 header .header-overlay {
   background-color: rgba(28, 167, 86, 0.5);
   width: 100%;
   height: 100%;
+  display: -webkit-box;
   display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
+  -webkit-box-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          flex-direction: column;
+  -webkit-box-align: center;
+          align-items: center;
 }
 
 header .header-subtitle,
@@ -114,11 +131,13 @@ main .container {
 }
 
 main .main-colums {
+  display: -webkit-box;
   display: flex;
 }
 
 main .main-column {
-  flex-grow: 1;
+  -webkit-box-flex: 1;
+          flex-grow: 1;
   padding: 0 10px;
 }
 
@@ -129,9 +148,12 @@ main .main-highlight {
 main .main-highlight > .container {
   margin: 0 auto;
   padding: 30px 0;
+  display: -webkit-box;
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  -webkit-box-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+          justify-content: space-between;
 }
 
 main .main-highlight > .container > * {
@@ -185,12 +207,14 @@ footer {
 footer .footer-container {
   max-width: 1000px;
   margin: 50px auto 0;
+  display: -webkit-box;
   display: flex;
   padding: 40px 10px 80px;
 }
 
 footer .footer-container .footer-column {
-  flex-grow: 1;
+  -webkit-box-flex: 1;
+          flex-grow: 1;
   padding: 0 10px;
 }
 
@@ -239,11 +263,59 @@ form textarea {
   width: 100%;
 }
 
-.actions {
+.challenges {
+  display: -webkit-box;
   display: flex;
-  flex-direction: row;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+          flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-between;
+}
+
+.challenge {
+  width: 31%;
+  margin: 10px;
+  margin-bottom: 30px;
+}
+
+.challenge a {
+  text-decoration: none;
+  color: #000;
+}
+
+.challenge a:hover {
+  color: #1ca756;
+}
+
+.challenge .challenge-image {
+  width: 100%;
+  height: 350px;
+  border: solid 3px #1ca756;
+  border-radius: 20px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.challenge .challenge-title {
+  margin: 0;
+  padding: 5px 20px;
+  display: inline-block;
+}
+
+.challenge .challenge-subtitle {
+  padding: 0 20px;
+  display: inline-block;
+}
+
+.actions {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+          flex-direction: row;
+  flex-wrap: wrap;
+  -webkit-box-pack: justify;
+          justify-content: space-between;
 }
 
 .action {
