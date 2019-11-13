@@ -25,6 +25,7 @@ class CreateActionsTable extends Migration
             $table->string('discount');
             $table->double('new_price');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

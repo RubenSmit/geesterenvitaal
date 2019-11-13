@@ -19,6 +19,7 @@ class CreatePagesTable extends Migration
             $table->string('subtitle');
             $table->text('content');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

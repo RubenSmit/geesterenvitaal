@@ -314,12 +314,10 @@ form textarea {
   -webkit-box-direction: normal;
           flex-direction: row;
   flex-wrap: wrap;
-  -webkit-box-pack: justify;
-          justify-content: space-between;
 }
 
 .action {
-  width: 30%;
+  width: 31%;
   margin: 10px;
   margin-bottom: 30px;
 }

@@ -100,4 +100,10 @@ class ActionController extends Controller
                 ->action('ActionController@admin');
         }
     }
+
+    public function destroy($id) {
+        Action::destroy($id);
+        return redirect()
+            ->action('ActionController@admin');
+    }
 }
