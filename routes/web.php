@@ -52,4 +52,12 @@ Route::prefix('admin')->group(function () {
         Route::patch('{id}', 'ActionController@update');
         Route::get('{id}', 'ActionController@edit');
     });
+
+    Route::prefix('uitdaging')->group(function () {
+        Route::get('/', 'ChallengeController@admin');
+        Route::post('new', 'ChallengeController@create');
+        Route::get('new', 'ChallengeController@new');
+        Route::patch('{id}', 'ChallengeController@update');
+        Route::get('{id}', 'ChallengeController@edit');
+    });
 });
