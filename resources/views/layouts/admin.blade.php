@@ -11,15 +11,16 @@
             @if (Route::has('register'))
                 <a class="nav-item nav-pill" href="{{ route('register') }}">{{ __('Registreren') }}</a>
             @endif
-            <a class="nav-item nav-pill" href="{{ route('login') }}">{{ __('Login') }}</a>
+            <a class="nav-item nav-pill" href="{{ route('login') }}">{{ __('Inloggen') }}</a>
         @else
             <a class="nav-item" href="{{url('/admin/pagina')}}">Pagina's</a>
             <a class="nav-item" href="{{url('/admin/actie')}}">Acties</a>
             <a class="nav-item" href="{{url('/admin/activiteit')}}">Activiteiten</a>
             <a class="nav-item" href="{{url('/admin/uitdaging')}}">Uitdagingen</a>
+            <a class="nav-item" href="{{url('/admin/gebruiker')}}">Gebruikers</a>
             <a class="nav-item nav-pill" href="{{ route('logout') }}"
                onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                {{ __('Logout') }}
+                {{ __('Uitloggen') }}
             </a>
             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                 @csrf

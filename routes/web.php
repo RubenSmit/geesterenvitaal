@@ -23,9 +23,9 @@ Route::get('actie/{id}', 'ActionController@show');
 Route::get('uitdaging/', 'ChallengeController@index');
 Route::get('uitdaging/{id}', 'ChallengeController@show');
 
-Auth::routes();
+Auth::routes(['verify' => true]);
 
-Route::group(['prefix' => 'admin',  'middleware' => 'auth'], function() {
+Route::group(['prefix' => 'admin',  'middleware' => ['auth', 'verified']], function() {
     Route::view('/', 'admin.index');
 
     Route::prefix('pagina')->group(function () {
@@ -61,5 +61,9 @@ Route::group(['prefix' => 'admin',  'middleware' => 'auth'], function() {
         Route::get('new', 'ChallengeController@new');
         Route::patch('{id}', 'ChallengeController@update');
         Route::get('{id}', 'ChallengeController@edit');
+    });
+
+    Route::prefix('gebruiker')->group(function () {
+        Route::get('/', 'UserController@admin');
     });
 });
