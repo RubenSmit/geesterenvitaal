@@ -22,7 +22,7 @@
                     </div>
                     <div class="article-info-date">
                         <strong>Datum:</strong>
-                        {{$activity->start_time}} tot {{$activity->end_time}}
+                        {{$activity->humanized_times}}
                     </div>
                 </div>
                 <div class="content">

@@ -14,8 +14,7 @@
                 <aside>
                     <h2><a href="/activiteit/{{$activity->id}}">{{$activity->title}}</a></h2>
                     <h3>{{$activity->subtitle}}</h3>
-                    <small>{{$activity->start_time}}</small>
-                    <small>{{$activity->end_time}}</small>
+                    <small>{{$activity->humanized_times}}</small>
                 </aside>
             @endforeach
         </div>

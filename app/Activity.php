@@ -27,6 +27,16 @@ class Activity extends Model
         'image_url',
     ];
 
+    /**
+     * The attributes that should be mutated to dates.
+     *
+     * @var array
+     */
+    protected $dates = [
+        'start_time',
+        'end_time',
+    ];
+
     public function scopeUpcoming($query) {
         return $query->where('start_time', '>=', date("Y-m-d H:i:s"))->orderBy('start_time');
     }
@@ -42,6 +52,23 @@ class Activity extends Model
             return url('img/banner.jpg');
         } else {
             return url(Storage::url($this->image_url));
+        }
+    }
+
+    /**
+     * Get the humanized times.
+     *
+     * @return string
+     */
+    public function getHumanizedTimesAttribute()
+    {
+        $firstDate = date_format($this->start_time, 'Y-m-d');
+        $secondDate = date_format($this->end_time, 'Y-m-d');
+
+        if ($firstDate == $secondDate) {
+            return $this->start_time->isoFormat('dddd D MMMM YYYY [van] H:mm').' tot '.$this->end_time->isoFormat('H:mm');
+        } else {
+            return $this->start_time->isoFormat('[van] dddd D MMMM YYYY [om] H:mm').' tot '.$this->end_time->isoFormat('dddd D MMMM YYYY [om] H:mm');
         }
     }
 }
