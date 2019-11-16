@@ -215,3 +215,38 @@ footer {
         color: $light;
     }
 }
+
+button, .btn {
+    border: 0;
+    border-radius: $border-radius;
+    background-color: $brand_primary;
+    color: $light;
+    padding: 5px 10px;
+    font-size: inherit;
+    text-decoration: none;
+    cursor: pointer;
+    margin-right: 5px;
+
+    &:hover {
+        background-color: $brand_primary_dark;
+        color: $light;
+    }
+
+    &:active {
+        box-shadow: 0 0 5px $brand_primary_light;
+        color: $light;
+    }
+}
+
+a, button.link {
+    text-decoration: none;
+    color: $brand_primary;
+
+    &:hover {
+        color: $brand_primary_dark;
+    }
+
+    &:active {
+        color: $brand_primary_light;
+    }
+}
