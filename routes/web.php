@@ -23,7 +23,9 @@ Route::get('actie/{id}', 'ActionController@show');
 Route::get('uitdaging/', 'ChallengeController@index');
 Route::get('uitdaging/{id}', 'ChallengeController@show');
 
-Route::prefix('admin')->group(function () {
+Auth::routes();
+
+Route::group(['prefix' => 'admin',  'middleware' => 'auth'], function() {
     Route::view('/', 'admin.index');
 
     Route::prefix('pagina')->group(function () {

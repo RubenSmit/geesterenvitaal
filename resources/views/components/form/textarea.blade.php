@@ -10,7 +10,7 @@
         {{ isset($attributes) ? $attributes : '' }}>{{ old($name) ?: (isset($model) ? $model->{$name} : '') }}</textarea>
 
     @if ($errors->has($name))
-        <span class="form-item-help">
+        <span class="form-item-help" role="alert">
             {{ $errors->first($name) }}
         </span>
     @endif

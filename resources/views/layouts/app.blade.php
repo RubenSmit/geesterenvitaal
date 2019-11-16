@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -9,21 +12,18 @@
 
     <title>Geesteren Vitaal - @yield('title')</title>
 </head>
-<body>
+<body class="@yield('type')">
 <nav>
     <div class="nav-container">
-        <a href="/">
-            <img class="nav-brand" src="{{url('img/temp.bmp')}}" alt="Geesteren Vitaal - Home"/>
-        </a>
-        <div class="nav-menu">
-            <a class="nav-item" href="/activiteit">Activiteiten</a>
-            <a class="nav-item" href="/actie">Spaaracties</a>
-            <a class="nav-item" href="/uitdaging">Uitdagingen</a>
-            <a class="nav-item nav-pill" href="/">SamenGezond</a>
-        </div>
+        @yield('nav')
     </div>
 </nav>
-@yield('content')
+@if (session('status'))
+    <div class="alert alert-success" role="alert">
+        {{ session('status') }}
+    </div>
+@endif
+@yield('main')
 <footer>
     <div class="footer-container">
         <div class="footer-column">
