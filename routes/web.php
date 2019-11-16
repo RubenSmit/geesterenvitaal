@@ -25,7 +25,7 @@ Route::get('uitdaging/{id}', 'ChallengeController@show');
 
 Auth::routes(['verify' => true]);
 
-Route::group(['prefix' => 'admin',  'middleware' => ['auth', 'verified']], function() {
+Route::group(['prefix' => 'admin',  'middleware' => ['auth']], function() {
     Route::view('/', 'admin.index');
 
     Route::prefix('pagina')->group(function () {
