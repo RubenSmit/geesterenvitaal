@@ -18,7 +18,8 @@ class ActivityController extends Controller
         'end_time' => 'required|date|after:start_time',
         'location_name' => 'required',
         'location_address' => 'nullable',
-        'registration_url' => 'nullable|url'
+        'registration_url' => 'nullable|url',
+        'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
     ];
 
     public function index()
@@ -56,17 +57,24 @@ class ActivityController extends Controller
                 ->withErrors($validator)
                 ->withInput();
         } else {
-            Activity::findOrFail($id)
-                ->update([
-                    'title' => $request->input('title'),
-                    'subtitle' => $request->input('subtitle'),
-                    'content' => $request->input('content'),
-                    'start_time' => $request->input('start_time'),
-                    'end_time' => $request->input('end_time'),
-                    'location_name' => $request->input('location_name'),
-                    'location_address' => $request->input('location_address'),
-                    'registration_url' => $request->input('registration_url'),
-                ]);
+            $activity = Activity::findOrFail($id);
+            $path = $activity->image_url;
+
+            if ($request->hasFile('image')) {
+                $path = $request->file('image')->store('images', ['disk' => 'public']);
+            }
+
+            $activity->update([
+                'title' => $request->input('title'),
+                'subtitle' => $request->input('subtitle'),
+                'content' => $request->input('content'),
+                'start_time' => $request->input('start_time'),
+                'end_time' => $request->input('end_time'),
+                'location_name' => $request->input('location_name'),
+                'location_address' => $request->input('location_address'),
+                'registration_url' => $request->input('registration_url'),
+                'image_url' => $path,
+            ]);
             return redirect()
                 ->action('ActivityController@admin');
         }
@@ -93,6 +101,11 @@ class ActivityController extends Controller
                 ->withErrors($validator)
                 ->withInput();
         } else {
+            $path = null;
+            if ($request->hasFile('image')) {
+                $path = $request->file('image')->store('images', ['disk' => 'public']);
+            }
+
             Activity::create([
                 'title' => $request->input('title'),
                 'subtitle' => $request->input('subtitle'),
@@ -102,13 +115,15 @@ class ActivityController extends Controller
                 'location_name' => $request->input('location_name'),
                 'location_address' => $request->input('location_address'),
                 'registration_url' => $request->input('registration_url'),
+                'image_url' => $path,
             ]);
             return redirect()
                 ->action('ActivityController@admin');
         }
     }
 
-    public function destroy($id) {
+    public function destroy($id)
+    {
         Activity::destroy($id);
         return redirect()
             ->action('ActivityController@admin');

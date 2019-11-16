@@ -5,7 +5,7 @@
 @section('content')
     <main>
         <article>
-            <header style="background-image: url('{{url('img/blubel-ffmkD8dm7Zw-unsplash.jpg')}}')">
+            <header style="background-image: url('{{$activity->image_path}}')">
                 <div class="header-overlay">
                     <h1 class="header-title">{{$activity->title}}</h1>
                     <p class="header-subtitle">{{$activity->subtitle}}</p>

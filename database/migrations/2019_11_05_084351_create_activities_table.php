@@ -23,6 +23,7 @@ class CreateActivitiesTable extends Migration
             $table->text('location_name');
             $table->text('location_address');
             $table->text('registration_url');
+            $table->string('image_url')->nullable(true);
             $table->timestamps();
             $table->softDeletes();
         });

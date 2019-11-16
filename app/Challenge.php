@@ -4,6 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Support\Facades\Storage;
 
 class Challenge extends Model
 {
@@ -24,5 +25,20 @@ class Challenge extends Model
         'location_address',
         'latitude',
         'longitude',
+        'image_url',
     ];
+
+    /**
+     * Get the image path.
+     *
+     * @return string
+     */
+    public function getImagePathAttribute()
+    {
+        if (is_null($this->image_url)) {
+            return url('img/banner.jpg');
+        } else {
+            return url(Storage::url($this->image_url));
+        }
+    }
 }

@@ -11,6 +11,13 @@
     'placeholder' => 'Ondertitel van de activiteit',
     'model' => $activity,
 ])@endcomponent
+@component('components.form.input', [
+    'name' => 'image',
+    'label' => 'Afbeelding',
+    'placeholder' => 'Afbeelding van de activiteit',
+    'model' => $activity,
+    'type' => 'file',
+])@endcomponent
 @component('components.form.textarea', [
     'name' => 'content',
     'label' => 'Inhoud',

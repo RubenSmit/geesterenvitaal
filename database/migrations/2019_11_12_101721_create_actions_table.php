@@ -24,6 +24,7 @@ class CreateActionsTable extends Migration
             $table->double('old_price');
             $table->string('discount');
             $table->double('new_price');
+            $table->string('image_url')->nullable(true);
             $table->timestamps();
             $table->softDeletes();
         });

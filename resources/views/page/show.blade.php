@@ -1,11 +1,11 @@
-@extends('layouts.app')
+@extends('layouts.public')
 
 @section('title', $page->title)
 
 @section('content')
     <main>
         <article>
-            <header style="background-image: url('{{url('img/blubel-ffmkD8dm7Zw-unsplash.jpg')}}')">
+            <header style="background-image: url('{{$page->image_path}}')">
                 <div class="header-overlay">
                     <h1 class="header-title">{{$page->title}}</h1>
                     <p class="header-subtitle">{{$page->subtitle}}</p>

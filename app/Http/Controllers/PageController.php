@@ -13,7 +13,8 @@ class PageController extends Controller
     const VALIDATION_RULES = [
         'title' => 'required|max:255|min:3',
         'subtitle' => 'required|max:255|min:3',
-        'content' => 'required|min:10'
+        'content' => 'required|min:10',
+        'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
     ];
 
     public function admin()
@@ -41,12 +42,19 @@ class PageController extends Controller
                 ->withErrors($validator)
                 ->withInput();
         } else {
-            Page::findOrFail($id)
-                ->update([
-                    'title' => $request->input('title'),
-                    'subtitle' => $request->input('subtitle'),
-                    'content' => $request->input('content')
-                ]);
+            $page = Page::findOrFail($id);
+            $path = $page->image_url;
+
+            if ($request->hasFile('image')) {
+                $path = $request->file('image')->store('images', ['disk' => 'public']);
+            }
+
+            $page->update([
+                'title' => $request->input('title'),
+                'subtitle' => $request->input('subtitle'),
+                'content' => $request->input('content'),
+                'image_url' => $path,
+            ]);
             return redirect()
                 ->action('PageController@admin');
         }
@@ -68,17 +76,24 @@ class PageController extends Controller
                 ->withErrors($validator)
                 ->withInput();
         } else {
-            $page = Page::create([
+            $path = null;
+            if ($request->hasFile('image')) {
+                $path = $request->file('image')->store('images', ['disk' => 'public']);
+            }
+
+            Page::create([
                 'title' => $request->input('title'),
                 'subtitle' => $request->input('subtitle'),
-                'content' => $request->input('content')
+                'content' => $request->input('content'),
+                'image_url' => $path,
             ]);
             return redirect()
                 ->action('PageController@admin');
         }
     }
 
-    public function destroy($id) {
+    public function destroy($id)
+    {
         Page::destroy($id);
         return redirect()
             ->action('PageController@admin');
