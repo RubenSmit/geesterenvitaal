@@ -11,6 +11,13 @@
     'placeholder' => 'Ondertitel van de pagina',
     'model' => $page,
 ])@endcomponent
+@component('components.form.input', [
+    'name' => 'image',
+    'label' => 'Afbeelding',
+    'placeholder' => 'Afbeelding van de pagina',
+    'model' => $page,
+    'type' => 'file',
+])@endcomponent
 @component('components.form.textarea', [
     'name' => 'content',
     'label' => 'Inhoud',
