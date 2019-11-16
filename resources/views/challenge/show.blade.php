@@ -5,7 +5,7 @@
 @section('content')
     <main>
         <article>
-            <header style="background-image: url('{{url('banner.jpg')}}')">
+            <header style="background-image: url('{{$challenge->image_path}}')">
                 <div class="header-overlay">
                     <h1 class="header-title">{{$challenge->title}}</h1>
                     <p class="header-subtitle">{{$challenge->subtitle}}</p>

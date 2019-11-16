@@ -13,6 +13,14 @@
     'model' => $challenge,
 ])@endcomponent
 
+@component('components.form.input', [
+    'name' => 'image',
+    'label' => 'Afbeelding',
+    'placeholder' => 'Afbeelding van de uitdaging',
+    'model' => $challenge,
+    'type' => 'file',
+])@endcomponent
+
 @component('components.form.textarea', [
     'name' => 'content',
     'label' => 'Inhoud',

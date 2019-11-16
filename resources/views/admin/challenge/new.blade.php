@@ -4,7 +4,7 @@
 
 @section('content')
     <h1>Nieuwe uitdaging</h1>
-    <form action="/admin/uitdaging/new" method="POST">
+    <form action="/admin/uitdaging/new" method="POST" enctype="multipart/form-data">
         @method('POST')
         @include('admin.challenge.form')
         <button type="submit">Aanmaken</button>

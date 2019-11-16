@@ -13,7 +13,7 @@
             @foreach ($challenges as $challenge)
                 <aside class="challenge">
                     <a href="/uitdaging/{{$challenge->id}}">
-                        <img class="challenge-image" src="img/banner.jpg"/>
+                        <img class="challenge-image" src="{{$challenge->image_path}}"/>
                         <div>
                             <h2 class="challenge-title">{{$challenge->title}}</h2>
                             <small class="challenge-subtitle">{{$challenge->subtitle}}</small>

@@ -21,7 +21,8 @@ class ChallengeController extends Controller
         'location_address' => 'nullable',
         'registration_url' => 'nullable',
         'latitude' => 'nullable',
-        'longitude' => 'nullable'
+        'longitude' => 'nullable',
+        'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
     ];
 
     public function index()
@@ -59,19 +60,26 @@ class ChallengeController extends Controller
                 ->withErrors($validator)
                 ->withInput();
         } else {
-            Challenge::findOrFail($id)
-                ->update([
-                    'title' => $request->input('title'),
-                    'subtitle' => $request->input('subtitle'),
-                    'content' => $request->input('content'),
-                    'start_time' => $request->input('start_time'),
-                    'end_time' => $request->input('end_time'),
-                    'location_name' => $request->input('location_name'),
-                    'location_address' => $request->input('location_address'),
-                    'registration_url' => $request->input('registration_url'),
-                    'latitude' => $request->input('latitude'),
-                    'longitude' => $request->input('longitude')
-                ]);
+            $challenge = Challenge::findOrFail($id);
+            $path = $challenge->image_url;
+
+            if ($request->hasFile('image')) {
+                $path = $request->file('image')->store('images', ['disk' => 'public']);
+            }
+
+            $challenge->update([
+                'title' => $request->input('title'),
+                'subtitle' => $request->input('subtitle'),
+                'content' => $request->input('content'),
+                'start_time' => $request->input('start_time'),
+                'end_time' => $request->input('end_time'),
+                'location_name' => $request->input('location_name'),
+                'location_address' => $request->input('location_address'),
+                'registration_url' => $request->input('registration_url'),
+                'latitude' => $request->input('latitude'),
+                'longitude' => $request->input('longitude'),
+                'image_url' => $path,
+            ]);
             return redirect()
                 ->action('ChallengeController@admin');
         }
@@ -97,7 +105,12 @@ class ChallengeController extends Controller
                 ->withErrors($validator)
                 ->withInput();
         } else {
-            $challenge = Challenge::create([
+            $path = null;
+            if ($request->hasFile('image')) {
+                $path = $request->file('image')->store('images', ['disk' => 'public']);
+            }
+
+            Challenge::create([
                 'title' => $request->input('title'),
                 'subtitle' => $request->input('subtitle'),
                 'content' => $request->input('content'),
@@ -107,7 +120,8 @@ class ChallengeController extends Controller
                 'location_address' => $request->input('location_address'),
                 'registration_url' => $request->input('registration_url'),
                 'latitude' => $request->input('latitude'),
-                'longitude' => $request->input('longitude')
+                'longitude' => $request->input('longitude'),
+                'image_url' => $path,
             ]);
             return redirect()
                 ->action('ChallengeController@admin');
