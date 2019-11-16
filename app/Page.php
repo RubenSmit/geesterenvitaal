@@ -25,7 +25,7 @@ class Page extends Model
     public function getImagePathAttribute()
     {
         if (is_null($this->image_url)) {
-            return url('img/blubel-ffmkD8dm7Zw-unsplash.jpg');
+            return url('img/banner.jpg');
         } else {
             return url(Storage::url($this->image_url));
         }

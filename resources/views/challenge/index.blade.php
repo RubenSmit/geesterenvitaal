@@ -4,7 +4,7 @@
 
 @section('content')
     <main>
-        <header class="header-narrow" style="background-image: url('img/blubel-ffmkD8dm7Zw-unsplash.jpg')">
+        <header class="header-narrow" style="background-image: url('img/banner.jpg')">
             <div class="header-overlay">
                 <h1 class="header-title">uitdagingen</h1>
             </div>
@@ -13,7 +13,7 @@
             @foreach ($challenges as $challenge)
                 <aside class="challenge">
                     <a href="/uitdaging/{{$challenge->id}}">
-                        <img class="challenge-image" src="img/blubel-ffmkD8dm7Zw-unsplash.jpg"/>
+                        <img class="challenge-image" src="img/banner.jpg"/>
                         <div>
                             <h2 class="challenge-title">{{$challenge->title}}</h2>
                             <small class="challenge-subtitle">{{$challenge->subtitle}}</small>

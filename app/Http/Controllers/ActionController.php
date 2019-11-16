@@ -20,7 +20,8 @@ class ActionController extends Controller
         'points_required' => 'required|numeric',
         'old_price' => 'nullable|numeric',
         'discount' => 'nullable',
-        'new_price' => 'nullable|numeric'
+        'new_price' => 'nullable|numeric',
+        'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
     ];
 
     public function index()
@@ -58,18 +59,25 @@ class ActionController extends Controller
                 ->withErrors($validator)
                 ->withInput();
         } else {
-            Action::findOrFail($id)
-                ->update([
-                    'title' => $request->input('title'),
-                    'content' => $request->input('content'),
-                    'start_time' => $request->input('start_time'),
-                    'end_time' => $request->input('end_time'),
-                    'samengezond_url' => $request->input('samengezond_url'),
-                    'points_required' => $request->input('points_required'),
-                    'old_price' => $request->input('old_price'),
-                    'discount' => $request->input('discount'),
-                    'new_price' => $request->input('new_price')
-                ]);
+            $action = Action::findOrFail($id);
+            $path = $action->image_url;
+
+            if ($request->hasFile('image')) {
+                $path = $request->file('image')->store('images', ['disk' => 'public']);
+            }
+
+            $action->update([
+                'title' => $request->input('title'),
+                'content' => $request->input('content'),
+                'start_time' => $request->input('start_time'),
+                'end_time' => $request->input('end_time'),
+                'samengezond_url' => $request->input('samengezond_url'),
+                'points_required' => $request->input('points_required'),
+                'old_price' => $request->input('old_price'),
+                'discount' => $request->input('discount'),
+                'new_price' => $request->input('new_price'),
+                'image_url' => $path,
+            ]);
             return redirect()
                 ->action('ActionController@admin');
         }
@@ -95,7 +103,12 @@ class ActionController extends Controller
                 ->withErrors($validator)
                 ->withInput();
         } else {
-            $activity = Action::create([
+            $path = null;
+            if ($request->hasFile('image')) {
+                $path = $request->file('image')->store('images', ['disk' => 'public']);
+            }
+
+            Action::create([
                 'title' => $request->input('title'),
                 'content' => $request->input('content'),
                 'start_time' => $request->input('start_time'),
@@ -104,14 +117,16 @@ class ActionController extends Controller
                 'points_required' => $request->input('points_required'),
                 'old_price' => $request->input('old_price'),
                 'discount' => $request->input('discount'),
-                'new_price' => $request->input('new_price')
+                'new_price' => $request->input('new_price'),
+                'image_url' => $path,
             ]);
             return redirect()
                 ->action('ActionController@admin');
         }
     }
 
-    public function destroy($id) {
+    public function destroy($id)
+    {
         Action::destroy($id);
         return redirect()
             ->action('ActionController@admin');

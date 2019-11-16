@@ -4,7 +4,7 @@
 
 @section('content')
     <main>
-        <header class="header-narrow" style="background-image: url('img/blubel-ffmkD8dm7Zw-unsplash.jpg')">
+        <header class="header-narrow" style="background-image: url('img/banner.jpg')">
             <div class="header-overlay">
                 <h1 class="header-title">activiteiten</h1>
             </div>
