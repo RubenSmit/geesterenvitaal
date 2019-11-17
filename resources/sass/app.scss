@@ -10,7 +10,9 @@
 @import "components/nav";
 @import "components/form";
 @import "components/challenge";
-@import "components/action";
 
 // Pages
 @import "pages/index";
+@import "pages/action-index";
+@import "pages/action-show";
+@import "pages/activity-index";

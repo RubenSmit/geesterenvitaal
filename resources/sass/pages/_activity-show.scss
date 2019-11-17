@@ -1,0 +1,46 @@
+.activity-index {
+
+    .activity {
+        display: flex;
+        flex-direction: row;
+        color: $dark;
+
+        > * {
+            flex-basis: 50%;
+            margin: 10px;
+        }
+
+        &:hover {
+            color: $brand_primary;
+        }
+    }
+
+    .activity-image {
+        border: solid 3px $brand_primary;
+        border-radius: $border-radius-large;
+        object-fit: cover;
+        height: 250px;
+    }
+
+    .activity-content {
+        padding: 10px 0;
+    }
+
+    .activity-date {
+        color: $brand_primary;
+    }
+
+    .activity-title {
+        margin-top: 10px;
+        margin-bottom: 5px;
+        font-size: 30px;
+    }
+
+    .activity-subtitle {
+        margin: 0 0 20px 0;
+    }
+
+    .activity-time {
+        margin-left: 20px;
+    }
+}

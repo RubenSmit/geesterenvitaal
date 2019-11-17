@@ -71,4 +71,14 @@ class Activity extends Model
             return $this->start_time->isoFormat('[van] dddd D MMMM YYYY [om] H:mm').' tot '.$this->end_time->isoFormat('dddd D MMMM YYYY [om] H:mm');
         }
     }
+
+    /**
+     * Get the humanized timerange.
+     *
+     * @return string
+     */
+    public function getHumanizedTimerangeAttribute()
+    {
+            return $this->start_time->isoFormat('H:mm').' - '.$this->end_time->isoFormat('H:mm');
+    }
 }

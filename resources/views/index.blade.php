@@ -16,7 +16,8 @@
                 <div class="main-highlight-content">
                     <h2 class="main-highlight-title">
                         {{$activities->first()->title}}
-                        <small class="main-highlight-small">{{$activities->first()->start_time->isoFormat('dddd D MMM [om] H:mm')}}</small>
+                        <small
+                            class="main-highlight-small">{{$activities->first()->start_time->isoFormat('dddd D MMM [om] H:mm')}}</small>
                     </h2>
                     <p class="main-highlight-subtitle">{{$activities->first()->subtitle}}</p>
                 </div>
@@ -32,33 +33,37 @@
                             <li>
                                 <h3>{{$activity->title}}</h3>
                                 <strong>{{$activity->subtitle}}</strong>
-                                <small>{{$activity->start_time}} tot {{$activity->end_time}}</small>
-                                {{$activity->content}}
+                                <small>{{$activity->start_time->isoFormat('dddd D MMM [om] H:mm')}}</small>
                             </li>
                         @endforeach
                     </ul>
+                    <a href="{{url('/activiteit')}}">Meer activiteiten</a>
                 </aside>
                 <aside class="main-column">
                     <h2 class="aside-title">spaaracties</h2>
-                    <p class="aside-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas non elit non
-                        dolor efficitur porta. Curabitur et tempus lacus. Lorem ipsum dolor sit amet, consectetur
-                        adipiscing
-                        elit. Quisque lorem lacus, feugiat at tellus ac, eleifend sodales tortor. Sed quis risus nisl.
-                        Suspendisse justo odio, maximus nec lobortis ut, vehicula ac arcu. Aliquam erat volutpat. Nullam
-                        facilisis enim a nibh placerat, vel mattis odio congue. Ut consequat mi nec arcu imperdiet
-                        gravida.
-                        Nam dapibus maximus eleifend. </p>
+                    <ul>
+                        @foreach($actions as $action)
+                            <li>
+                                <h3>{{$action->title}}</h3>
+                                <small>Vanaf €{{number_format($action->new_price, 2, ',', '')}}
+                                    + {{$action->points_required}} punten</small>
+                            </li>
+                        @endforeach
+                    </ul>
+                    <a href="{{url('/actie')}}">Meer spaaracties</a>
                 </aside>
                 <aside class="main-column">
                     <h2 class="aside-title">uitdagingen</h2>
-                    @foreach($challenges as $challenge)
-                        <li>
-                            <h3>{{$challenge->title}}</h3>
-                            <strong>{{$challenge->subtitle}}</strong>
-                            <small>{{$challenge->start_time}} tot {{$challenge->end_time}}</small>
-                            {{$challenge->content}}
-                        </li>
-                    @endforeach
+                    <ul>
+                        @foreach($challenges as $challenge)
+                            <li>
+                                <h3>{{$challenge->title}}</h3>
+                                <strong>{{$challenge->subtitle}}</strong>
+                                <small>locatie: {{$challenge->location_name}}</small>
+                            </li>
+                        @endforeach
+                    </ul>
+                    <a href="{{url('/uitdaging')}}">Meer uitdagingen</a>
                 </aside>
             </div>
         </div>

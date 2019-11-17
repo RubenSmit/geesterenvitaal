@@ -127,10 +127,11 @@ main {
 
     .main-colums {
         display: flex;
+        align-content: center;
     }
 
     .main-column {
-        flex-grow: 1;
+        flex-basis: 33%;
         padding: 0 10px;
     }
 }
@@ -142,6 +143,10 @@ article {
     }
 
     .content {
+        padding: 0 10px;
+    }
+
+    .article-info {
         padding: 0 10px;
     }
 }

@@ -11,13 +11,13 @@
         </header>
         <div class="container actions">
             @foreach ($actions as $action)
-                <aside class="action">
+                <aside class="action-index">
                     <a href="/actie/{{$action->id}}">
                         <img class="action-image" src="{{$action->image_path}}"/>
                         <div>
                             <h2 class="action-title">{{$action->title}}</h2>
-                            <small class="action-subtitle">Vanaf €{{number_format($action->new_price/100, 2, ',', '')}}
-                                + {{$action->points_required}} punten!</small>
+                            <small class="action-subtitle">Vanaf €{{number_format($action->new_price, 2, ',', '')}}
+                                + {{$action->points_required}} punten</small>
                         </div>
                     </a>
                 </aside>

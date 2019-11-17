@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Action;
 use App\Activity;
 use App\Challenge;
 use App\Http\Controllers\Controller;
@@ -13,6 +14,10 @@ class DashboardController extends Controller
 {
     public function index()
     {
-        return view('index', ['challenges' => Challenge::inRandomOrder()->take(3)->get(), 'activities' => Activity::upcoming()->take(3)->get()]);
+        return view('index', [
+            'challenges' => Challenge::inRandomOrder()->take(3)->get(),
+            'actions' => Action::inRandomOrder()->take(3)->get(),
+            'activities' => Activity::upcoming()->take(3)->get()
+        ]);
     }
 }

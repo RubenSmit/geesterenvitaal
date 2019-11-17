@@ -24,7 +24,7 @@ class ActivityController extends Controller
 
     public function index()
     {
-        return view('activity.index', ['activities' => Activity::all()]);
+        return view('activity.index', ['activities' => Activity::upcoming()->get()]);
     }
 
     public function admin()
