@@ -10,6 +10,7 @@
     .action-image {
         border: solid 3px $brand_primary;
         border-radius: $border-radius-large;
+        object-fit: contain;
     }
 
     .action-price {
