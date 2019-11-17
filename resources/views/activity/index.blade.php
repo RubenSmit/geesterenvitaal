@@ -12,7 +12,7 @@
         <div class="container">
             @foreach ($activities as $activity)
                 <a href="{{url('/activiteit/'.$activity->id)}}">
-                    <aside class="activity">
+                    <div class="activity">
                         <img class="activity-image" src="{{$activity->image_path}}"/>
                         <div class="activity-content">
                             <strong class="activity-date">{{$activity->start_time->isoFormat('dddd D MMMM')}}</strong>
@@ -23,7 +23,7 @@
                                 <span class="activity-time">{{$activity->humanized_timerange}}</span>
                             </small>
                         </div>
-                    </aside>
+                    </div>
                 </a>
             @endforeach
         </div>

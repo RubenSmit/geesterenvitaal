@@ -11,7 +11,7 @@
         </header>
         <div class="container challenges">
             @foreach ($challenges as $challenge)
-                <aside class="challenge">
+                <div class="challenge">
                     <a href="/uitdaging/{{$challenge->id}}">
                         <img class="challenge-image" src="{{$challenge->image_path}}"/>
                         <div>
@@ -19,7 +19,7 @@
                             <small class="challenge-subtitle">{{$challenge->subtitle}}</small>
                         </div>
                     </a>
-                </aside>
+                </div>
             @endforeach
         </div>
     </main>

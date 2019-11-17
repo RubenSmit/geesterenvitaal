@@ -11,7 +11,7 @@
         </header>
         <div class="container actions">
             @foreach ($actions as $action)
-                <aside class="action-index">
+                <div class="action-index">
                     <a href="/actie/{{$action->id}}">
                         <img class="action-image" src="{{$action->image_path}}"/>
                         <div>
@@ -20,7 +20,7 @@
                                 + {{$action->points_required}} punten</small>
                         </div>
                     </a>
-                </aside>
+                </div>
             @endforeach
         </div>
     </main>
