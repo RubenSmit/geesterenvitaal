@@ -29,11 +29,11 @@ class Action extends Model
         'image_url',
     ];
 
-    /**
-     * Get the image path.
-     *
-     * @return string
-     */
+    public function category()
+    {
+        return $this->belongsTo('App\ActionCategory');
+    }
+
     public function getImagePathAttribute()
     {
         if (is_null($this->image_url)) {

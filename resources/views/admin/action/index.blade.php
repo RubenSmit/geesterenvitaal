@@ -3,9 +3,35 @@
 @section('title', 'Alle acties\'s')
 
 @section('content')
-    <h1>Alle acties</h1>
-    <a href="/admin/actie/new">Nieuwe actie maken</a>
+    <h1>Categorieën</h1>
+    <a href="/admin/actie-categorie/new">Nieuwe categorie maken</a>
     <table>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th></th>
+        </tr>
+        <tbody>
+        @foreach ($categories as $category)
+            <tr>
+                <th scope="row">{{$category->id}}</th>
+                <td>{{$category->name}}</td>
+                <td>
+                    <a href="/admin/actie-categorie/{{$category->id}}">Bewerken</a>
+                    <form action="/admin/actie-categorie/{{$category->id}}" method="POST">
+                        @method('DELETE')
+                        @csrf
+                        <button type="submit" onclick="return confirm('Weet je zeker dat je de categorie \'{{$category->title}}\' wilt verwijderen?')">Verwijderen</button>
+                    </form>
+                </td>
+            </tr>
+        @endforeach
+        </tbody>
+    </table>
+
+    <h1>Acties</h1>
+    <a href="/admin/actie/new">Nieuwe actie maken</a>
+        <table>
         <thead>
         <tr>
             <th>Id</th>

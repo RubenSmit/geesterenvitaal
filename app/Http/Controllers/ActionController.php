@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Action;
+use App\ActionCategory;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
@@ -36,7 +37,7 @@ class ActionController extends Controller
 
     public function admin()
     {
-        return view('admin.action.index', ['actions' => Action::all()]);
+        return view('admin.action.index', ['actions' => Action::all(), 'categories' => ActionCategory::all()]);
     }
 
     public function edit($id)

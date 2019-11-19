@@ -64,6 +64,14 @@ Route::group(['prefix' => 'admin',  'middleware' => ['auth']], function() {
         Route::get('{id}', 'ChallengeController@edit');
     });
 
+    Route::prefix('actie-categorie')->group(function () {
+        Route::post('new', 'ActionCategoryController@create');
+        Route::get('new', 'ActionCategoryController@new');
+        Route::delete('{id}', 'ActionCategoryController@destroy');
+        Route::patch('{id}', 'ActionCategoryController@update');
+        Route::get('{id}', 'ActionCategoryController@edit');
+    });
+
     Route::prefix('gebruiker')->group(function () {
         Route::get('/', 'UserController@admin');
     });
