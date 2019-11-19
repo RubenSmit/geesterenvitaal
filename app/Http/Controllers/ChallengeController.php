@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Activity;
 use App\Challenge;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -126,5 +125,11 @@ class ChallengeController extends Controller
             return redirect()
                 ->action('ChallengeController@admin');
         }
+    }
+
+    public function destroy($id) {
+        Challenge::destroy($id);
+        return redirect()
+            ->action('ChallengeController@admin');
     }
 }
