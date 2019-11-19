@@ -57,6 +57,7 @@ Route::prefix('admin')->group(function () {
         Route::get('/', 'ChallengeController@admin');
         Route::post('new', 'ChallengeController@create');
         Route::get('new', 'ChallengeController@new');
+        Route::delete('{id}', 'ChallengeController@destroy');
         Route::patch('{id}', 'ChallengeController@update');
         Route::get('{id}', 'ChallengeController@edit');
     });

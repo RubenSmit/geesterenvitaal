@@ -18,7 +18,8 @@ $factory->define(Challenge::class, function (Faker $faker) {
         'end_time' => $to,
         'location_name' => 'Erve Kampboer',
         'location_address' => 'Kampboerlaan 13, 7678 VV Geesteren, Nederland',
+        'registration_url' => 'https://www.rubensmit.com',
         'latitude' => 52.4217347,
-        'longitude' => 6.7339456,
+        'longitude' => 6.7339456
     ];
 });
