@@ -63,4 +63,9 @@ Route::group(['prefix' => 'admin',  'middleware' => ['auth']], function() {
         Route::patch('{id}', 'ChallengeController@update');
         Route::get('{id}', 'ChallengeController@edit');
     });
+
+    Route::prefix('gebruiker')->group(function () {
+        Route::get('/', 'UserController@admin');
+    });
 });
+
