@@ -1,27 +1,27 @@
-@extends('layouts.app')
+@extends('layouts.public')
 
 @section('title', $action->title)
 
 @section('content')
     <main>
         <article>
-            <header style="background-image: url('{{url('img/blubel-ffmkD8dm7Zw-unsplash.jpg')}}')">
+            <header class="header-narrow" style="background-image: url('{{$action->image_path}}')">
                 <div class="header-overlay">
                     <h1 class="header-title">{{$action->title}}</h1>
                 </div>
             </header>
             <div class="container">
-                <div class="content">
-                    @markdown($action->content)
-                    <p>
-                    <ul>
-                        <li>SamenGezond URL: {{$action->samengezond_url}}</li>
-                        <li>Benodigde aantal punten: {{$action->points_required}}</li>
-                        <li>Van €{{number_format($action->old_price, 2, ',', '')}}!</li>
-                        <li>U bespaart {{number_format($action->discount, 1, ',', '')}}%!</li>
-                        <li>Nu voor maar €{{number_format($action->new_price, 2, ',', '')}}!</li>
-                    </ul>
-                    </p>
+                <div class="action-show">
+                    <img class="action-image" src="{{$action->image_path}}">
+                    <div class="action-content">
+                        <h2 class="action-price">Vanaf €{{number_format($action->new_price, 2, ',', '')}}
+                            + {{$action->points_required}} punten</h2>
+                        <small class="action-old-price">Gewoonlijke prijs: €{{number_format($action->old_price, 2, ',', '')}}</small>
+                        <div class="action-description">
+                            @markdown($action->content)
+                        </div>
+                        <a href="{{$action->samengezond_url}}" class="action-link btn">Bestellen via SamenGezond</a>
+                    </div>
                 </div>
                 <small class="article-date">Gepubliceerd op {{$action->created_at}}</small>
             </div>

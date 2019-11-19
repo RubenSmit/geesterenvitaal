@@ -3,4 +3,28 @@ form {
     input, textarea {
         width: 100%;
     }
+
+    .form-item {
+        margin-bottom: 10px;
+    }
+
+    .form-item-holder {
+        display: flex;
+        flex-direction: row;
+
+        > * {
+            flex-grow: 1;
+        }
+    }
+
+    .form-item-checkbox {
+        .form-item-label {
+            display: inline-block;
+        }
+
+        .form-item-field {
+            display: inline-block;
+            width: unset;
+        }
+    }
 }

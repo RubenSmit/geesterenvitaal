@@ -1,14 +1,19 @@
+@import "fonts";
 @import "variables";
 
 // Modules
 @import "modules/main";
 @import "modules/admin";
+@import "modules/auth";
 
 // Components
 @import "components/nav";
 @import "components/form";
 @import "components/challenge";
-@import "components/action";
 
 // Pages
 @import "pages/index";
+@import "pages/action-index";
+@import "pages/action-show";
+@import "pages/activity-index";
+@import "pages/activity-show";

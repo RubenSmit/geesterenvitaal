@@ -1,22 +1,30 @@
-@extends('layouts.app')
+@extends('layouts.public')
 
 @section('title', 'Activiteiten')
 
 @section('content')
-    <main>
-        <header class="header-narrow" style="background-image: url('img/blubel-ffmkD8dm7Zw-unsplash.jpg')">
+    <main class="activity-index">
+        <header class="header-narrow" style="background-image: url('img/banner.jpg')">
             <div class="header-overlay">
                 <h1 class="header-title">activiteiten</h1>
             </div>
         </header>
         <div class="container">
             @foreach ($activities as $activity)
-                <aside>
-                    <h2><a href="/activiteit/{{$activity->id}}">{{$activity->title}}</a></h2>
-                    <h3>{{$activity->subtitle}}</h3>
-                    <small>{{$activity->start_time}}</small>
-                    <small>{{$activity->end_time}}</small>
-                </aside>
+                <a href="{{url('/activiteit/'.$activity->id)}}">
+                    <div class="activity">
+                        <img class="activity-image" src="{{$activity->image_path}}"/>
+                        <div class="activity-content">
+                            <strong class="activity-date">{{$activity->start_time->isoFormat('dddd D MMMM')}}</strong>
+                            <h2 class="activity-title">{{$activity->title}}</h2>
+                            <p class="activity-subtitle">{{$activity->subtitle}}</p>
+                            <small class="activity-info">
+                                <span class="activity-location">{{$activity->location_name}}</span>
+                                <span class="activity-time">{{$activity->humanized_timerange}}</span>
+                            </small>
+                        </div>
+                    </div>
+                </a>
             @endforeach
         </div>
     </main>

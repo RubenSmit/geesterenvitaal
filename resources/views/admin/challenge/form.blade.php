@@ -13,6 +13,14 @@
     'model' => $challenge,
 ])@endcomponent
 
+@component('components.form.input', [
+    'name' => 'image',
+    'label' => 'Afbeelding',
+    'placeholder' => 'Afbeelding van de uitdaging',
+    'model' => $challenge,
+    'type' => 'file',
+])@endcomponent
+
 @component('components.form.textarea', [
     'name' => 'content',
     'label' => 'Inhoud',
@@ -20,18 +28,15 @@
     'model' => $challenge,
 ])@endcomponent
 
-{{--TODO: DATETIME componenten maken voor firefox support--}}
-@component('components.form.input', [
+@component('components.form.datetime', [
     'name' => 'start_time',
     'label' => 'Start tijd',
     'model' => $challenge,
-    'type' => 'datetime-local'
 ])@endcomponent
-@component('components.form.input', [
+@component('components.form.datetime', [
     'name' => 'end_time',
     'label' => 'Eind tijd',
     'model' => $challenge,
-    'type' => 'datetime-local'
 ])@endcomponent
 
 @component('components.form.input', [

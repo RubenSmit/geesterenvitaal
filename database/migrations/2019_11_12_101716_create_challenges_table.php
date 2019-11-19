@@ -24,6 +24,7 @@ class CreateChallengesTable extends Migration
             $table->text('location_address');
             $table->decimal('latitude', 10, 7);
             $table->decimal('longitude', 10, 7);
+            $table->string('image_url')->nullable(true);
             $table->timestamps();
             $table->softDeletes();
         });

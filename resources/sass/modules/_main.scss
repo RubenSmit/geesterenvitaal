@@ -1,6 +1,11 @@
 body {
-    font-family: sans-serif;
+    font-family: 'Aller', sans-serif;
     margin: 0;
+    font-size: 18px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Bitter', serif;
 }
 
 nav {
@@ -99,6 +104,7 @@ header {
         border-radius: $border-radius;
         background-color: $light;
         text-decoration: none;
+        color: $dark;
 
         &:hover {
             color: $light;
@@ -121,54 +127,12 @@ main {
 
     .main-colums {
         display: flex;
+        align-content: center;
     }
 
     .main-column {
-        flex-grow: 1;
+        flex-basis: 33%;
         padding: 0 10px;
-    }
-
-    .main-highlight {
-        background-color: $brand_primary;
-
-        > .container {
-            margin: 0 auto;
-            padding: 30px 0;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-
-            > * {
-                margin: 0 10px;
-            }
-        }
-
-        .main-highlight-title {
-            color: $dark;
-            font-size: 40px;
-            margin: 0;
-        }
-
-        .main-highlight-subtitle {
-            color: $light;
-            font-size: 20px;
-            margin: 0;
-        }
-
-        .main-highlight-link {
-            padding: 5px 10px;
-            border-radius: $border-radius;
-            background-color: $light;
-            text-decoration: none;
-
-            &:hover {
-                color: $brand_primary;
-            }
-
-            &:active {
-                color: $dark;
-            }
-        }
     }
 }
 
@@ -213,5 +177,40 @@ footer {
     .footer-text {
         margin: 3px 0;
         color: $light;
+    }
+}
+
+button, .btn {
+    border: 0;
+    border-radius: $border-radius;
+    background-color: $brand_primary;
+    color: $light;
+    padding: 5px 10px;
+    font-size: inherit;
+    text-decoration: none;
+    cursor: pointer;
+    margin-right: 5px;
+
+    &:hover {
+        background-color: $brand_primary_dark;
+        color: $light;
+    }
+
+    &:active {
+        box-shadow: 0 0 5px $brand_primary_light;
+        color: $light;
+    }
+}
+
+a, button.link {
+    text-decoration: none;
+    color: $brand_primary;
+
+    &:hover {
+        color: $brand_primary_dark;
+    }
+
+    &:active {
+        color: $brand_primary_light;
     }
 }

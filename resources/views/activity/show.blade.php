@@ -1,31 +1,30 @@
-@extends('layouts.app')
+@extends('layouts.public')
 
 @section('title', $activity->title)
 
 @section('content')
-    <main>
+    <main class="activity-show">
         <article>
-            <header style="background-image: url('{{url('img/blubel-ffmkD8dm7Zw-unsplash.jpg')}}')">
-                <div class="header-overlay">
-                    <h1 class="header-title">{{$activity->title}}</h1>
-                    <p class="header-subtitle">{{$activity->subtitle}}</p>
-                    <a class="header-link" href="{{$activity->registration_url}}" target="_blank" rel="noreferrer">Inschrijven</a>
-                </div>
-            </header>
+            <img class="activity-image" src="{{$activity->image_path}}"/>
             <div class="container">
-                <div class="article-info">
-                    <div class="article-info-location">
-                        <strong>Locatie:</strong>
-                        <a href="https://www.google.com/maps/place/{{str_replace(" ", "+", trim($activity->location_address))}}"
-                           target="_blank" rel="noreferrer">{{$activity->location_name}}
-                        </a>
-                    </div>
-                    <div class="article-info-date">
-                        <strong>Datum:</strong>
-                        {{$activity->start_time}} tot {{$activity->end_time}}
-                    </div>
-                </div>
                 <div class="content">
+                    <div class="activity-header">
+                        <h1 class="activity-title">{{$activity->title}}</h1>
+                        <a class="activity-link btn" href="{{$activity->registration_url}}" target="_blank" rel="noreferrer">Inschrijven</a>
+                    </div>
+                    <p class="activity-subtitle">{{$activity->subtitle}}</p>
+                    <div class="activity-info">
+                        <div class="article-info-date">
+                            <strong>Locatie:</strong>
+                            <a href="https://www.google.com/maps/place/{{str_replace(" ", "+", trim($activity->location_address))}}"
+                               target="_blank" rel="noreferrer">{{$activity->location_name}}
+                            </a>
+                        </div>
+                        <div class="article-info-date">
+                            <strong>Datum:</strong>
+                            {{$activity->humanized_times}}
+                        </div>
+                    </div>
                     @markdown($activity->content)
                 </div>
                 <small class="article-date">Gepubliceerd op {{$activity->created_at}}</small>

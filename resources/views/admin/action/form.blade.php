@@ -6,6 +6,14 @@
     'model' => $action,
 ])@endcomponent
 
+@component('components.form.input', [
+    'name' => 'image',
+    'label' => 'Afbeelding',
+    'placeholder' => 'Afbeelding van de actie',
+    'model' => $action,
+    'type' => 'file',
+])@endcomponent
+
 @component('components.form.textarea', [
     'name' => 'content',
     'label' => 'Inhoud',
@@ -13,18 +21,15 @@
     'model' => $action,
 ])@endcomponent
 
-{{--TODO: DATETIME componenten maken voor firefox support--}}
-@component('components.form.input', [
+@component('components.form.datetime', [
     'name' => 'start_time',
     'label' => 'Start tijd',
-    'model' => $action,
-    'type' => 'datetime-local'
+    'model' => $action
 ])@endcomponent
-@component('components.form.input', [
+@component('components.form.datetime', [
     'name' => 'end_time',
     'label' => 'Eind tijd',
     'model' => $action,
-    'type' => 'datetime-local'
 ])@endcomponent
 
 @component('components.form.input', [

@@ -1,0 +1,24 @@
+.action-show {
+    display: flex;
+    flex-direction: row;
+
+    > * {
+        flex-basis: 50%;
+        margin: 0 10px;
+    }
+
+    .action-image {
+        border: solid 3px $brand_primary;
+        border-radius: $border-radius-large;
+        object-fit: contain;
+    }
+
+    .action-price {
+        margin-top: 10px;
+        margin-bottom: 0;
+    }
+
+    .action-link {
+        font-size: 20px;
+    }
+}

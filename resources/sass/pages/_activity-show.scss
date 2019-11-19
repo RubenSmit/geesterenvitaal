@@ -1,0 +1,31 @@
+.activity-show {
+    .activity-image {
+        width: 100%;
+        height: 60vh;
+        object-fit: cover;
+    }
+
+    .activity-header {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-end;
+    }
+
+    .activity-title {
+        color: $brand_primary;
+        margin: 0;
+        font-size: 75px;
+        flex-grow: 1;
+    }
+
+    .activity-link {
+        margin-left: 40px;
+        margin-bottom: 20px;
+        font-size: 20px;
+    }
+
+    .activity-subtitle {
+        margin-top: 0;
+        font-size: 30px;
+    }
+}

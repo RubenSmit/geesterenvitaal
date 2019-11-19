@@ -3,5 +3,8 @@
 @section('title', 'Home')
 
 @section('content')
-    <h1>Administratie interface</h1>
+    <div class="container">
+        <h1>Administratie interface</h1>
+        <small>Ingelogd als {{ Auth::user()->name }}</small>
+    </div>
 @endsection

@@ -18,6 +18,7 @@ class CreatePagesTable extends Migration
             $table->string('title');
             $table->string('subtitle');
             $table->text('content');
+            $table->string('image_url')->nullable(true);
             $table->timestamps();
             $table->softDeletes();
         });

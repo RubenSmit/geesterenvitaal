@@ -18,12 +18,13 @@ class ActivityController extends Controller
         'end_time' => 'required|date|after:start_time',
         'location_name' => 'required',
         'location_address' => 'nullable',
-        'registration_url' => 'nullable|url'
+        'registration_url' => 'nullable|url',
+        'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
     ];
 
     public function index()
     {
-        return view('activity.index', ['activities' => Activity::all()]);
+        return view('activity.index', ['activities' => Activity::upcoming()->get()]);
     }
 
     public function admin()
@@ -43,6 +44,11 @@ class ActivityController extends Controller
 
     public function update($id, Request $request)
     {
+        $request->merge(array(
+            'start_time' => ($request->input('start_time_date') . " " . $request->input('start_time_time')),
+            'end_time' => ($request->input('end_time_date') . " " . $request->input('end_time_time')),
+        ));
+
         $validator = Validator::make($request->all(), self::VALIDATION_RULES);
 
         if ($validator->fails()) {
@@ -51,11 +57,24 @@ class ActivityController extends Controller
                 ->withErrors($validator)
                 ->withInput();
         } else {
-            Activity::findOrFail($id)
-                ->update([
-                    'title' => $request->input('title'),
-                    'content' => $request->input('content')
-                ]);
+            $activity = Activity::findOrFail($id);
+            $path = $activity->image_url;
+
+            if ($request->hasFile('image')) {
+                $path = $request->file('image')->store('images', ['disk' => 'public']);
+            }
+
+            $activity->update([
+                'title' => $request->input('title'),
+                'subtitle' => $request->input('subtitle'),
+                'content' => $request->input('content'),
+                'start_time' => $request->input('start_time'),
+                'end_time' => $request->input('end_time'),
+                'location_name' => $request->input('location_name'),
+                'location_address' => $request->input('location_address'),
+                'registration_url' => $request->input('registration_url'),
+                'image_url' => $path,
+            ]);
             return redirect()
                 ->action('ActivityController@admin');
         }
@@ -69,6 +88,11 @@ class ActivityController extends Controller
 
     public function create(Request $request)
     {
+        $request->merge(array(
+            'start_time' => ($request->input('start_time_date') . " " . $request->input('start_time_time')),
+            'end_time' => ($request->input('end_time_date') . " " . $request->input('end_time_time')),
+        ));
+
         $validator = Validator::make($request->all(), self::VALIDATION_RULES);
 
         if ($validator->fails()) {
@@ -77,16 +101,29 @@ class ActivityController extends Controller
                 ->withErrors($validator)
                 ->withInput();
         } else {
-            $activity = Activity::create([
+            $path = null;
+            if ($request->hasFile('image')) {
+                $path = $request->file('image')->store('images', ['disk' => 'public']);
+            }
+
+            Activity::create([
                 'title' => $request->input('title'),
-                'content' => $request->input('content')
+                'subtitle' => $request->input('subtitle'),
+                'content' => $request->input('content'),
+                'start_time' => $request->input('start_time'),
+                'end_time' => $request->input('end_time'),
+                'location_name' => $request->input('location_name'),
+                'location_address' => $request->input('location_address'),
+                'registration_url' => $request->input('registration_url'),
+                'image_url' => $path,
             ]);
             return redirect()
                 ->action('ActivityController@admin');
         }
     }
 
-    public function destroy($id) {
+    public function destroy($id)
+    {
         Activity::destroy($id);
         return redirect()
             ->action('ActivityController@admin');

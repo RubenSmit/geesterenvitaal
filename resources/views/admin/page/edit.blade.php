@@ -5,7 +5,7 @@
 @section('content')
     <h1>Pagina "{{$page->title}}" bewerken</h1>
 
-    <form action="/admin/pagina/{{$page->id}}" method="POST">
+    <form action="/admin/pagina/{{$page->id}}" method="POST" enctype="multipart/form-data">
         @method('PATCH')
         @include('admin.page.form')
         <button type="submit">Opslaan</button>
