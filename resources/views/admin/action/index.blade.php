@@ -21,7 +21,7 @@
                     <form action="/admin/actie-categorie/{{$category->id}}" method="POST">
                         @method('DELETE')
                         @csrf
-                        <button type="submit" onclick="return confirm('Weet je zeker dat je de categorie \'{{$category->title}}\' wilt verwijderen?')">Verwijderen</button>
+                        <button type="submit" onclick="return confirm('Weet je zeker dat je de categorie \'{{$category->name}}\' wilt verwijderen?')">Verwijderen</button>
                     </form>
                 </td>
             </tr>

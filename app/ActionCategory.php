@@ -14,6 +14,7 @@ class ActionCategory extends Model
     protected $fillable = [
         'name'
     ];
+
     public function comments()
     {
         return $this->hasMany('App\Action', 'action_category_id');

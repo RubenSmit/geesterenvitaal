@@ -11,7 +11,6 @@ use function Psy\debug;
 
 class ActionCategoryController extends Controller
 {
-//    TODO: Samengezond Url beperken tot Samengezonddomein
     const VALIDATION_RULES = [
         'name' => 'required|max:255|min:3',
     ];
@@ -31,9 +30,7 @@ class ActionCategoryController extends Controller
                 ->withErrors($validator)
                 ->withInput();
         } else {
-            $action_category = ActionCategory::findOrFail($id);
-
-            $action_category->update([
+            ActionCategory::findOrFail($id)->update([
                 'name' => $request->input('name'),
             ]);
             return redirect()

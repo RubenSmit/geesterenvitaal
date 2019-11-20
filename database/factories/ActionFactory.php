@@ -24,7 +24,7 @@ $factory->define(Action::class, function (Faker $faker) {
         'discount'=> $discount,
         'new_price' => $new_price,
         'action_category_id' => function () {
-            return factory(App\ActionCategory::class)->create()->id;
+            return factory(ActionCategory::class)->create()->id;
         },
     ];
 });

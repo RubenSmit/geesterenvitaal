@@ -4,9 +4,6 @@
 
 @section('content')
     <main>
-
-
-
         <article>
             <header class="header-narrow" style="background-image: url('{{$action->image_path}}')">
                 <div class="header-overlay">

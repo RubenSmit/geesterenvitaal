@@ -51,6 +51,11 @@ class Action extends Model
         return $query->join('action_categories', 'action_categories.id', '=', 'actions.action_category_id')->where('action_categories.name', '=', $name);
     }
 
+    /**
+     * Get the image path.
+     *
+     * @return url
+     * */
     public function getImagePathAttribute()
     {
         if (is_null($this->image_url)) {
