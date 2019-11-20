@@ -16,6 +16,7 @@ Route::get('pagina/{id}', 'PageController@show');
 
 Route::get('activiteit/', 'ActivityController@index');
 Route::get('activiteit/{id}', 'ActivityController@show');
+Route::get('activiteit/categorie/{name}', 'ActivityController@category');
 
 Route::get('actie/', 'ActionController@index');
 Route::get('actie/{id}', 'ActionController@show');

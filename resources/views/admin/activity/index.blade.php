@@ -3,6 +3,10 @@
 @section('title', 'Alle activiteiten\'s')
 
 @section('content')
+    <h1>Alle categorieën</h1>
+    @foreach ($categories as $category)
+        <li>{{$category->name}}</li>
+        @endforeach
     <h1>Alle activiteiten</h1>
     <a href="/admin/activiteit/new">Nieuwe activiteit maken</a>
     <table>

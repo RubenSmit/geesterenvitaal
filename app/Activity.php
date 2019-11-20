@@ -37,8 +37,30 @@ class Activity extends Model
         'end_time',
     ];
 
+    /**
+     * Get the category that owns the activity.
+     */
+    public function category()
+    {
+        return $this->belongsTo('App\ActivityCategory');
+    }
+
+    /**
+     * Get the upcoming activities
+     * @param $query
+     * @return mixed
+     */
     public function scopeUpcoming($query) {
         return $query->where('start_time', '>=', date("Y-m-d H:i:s"))->orderBy('start_time');
+    }
+
+    /**
+     * Get the activities by category
+     * @param $query
+     * @return mixed
+     */
+    public function scopeByCategory($query, $name) {
+        return $query->join('activity_categories', 'activity_categories.id', '=', 'activities.activity_category_id')->where('activity_categories.name', '=', $name);
     }
 
     /**

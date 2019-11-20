@@ -4,11 +4,19 @@
 
 @section('content')
     <main class="activity-index">
-        <header class="header-narrow" style="background-image: url('img/banner.jpg')">
+        <header class="header-narrow" style="background-image: url('{{url('img/banner.jpg')}}')">
             <div class="header-overlay">
                 <h1 class="header-title">activiteiten</h1>
             </div>
         </header>
+        <div class="link-bar">
+            <div class="container">
+                <a href="{{url('/activiteit')}}">alles</a>
+                @foreach($categories as $category)
+                    <a href="{{url('/activiteit/categorie/'.$category->name)}}">{{$category->name}}</a>
+                @endforeach
+            </div>
+        </div>
         <div class="container">
             @foreach ($activities as $activity)
                 <a href="{{url('/activiteit/'.$activity->id)}}">

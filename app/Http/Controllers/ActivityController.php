@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Activity;
+use App\ActivityCategory;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
@@ -24,12 +25,17 @@ class ActivityController extends Controller
 
     public function index()
     {
-        return view('activity.index', ['activities' => Activity::upcoming()->get()]);
+        return view('activity.index', ['activities' => Activity::upcoming()->get(), 'categories' => ActivityCategory::all()]);
+    }
+
+    public function category($name)
+    {
+        return view('activity.index', ['activities' => Activity::upcoming()->byCategory($name)->get(), 'categories' => ActivityCategory::all()]);
     }
 
     public function admin()
     {
-        return view('admin.activity.index', ['activities' => Activity::all()]);
+        return view('admin.activity.index', ['activities' => Activity::all(), 'categories' => ActivityCategory::all()]);
     }
 
     public function show($id)
