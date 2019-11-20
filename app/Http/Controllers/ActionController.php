@@ -23,6 +23,7 @@ class ActionController extends Controller
         'discount' => 'nullable',
         'new_price' => 'nullable|numeric',
         'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        'action_category_id' => 'required|numeric',
     ];
 
     public function index()
@@ -47,7 +48,7 @@ class ActionController extends Controller
 
     public function edit($id)
     {
-        return view('admin.action.edit', ['action' => Action::findOrFail($id)]);
+        return view('admin.action.edit', ['action' => Action::findOrFail($id), 'categories' => ActionCategory::all()]);
     }
 
     public function update($id, Request $request)
@@ -84,6 +85,10 @@ class ActionController extends Controller
                 'new_price' => $request->input('new_price'),
                 'image_url' => $path,
             ]);
+
+            $action->category()->associate(ActionCategory::find($request->input('action_category_id')));
+            $action->save();
+
             return redirect()
                 ->action('ActionController@admin');
         }
@@ -91,7 +96,7 @@ class ActionController extends Controller
 
     public function new()
     {
-        return view('admin.action.new', ['action' => null]);
+        return view('admin.action.new', ['action' => null, 'categories' => ActionCategory::all()]);
     }
 
     public function create(Request $request)
@@ -114,7 +119,7 @@ class ActionController extends Controller
                 $path = $request->file('image')->store('images', ['disk' => 'public']);
             }
 
-            Action::create([
+            $action = Action::create([
                 'title' => $request->input('title'),
                 'content' => $request->input('content'),
                 'start_time' => $request->input('start_time'),
@@ -126,6 +131,10 @@ class ActionController extends Controller
                 'new_price' => $request->input('new_price'),
                 'image_url' => $path,
             ]);
+
+            $action->category()->associate(ActionCategory::find($request->input('action_category_id')));
+            $action->save();
+
             return redirect()
                 ->action('ActionController@admin');
         }

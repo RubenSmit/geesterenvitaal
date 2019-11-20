@@ -29,9 +29,16 @@ class Action extends Model
         'image_url',
     ];
 
+    /**
+     * The relationships that should always be loaded.
+     *
+     * @var array
+     */
+    protected $with = ['category'];
+
     public function category()
     {
-        return $this->belongsTo('App\ActionCategory');
+        return $this->belongsTo('App\ActionCategory', 'action_category_id');
     }
 
     /**
