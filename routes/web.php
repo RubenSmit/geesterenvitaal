@@ -1,5 +1,4 @@
 <?php
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -19,6 +18,7 @@ Route::get('activiteit/{id}', 'ActivityController@show');
 
 Route::get('actie/', 'ActionController@index');
 Route::get('actie/{id}', 'ActionController@show');
+Route::get('actie/categorie/{name}', 'ActionController@category');
 
 Route::get('uitdaging/', 'ChallengeController@index');
 Route::get('uitdaging/{id}', 'ChallengeController@show');

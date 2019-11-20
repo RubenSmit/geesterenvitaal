@@ -34,6 +34,16 @@ class Action extends Model
         return $this->belongsTo('App\ActionCategory');
     }
 
+    /**
+     * Get the activities by category
+     * @param $query
+     * @return mixed
+     */
+    public function scopeByCategory($query, $name)
+    {
+        return $query->join('action_categories', 'action_categories.id', '=', 'actions.action_category_id')->where('action_categories.name', '=', $name);
+    }
+
     public function getImagePathAttribute()
     {
         if (is_null($this->image_url)) {
