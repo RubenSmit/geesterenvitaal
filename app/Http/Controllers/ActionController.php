@@ -28,12 +28,12 @@ class ActionController extends Controller
 
     public function index()
     {
-        return view('action.index', ['actions' => Action::all(), 'categories' => ActionCategory::all()]);
+        return view('action.index', ['actions' => Action::all(), 'categories' => ActionCategory::all(), 'current_category' => null]);
     }
 
     public function category($name)
     {
-        return view('action.index', ['actions' => Action::byCategory($name)->get(), 'categories' => ActionCategory::all()]);
+        return view('action.index', ['actions' => Action::byCategory($name)->get(), 'categories' => ActionCategory::all(), 'current_category' => $name]);
     }
 
     public function show($id)

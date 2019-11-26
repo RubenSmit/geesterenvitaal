@@ -12,11 +12,10 @@
 
         <div class="link-bar">
             <div class="container">
-                <h3>Per Categorie</h3>
-                <a href="{{url('/actie')}}">alle acties</a>
-                    @foreach($categories as $category)
-                        <a href="{{url('/actie/categorie/'.$category->name)}}">{{$category->name}}</a>
-                    @endforeach
+                <a href="{{url('/actie')}}" class="{{$current_category == null ? "active" : "" }}">alles</a>
+                @foreach($categories as $category)
+                    <a href="{{url('/actie/categorie/'.$category->name)}}"  class="{{$current_category == $category->name ? "active" : "" }}">{{$category->name}}</a>
+                @endforeach
             </div>
         </div>
 
