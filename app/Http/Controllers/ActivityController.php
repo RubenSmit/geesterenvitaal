@@ -90,7 +90,6 @@ class ActivityController extends Controller
             return redirect()
                 ->action('ActivityController@admin');
         }
-
     }
 
     public function new()

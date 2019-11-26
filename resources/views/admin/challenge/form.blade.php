@@ -1,11 +1,18 @@
 @csrf
+@component('components.form.select', [
+    'name' => 'challenge_category_id',
+    'label' => 'Categorie',
+    'model' => $challenge,
+    'items' => $categories,
+    'item_key' => 'id',
+    'item_value' => 'name',
+])@endcomponent
 @component('components.form.input', [
     'name' => 'title',
     'label' => 'Titel',
     'placeholder' => 'Titel van de actie',
     'model' => $challenge,
 ])@endcomponent
-
 @component('components.form.textarea', [
     'name' => 'subtitle',
     'label' => 'Ondertitel',
@@ -38,21 +45,18 @@
     'label' => 'Eind tijd',
     'model' => $challenge,
 ])@endcomponent
-
 @component('components.form.input', [
     'name' => 'location_name',
     'label' => 'Locatie naam',
     'placeholder' => 'Naam van locatie',
     'model' => $challenge,
 ])@endcomponent
-
 @component('components.form.input', [
     'name' => 'location_address',
     'label' => 'Locatie adres',
     'placeholder' => 'Adres van de locatie',
     'model' => $challenge,
 ])@endcomponent
-
 @component('components.form.input', [
     'name' => 'registration_url',
     'label' => 'Registratie URL',
@@ -74,3 +78,12 @@
     'model' => $challenge,
 ])@endcomponent
 
+@if (count($errors) > 0)
+    <div class="error">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif

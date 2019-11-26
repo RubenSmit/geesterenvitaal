@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Challenge;
+use App\ChallengeCategory;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
@@ -22,16 +23,22 @@ class ChallengeController extends Controller
         'latitude' => 'nullable',
         'longitude' => 'nullable',
         'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        'challenge_category_id' => 'required|numeric|exists:activity_categories,id',
     ];
 
     public function index()
     {
-        return view('challenge.index', ['challenges' => Challenge::all()]);
+        return view('challenge.index', ['challenges' => Challenge::upcoming()->get(), 'categories' => ActionCategory::all(), 'current_category' => null]);
+    }
+
+    public function category($name)
+    {
+        return view('challenge.index', ['challenges' => Challenge::upcoming()->byCategory($name)->get(), 'categories' => ChallengeCategory::all(), 'current_category' => $name]);
     }
 
     public function admin()
     {
-        return view('admin.challenge.index', ['challenges' => Challenge::all()]);
+        return view('admin.challenge.index', ['challenges' => Challenge::all(), 'categories' => ChallengeCategory::all()]);
     }
 
     public function show($id)
@@ -41,7 +48,7 @@ class ChallengeController extends Controller
 
     public function edit($id)
     {
-        return view('admin.challenge.edit', ['challenge' => Challenge::findOrFail($id)]);
+        return view('admin.challenge.edit', ['challenge' => Challenge::findOrFail($id), 'categories' => ChallengeCategory::all()]);
     }
 
     public function update($id, Request $request)
@@ -79,6 +86,10 @@ class ChallengeController extends Controller
                 'longitude' => $request->input('longitude'),
                 'image_url' => $path,
             ]);
+
+            $challenge->category()->associate(ChallengeCategory::find($request->input('challenge_category_id')));
+            $challenge->save();
+
             return redirect()
                 ->action('ChallengeController@admin');
         }
@@ -86,7 +97,7 @@ class ChallengeController extends Controller
 
     public function new()
     {
-        return view('admin.challenge.new', ['challenge' => null]);
+        return view('admin.challenge.new', ['challenge' => null, 'categories' => ChallengeCategory::all()]);
     }
 
     public function create(Request $request)
@@ -109,7 +120,7 @@ class ChallengeController extends Controller
                 $path = $request->file('image')->store('images', ['disk' => 'public']);
             }
 
-            Challenge::create([
+            $challenge = Challenge::create([
                 'title' => $request->input('title'),
                 'subtitle' => $request->input('subtitle'),
                 'content' => $request->input('content'),
@@ -122,6 +133,10 @@ class ChallengeController extends Controller
                 'longitude' => $request->input('longitude'),
                 'image_url' => $path,
             ]);
+
+            $challenge->category()->associate(ChallengeCategory::find($request->input('challenge_category_id')));
+            $challenge->save();
+
             return redirect()
                 ->action('ChallengeController@admin');
         }

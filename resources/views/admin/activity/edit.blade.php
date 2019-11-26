@@ -4,7 +4,6 @@
 
 @section('content')
     <h1>Activiteit "{{$activity->title}}" bewerken</h1>
-
     <form action="/admin/activiteit/{{$activity->id}}" method="POST" enctype="multipart/form-data">
         @method('PATCH')
         @include('admin.activity.form')
