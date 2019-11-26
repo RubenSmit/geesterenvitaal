@@ -23,7 +23,7 @@ class ChallengeController extends Controller
         'latitude' => 'nullable',
         'longitude' => 'nullable',
         'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-        'challenge_category_id' => 'required|numeric|exists:activity_categories,id',
+        'challenge_category_id' => 'required|numeric|exists:challenge_categories,id',
     ];
 
     public function index()

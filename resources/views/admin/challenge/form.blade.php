@@ -31,7 +31,7 @@
 @component('components.form.textarea', [
     'name' => 'content',
     'label' => 'Inhoud',
-    'placeholder' => 'Inhoud van de actie',
+    'placeholder' => 'Inhoud van de uitdaging',
     'model' => $challenge,
 ])@endcomponent
 
