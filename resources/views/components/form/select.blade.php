@@ -5,10 +5,16 @@
 
     <select
         name="{{ $name }}"
+        placeholder="{{ isset($placeholder) ? $placeholder : '' }}"
+        value="{{
+                old($name) ?: (isset($model) ? $model->{$name} : '')
+            }}"
         {{ isset($attributes) ? $attributes : '' }}>
         @foreach ($items as $item)
             <option
-                value="{{ $item->{$item_key} }}" {{old($name) ? (old($name) == $item->{$item_key} ? 'selected=selected' : '') : ( isset($model) ? ($model->{$name} == $item->{$item_key} ? 'selected=selected' : '') : '')}}>{{ $item->{$item_value} }}</option>
+                value="{{ $item->{$item_key} }}" {{old($name) ? (old($name) == $item->{$item_key} ? 'selected=selected' : '') : ( isset($model) ? ($model->{$name} == $item->{$item_key} ? 'selected=selected' : '') : '')}}>
+                {{ $item->{$item_value} }}
+            </option>
         @endforeach
     </select>
 

@@ -1,0 +1,21 @@
+.link-bar {
+    background-color: $gray;
+    padding: 1px;
+
+    a {
+        color: $dark;
+        margin: 0 10px;
+
+        &:hover {
+            color: $brand_primary;
+        }
+
+        &.active {
+            color: $brand_primary;
+        }
+    }
+
+    > .container {
+        text-align: center;
+    }
+}

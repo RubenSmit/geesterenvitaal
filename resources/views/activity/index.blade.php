@@ -4,13 +4,21 @@
 
 @section('content')
     <main class="activity-index">
-        <header class="header-narrow" style="background-image: url('img/banner.jpg')">
+        <header class="header-narrow" style="background-image: url('{{url('img/banner.jpg')}}')">
             <div class="header-overlay">
                 <h1 class="header-title">activiteiten</h1>
             </div>
         </header>
+        <div class="link-bar">
+            <div class="container">
+                <a href="{{url('/activiteit')}}" class="{{$current_category == null ? "active" : "" }}">alles</a>
+                @foreach($categories as $category)
+                    <a href="{{url('/activiteit/categorie/'.$category->name)}}"  class="{{$current_category == $category->name ? "active" : "" }}">{{$category->name}}</a>
+                @endforeach
+            </div>
+        </div>
         <div class="container">
-            @foreach ($activities as $activity)
+            @forelse ($activities as $activity)
                 <a href="{{url('/activiteit/'.$activity->id)}}">
                     <div class="activity">
                         <img class="activity-image" src="{{$activity->image_path}}"/>
@@ -25,7 +33,9 @@
                         </div>
                     </div>
                 </a>
-            @endforeach
+            @empty
+                <p>Er zijn geen activiteiten in deze categorie.</p>
+            @endforelse
         </div>
     </main>
 @endsection
