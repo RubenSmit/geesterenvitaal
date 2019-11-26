@@ -9,8 +9,18 @@
                 <h1 class="header-title">acties</h1>
             </div>
         </header>
+
+        <div class="link-bar">
+            <div class="container">
+                <a href="{{url('/actie')}}" class="{{$current_category == null ? "active" : "" }}">alles</a>
+                @foreach($categories as $category)
+                    <a href="{{url('/actie/categorie/'.$category->name)}}"  class="{{$current_category == $category->name ? "active" : "" }}">{{$category->name}}</a>
+                @endforeach
+            </div>
+        </div>
+
         <div class="container actions">
-            @foreach ($actions as $action)
+            @forelse ($actions as $action)
                 <div class="action-index">
                     <a href="/actie/{{$action->id}}">
                         <img class="action-image" src="{{$action->image_path}}"/>
@@ -21,7 +31,9 @@
                         </div>
                     </a>
                 </div>
-            @endforeach
+                @empty
+                    <p>Geen acties in deze categorie!</p>
+            @endforelse
         </div>
     </main>
 @endsection

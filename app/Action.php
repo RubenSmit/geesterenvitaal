@@ -30,10 +30,32 @@ class Action extends Model
     ];
 
     /**
+     * The relationships that should always be loaded.
+     *
+     * @var array
+     */
+    protected $with = ['category'];
+
+    public function category()
+    {
+        return $this->belongsTo('App\ActionCategory', 'action_category_id');
+    }
+
+    /**
+     * Get the activities by category
+     * @param $query
+     * @return mixed
+     */
+    public function scopeByCategory($query, $name)
+    {
+        return $query->join('action_categories', 'action_categories.id', '=', 'actions.action_category_id')->where('action_categories.name', '=', $name);
+    }
+
+    /**
      * Get the image path.
      *
-     * @return string
-     */
+     * @return url
+     * */
     public function getImagePathAttribute()
     {
         if (is_null($this->image_url)) {

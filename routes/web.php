@@ -1,5 +1,4 @@
 <?php
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -20,6 +19,7 @@ Route::get('activiteit/categorie/{name}', 'ActivityController@category');
 
 Route::get('actie/', 'ActionController@index');
 Route::get('actie/{id}', 'ActionController@show');
+Route::get('actie/categorie/{name}', 'ActionController@category');
 
 Route::get('uitdaging/', 'ChallengeController@index');
 Route::get('uitdaging/{id}', 'ChallengeController@show');
@@ -71,6 +71,14 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function () {
         Route::delete('{id}', 'ChallengeController@destroy');
         Route::patch('{id}', 'ChallengeController@update');
         Route::get('{id}', 'ChallengeController@edit');
+    });
+
+    Route::prefix('actie-categorie')->group(function () {
+        Route::post('new', 'ActionCategoryController@create');
+        Route::get('new', 'ActionCategoryController@new');
+        Route::delete('{id}', 'ActionCategoryController@destroy');
+        Route::patch('{id}', 'ActionCategoryController@update');
+        Route::get('{id}', 'ActionCategoryController@edit');
     });
 
     Route::prefix('gebruiker')->group(function () {

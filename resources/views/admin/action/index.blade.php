@@ -3,15 +3,40 @@
 @section('title', 'Alle acties\'s')
 
 @section('content')
-    <h1>Alle acties</h1>
-    <a href="/admin/actie/new">Nieuwe actie maken</a>
+    <h1>Categorieën</h1>
+    <a href="/admin/actie-categorie/new">Nieuwe categorie maken</a>
     <table>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th></th>
+        </tr>
+        <tbody>
+        @foreach ($categories as $category)
+            <tr>
+                <th scope="row">{{$category->id}}</th>
+                <td>{{$category->name}}</td>
+                <td>
+                    <a href="/admin/actie-categorie/{{$category->id}}">Bewerken</a>
+                    <form action="/admin/actie-categorie/{{$category->id}}" method="POST">
+                        @method('DELETE')
+                        @csrf
+                        <button type="submit" onclick="return confirm('Weet je zeker dat je de categorie \'{{$category->name}}\' wilt verwijderen?')">Verwijderen</button>
+                    </form>
+                </td>
+            </tr>
+        @endforeach
+        </tbody>
+    </table>
+
+    <h1>Acties</h1>
+    <a href="/admin/actie/new">Nieuwe actie maken</a>
+        <table>
         <thead>
         <tr>
             <th>Id</th>
             <th>Titel</th>
-            <th>Starttijd</th>
-            <th>Eindtijd</th>
+            <th>Categorie</th>
             <th>Oude prijs</th>
             <th>Nieuwe prijs</th>
             <th>Benodigd aantal punten</th>
@@ -23,8 +48,7 @@
             <tr>
                 <th scope="row"><a href="/actie/{{$action->id}}" target="_blank">{{$action->id}}</a></th>
                 <td>{{$action->title}}</td>
-                <td>{{$action->start_time}}</td>
-                <td>{{$action->end_time}}</td>
+                <td>{{$action->category->name}}</td>
                 <td>{{$action->old_price}}</td>
                 <td>{{$action->new_price}}</td>
                 <td>{{$action->points_required}}</td>

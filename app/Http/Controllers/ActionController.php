@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Action;
+use App\ActionCategory;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
@@ -22,11 +23,17 @@ class ActionController extends Controller
         'discount' => 'nullable',
         'new_price' => 'nullable|numeric',
         'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        'action_category_id' => 'required|numeric',
     ];
 
     public function index()
     {
-        return view('action.index', ['actions' => Action::all()]);
+        return view('action.index', ['actions' => Action::all(), 'categories' => ActionCategory::all(), 'current_category' => null]);
+    }
+
+    public function category($name)
+    {
+        return view('action.index', ['actions' => Action::byCategory($name)->get(), 'categories' => ActionCategory::all(), 'current_category' => $name]);
     }
 
     public function show($id)
@@ -36,12 +43,12 @@ class ActionController extends Controller
 
     public function admin()
     {
-        return view('admin.action.index', ['actions' => Action::all()]);
+        return view('admin.action.index', ['actions' => Action::all(), 'categories' => ActionCategory::all()]);
     }
 
     public function edit($id)
     {
-        return view('admin.action.edit', ['action' => Action::findOrFail($id)]);
+        return view('admin.action.edit', ['action' => Action::findOrFail($id), 'categories' => ActionCategory::all()]);
     }
 
     public function update($id, Request $request)
@@ -78,6 +85,10 @@ class ActionController extends Controller
                 'new_price' => $request->input('new_price'),
                 'image_url' => $path,
             ]);
+
+            $action->category()->associate(ActionCategory::find($request->input('action_category_id')));
+            $action->save();
+
             return redirect()
                 ->action('ActionController@admin');
         }
@@ -85,7 +96,7 @@ class ActionController extends Controller
 
     public function new()
     {
-        return view('admin.action.new', ['action' => null]);
+        return view('admin.action.new', ['action' => null, 'categories' => ActionCategory::all()]);
     }
 
     public function create(Request $request)
@@ -108,7 +119,7 @@ class ActionController extends Controller
                 $path = $request->file('image')->store('images', ['disk' => 'public']);
             }
 
-            Action::create([
+            $action = Action::create([
                 'title' => $request->input('title'),
                 'content' => $request->input('content'),
                 'start_time' => $request->input('start_time'),
@@ -120,6 +131,10 @@ class ActionController extends Controller
                 'new_price' => $request->input('new_price'),
                 'image_url' => $path,
             ]);
+
+            $action->category()->associate(ActionCategory::find($request->input('action_category_id')));
+            $action->save();
+
             return redirect()
                 ->action('ActionController@admin');
         }
