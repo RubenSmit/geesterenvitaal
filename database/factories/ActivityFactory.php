@@ -4,6 +4,7 @@
 
 use Carbon\Carbon;
 use App\Activity;
+use App\ActivityCategory;
 use Faker\Generator as Faker;
 
 $factory->define(Activity::class, function (Faker $faker) {
@@ -18,6 +19,9 @@ $factory->define(Activity::class, function (Faker $faker) {
         'end_time' => $to,
         'location_name' => 'Erve Kampboer',
         'location_address' => 'Kampboerlaan 13, 7678 VV Geesteren, Nederland',
-        'registration_url' => 'https://google.com'
+        'registration_url' => 'https://google.com',
+        'activity_category_id' => function () {
+            return factory(ActivityCategory::class)->create()->id;
+        },
     ];
 });

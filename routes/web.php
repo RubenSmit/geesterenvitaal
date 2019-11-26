@@ -16,6 +16,7 @@ Route::get('pagina/{id}', 'PageController@show');
 
 Route::get('activiteit/', 'ActivityController@index');
 Route::get('activiteit/{id}', 'ActivityController@show');
+Route::get('activiteit/categorie/{name}', 'ActivityController@category');
 
 Route::get('actie/', 'ActionController@index');
 Route::get('actie/{id}', 'ActionController@show');
@@ -25,7 +26,7 @@ Route::get('uitdaging/{id}', 'ChallengeController@show');
 
 Auth::routes(['verify' => true]);
 
-Route::group(['prefix' => 'admin',  'middleware' => ['auth']], function() {
+Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function () {
     Route::view('/', 'admin.index');
 
     Route::prefix('pagina')->group(function () {
@@ -44,6 +45,14 @@ Route::group(['prefix' => 'admin',  'middleware' => ['auth']], function() {
         Route::delete('{id}', 'ActivityController@destroy');
         Route::patch('{id}', 'ActivityController@update');
         Route::get('{id}', 'ActivityController@edit');
+    });
+
+    Route::prefix('activiteit-categorie')->group(function () {
+        Route::post('new', 'ActivityCategoryController@create');
+        Route::get('new', 'ActivityCategoryController@new');
+        Route::delete('{id}', 'ActivityCategoryController@destroy');
+        Route::patch('{id}', 'ActivityCategoryController@update');
+        Route::get('{id}', 'ActivityCategoryController@edit');
     });
 
     Route::prefix('actie')->group(function () {

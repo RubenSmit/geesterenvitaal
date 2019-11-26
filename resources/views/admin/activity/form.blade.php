@@ -1,4 +1,13 @@
 @csrf
+
+@component('components.form.select', [
+    'name' => 'activity_category_id',
+    'label' => 'Categorie',
+    'model' => $activity,
+    'items' => $categories,
+    'item_key' => 'id',
+    'item_value' => 'name',
+])@endcomponent
 @component('components.form.input', [
     'name' => 'title',
     'label' => 'Titel',
@@ -55,3 +64,14 @@
     'model' => $activity,
     'type' => 'url',
 ])@endcomponent
+
+
+@if (count($errors) > 0)
+    <div class="error">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
