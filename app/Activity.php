@@ -42,7 +42,7 @@ class Activity extends Model
      */
     public function category()
     {
-        return $this->belongsTo('App\ActivityCategory');
+        return $this->belongsTo('App\ActivityCategory', 'activity_category_id');
     }
 
     /**

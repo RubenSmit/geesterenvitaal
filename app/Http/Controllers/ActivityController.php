@@ -7,7 +7,8 @@ use App\ActivityCategory;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
-use function Psy\debug;
+use Carbon\Carbon;
+
 
 class ActivityController extends Controller
 {
@@ -21,16 +22,17 @@ class ActivityController extends Controller
         'location_address' => 'nullable',
         'registration_url' => 'nullable|url',
         'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        'activity_category_id' => 'required|numeric|exists:activity_categories,id',
     ];
 
     public function index()
     {
-        return view('activity.index', ['activities' => Activity::upcoming()->get(), 'categories' => ActivityCategory::all()]);
+        return view('activity.index', ['activities' => Activity::upcoming()->get(), 'categories' => ActivityCategory::all(), 'current_category' => null]);
     }
 
     public function category($name)
     {
-        return view('activity.index', ['activities' => Activity::upcoming()->byCategory($name)->get(), 'categories' => ActivityCategory::all()]);
+        return view('activity.index', ['activities' => Activity::upcoming()->byCategory($name)->get(), 'categories' => ActivityCategory::all(), 'current_category' => $name]);
     }
 
     public function admin()
@@ -45,14 +47,14 @@ class ActivityController extends Controller
 
     public function edit($id)
     {
-        return view('admin.activity.edit', ['activity' => Activity::findOrFail($id)]);
+        return view('admin.activity.edit', ['activity' => Activity::findOrFail($id), 'categories' => ActivityCategory::all()]);
     }
 
     public function update($id, Request $request)
     {
         $request->merge(array(
-            'start_time' => ($request->input('start_time_date') . " " . $request->input('start_time_time')),
-            'end_time' => ($request->input('end_time_date') . " " . $request->input('end_time_time')),
+            'start_time' => Carbon::parse($request->input('start_time_date') . " " . $request->input('start_time_time')),
+            'end_time' => Carbon::parse($request->input('end_time_date') . " " . $request->input('end_time_time')),
         ));
 
         $validator = Validator::make($request->all(), self::VALIDATION_RULES);
@@ -81,6 +83,10 @@ class ActivityController extends Controller
                 'registration_url' => $request->input('registration_url'),
                 'image_url' => $path,
             ]);
+
+            $activity->category()->associate(ActivityCategory::findOrFail($request->input('activity_category_id')));
+            $activity->save();
+
             return redirect()
                 ->action('ActivityController@admin');
         }
@@ -89,7 +95,7 @@ class ActivityController extends Controller
 
     public function new()
     {
-        return view('admin.activity.new', ['activity' => null]);
+        return view('admin.activity.new', ['activity' => null, 'categories' => ActivityCategory::all()]);
     }
 
     public function create(Request $request)
@@ -112,7 +118,7 @@ class ActivityController extends Controller
                 $path = $request->file('image')->store('images', ['disk' => 'public']);
             }
 
-            Activity::create([
+            $activity = Activity::create([
                 'title' => $request->input('title'),
                 'subtitle' => $request->input('subtitle'),
                 'content' => $request->input('content'),
@@ -123,6 +129,10 @@ class ActivityController extends Controller
                 'registration_url' => $request->input('registration_url'),
                 'image_url' => $path,
             ]);
+
+            $activity->category()->associate(ActivityCategory::findOrFail($request->input('activity_category_id')));
+            $activity->save();
+
             return redirect()
                 ->action('ActivityController@admin');
         }

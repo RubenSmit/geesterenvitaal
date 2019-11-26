@@ -11,14 +11,14 @@
         </header>
         <div class="link-bar">
             <div class="container">
-                <a href="{{url('/activiteit')}}">alles</a>
+                <a href="{{url('/activiteit')}}" class="{{$current_category == null ? "active" : "" }}">alles</a>
                 @foreach($categories as $category)
-                    <a href="{{url('/activiteit/categorie/'.$category->name)}}">{{$category->name}}</a>
+                    <a href="{{url('/activiteit/categorie/'.$category->name)}}"  class="{{$current_category == $category->name ? "active" : "" }}">{{$category->name}}</a>
                 @endforeach
             </div>
         </div>
         <div class="container">
-            @foreach ($activities as $activity)
+            @forelse ($activities as $activity)
                 <a href="{{url('/activiteit/'.$activity->id)}}">
                     <div class="activity">
                         <img class="activity-image" src="{{$activity->image_path}}"/>
@@ -33,7 +33,9 @@
                         </div>
                     </div>
                 </a>
-            @endforeach
+            @empty
+                <p>Er zijn geen activiteiten in deze categorie.</p>
+            @endforelse
         </div>
     </main>
 @endsection

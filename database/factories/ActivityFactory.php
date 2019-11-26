@@ -21,7 +21,7 @@ $factory->define(Activity::class, function (Faker $faker) {
         'location_address' => 'Kampboerlaan 13, 7678 VV Geesteren, Nederland',
         'registration_url' => 'https://google.com',
         'activity_category_id' => function () {
-            return factory(App\ActivityCategory::class)->create()->id;
+            return factory(ActivityCategory::class)->create()->id;
         },
     ];
 });
