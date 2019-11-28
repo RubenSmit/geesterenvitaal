@@ -4,6 +4,7 @@
 
 use Carbon\Carbon;
 use App\Challenge;
+use App\ChallengeCategory;
 use Faker\Generator as Faker;
 
 $factory->define(Challenge::class, function (Faker $faker) {
@@ -19,6 +20,9 @@ $factory->define(Challenge::class, function (Faker $faker) {
         'location_name' => 'Erve Kampboer',
         'location_address' => 'Kampboerlaan 13, 7678 VV Geesteren, Nederland',
         'latitude' => 52.4217347,
-        'longitude' => 6.7339456
+        'longitude' => 6.7339456,
+        'challenge_category_id' => function () {
+            return factory(ChallengeCategory::class)->create()->id;
+        },
     ];
 });

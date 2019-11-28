@@ -23,6 +23,7 @@ Route::get('actie/categorie/{name}', 'ActionController@category');
 
 Route::get('uitdaging/', 'ChallengeController@index');
 Route::get('uitdaging/{id}', 'ChallengeController@show');
+Route::get('uitdaging/categorie/{name}', 'ChallengeController@category');
 
 Auth::routes(['verify' => true]);
 
@@ -79,6 +80,15 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function () {
         Route::delete('{id}', 'ActionCategoryController@destroy');
         Route::patch('{id}', 'ActionCategoryController@update');
         Route::get('{id}', 'ActionCategoryController@edit');
+    });
+
+
+    Route::prefix('uitdaging-categorie')->group(function () {
+        Route::post('new', 'ChallengeCategoryController@create');
+        Route::get('new', 'ChallengeCategoryController@new');
+        Route::delete('{id}', 'ChallengeCategoryController@destroy');
+        Route::patch('{id}', 'ChallengeCategoryController@update');
+        Route::get('{id}', 'ChallengeCategoryController@edit');
     });
 
     Route::prefix('gebruiker')->group(function () {
