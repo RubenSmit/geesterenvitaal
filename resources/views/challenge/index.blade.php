@@ -4,7 +4,7 @@
 
 @section('content')
     <main>
-        <header class="header-narrow" style="background-image: url('img/banner.jpg')">
+        <header class="header-narrow" style="background-image: url('{{url('img/banner.jpg')}}')">
             <div class="header-overlay">
                 <h1 class="header-title">uitdagingen</h1>
             </div>
