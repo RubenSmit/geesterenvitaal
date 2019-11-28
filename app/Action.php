@@ -30,6 +30,16 @@ class Action extends Model
     ];
 
     /**
+     * The attributes that should be mutated to dates.
+     *
+     * @var array
+     */
+    protected $dates = [
+        'start_time',
+        'end_time',
+    ];
+
+    /**
      * The relationships that should always be loaded.
      *
      * @var array

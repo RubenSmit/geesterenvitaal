@@ -54,13 +54,6 @@
 ])@endcomponent
 
 @component('components.form.input', [
-    'name' => 'registration_url',
-    'label' => 'Registratie URL',
-    'placeholder' => 'URL om je te registreren',
-    'model' => $challenge,
-])@endcomponent
-
-@component('components.form.input', [
     'name' => 'latitude',
     'label' => 'Breedtegraad',
     'placeholder' => 'Breedtegraad',

@@ -53,8 +53,8 @@ class ActivityController extends Controller
     public function update($id, Request $request)
     {
         $request->merge(array(
-            'start_time' => Carbon::parse($request->input('start_time_date') . " " . $request->input('start_time_time')),
-            'end_time' => Carbon::parse($request->input('end_time_date') . " " . $request->input('end_time_time')),
+            'start_time' => ($request->input('start_time_date') . " " . $request->input('start_time_time')),
+            'end_time' => ($request->input('end_time_date') . " " . $request->input('end_time_time')),
         ));
 
         $validator = Validator::make($request->all(), self::VALIDATION_RULES);
@@ -76,8 +76,8 @@ class ActivityController extends Controller
                 'title' => $request->input('title'),
                 'subtitle' => $request->input('subtitle'),
                 'content' => $request->input('content'),
-                'start_time' => $request->input('start_time'),
-                'end_time' => $request->input('end_time'),
+                'start_time' => Carbon::parse($request->start_time),
+                'end_time' => Carbon::parse($request->end_time),
                 'location_name' => $request->input('location_name'),
                 'location_address' => $request->input('location_address'),
                 'registration_url' => $request->input('registration_url'),
@@ -122,8 +122,8 @@ class ActivityController extends Controller
                 'title' => $request->input('title'),
                 'subtitle' => $request->input('subtitle'),
                 'content' => $request->input('content'),
-                'start_time' => $request->input('start_time'),
-                'end_time' => $request->input('end_time'),
+                'start_time' => Carbon::parse($request->input('start_time')),
+                'end_time' => Carbon::parse($request->input('end_time')),
                 'location_name' => $request->input('location_name'),
                 'location_address' => $request->input('location_address'),
                 'registration_url' => $request->input('registration_url'),

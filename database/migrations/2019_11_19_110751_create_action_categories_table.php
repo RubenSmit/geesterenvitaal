@@ -20,7 +20,7 @@ class CreateActionCategoriesTable extends Migration
         });
 
         Schema::table('actions', function($table) {
-            $table->unsignedBigInteger('action_category_id');
+            $table->unsignedBigInteger('action_category_id')->nullable(true);
             $table->foreign('action_category_id')
                 ->references('id')->on('action_categories')
                 ->onDelete('restrict');

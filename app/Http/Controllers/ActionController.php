@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Action;
 use App\ActionCategory;
 use App\Http\Controllers\Controller;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use function Psy\debug;
@@ -76,8 +77,8 @@ class ActionController extends Controller
             $action->update([
                 'title' => $request->input('title'),
                 'content' => $request->input('content'),
-                'start_time' => $request->input('start_time'),
-                'end_time' => $request->input('end_time'),
+                'start_time' => Carbon::parse($request->input('start_time')),
+                'end_time' => Carbon::parse($request->input('end_time')),
                 'samengezond_url' => $request->input('samengezond_url'),
                 'points_required' => $request->input('points_required'),
                 'old_price' => $request->input('old_price'),
@@ -122,8 +123,8 @@ class ActionController extends Controller
             $action = Action::create([
                 'title' => $request->input('title'),
                 'content' => $request->input('content'),
-                'start_time' => $request->input('start_time'),
-                'end_time' => $request->input('end_time'),
+                'start_time' => Carbon::parse($request->input('start_time')),
+                'end_time' => Carbon::parse($request->input('end_time')),
                 'samengezond_url' => $request->input('samengezond_url'),
                 'points_required' => $request->input('points_required'),
                 'old_price' => $request->input('old_price'),

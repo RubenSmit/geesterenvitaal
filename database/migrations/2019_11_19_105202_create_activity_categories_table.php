@@ -19,7 +19,7 @@ class CreateActivityCategoriesTable extends Migration
             $table->timestamps();
         });
         Schema::table('activities', function($table) {
-            $table->unsignedBigInteger('activity_category_id');
+            $table->unsignedBigInteger('activity_category_id')->nullable(true);
             $table->foreign('activity_category_id')
                 ->references('id')->on('activity_categories')
                 ->onDelete('restrict');

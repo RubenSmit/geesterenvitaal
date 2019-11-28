@@ -12,7 +12,6 @@
             <th>Titel</th>
             <th>location_name</th>
             <th>location_address</th>
-            <th>registration_url</th>
             <th>latitude</th>
             <th>longitude</th>
             <th></th>
@@ -25,7 +24,6 @@
                 <td>{{$challenge->title}}</td>
                 <td>{{$challenge->location_name}}</td>
                 <td>{{$challenge->location_address}}</td>
-                <td>{{$challenge->registration_url}}</td>
                 <td>{{$challenge->latitude}}</td>
                 <td>{{$challenge->longitude}}</td>
                 <td>

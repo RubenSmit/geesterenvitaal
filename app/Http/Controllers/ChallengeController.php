@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Challenge;
 use App\Http\Controllers\Controller;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use function Psy\debug;
@@ -70,8 +71,8 @@ class ChallengeController extends Controller
                 'title' => $request->input('title'),
                 'subtitle' => $request->input('subtitle'),
                 'content' => $request->input('content'),
-                'start_time' => $request->input('start_time'),
-                'end_time' => $request->input('end_time'),
+                'start_time' => Carbon::parse($request->input('start_time')),
+                'end_time' => Carbon::parse($request->input('end_time')),
                 'location_name' => $request->input('location_name'),
                 'location_address' => $request->input('location_address'),
                 'registration_url' => $request->input('registration_url'),
@@ -113,8 +114,8 @@ class ChallengeController extends Controller
                 'title' => $request->input('title'),
                 'subtitle' => $request->input('subtitle'),
                 'content' => $request->input('content'),
-                'start_time' => $request->input('start_time'),
-                'end_time' => $request->input('end_time'),
+                'start_time' => Carbon::parse($request->input('start_time')),
+                'end_time' => Carbon::parse($request->input('end_time')),
                 'location_name' => $request->input('location_name'),
                 'location_address' => $request->input('location_address'),
                 'registration_url' => $request->input('registration_url'),

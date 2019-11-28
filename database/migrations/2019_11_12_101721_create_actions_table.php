@@ -22,7 +22,7 @@ class CreateActionsTable extends Migration
             $table->text('samengezond_url');
             $table->integer('points_required');
             $table->double('old_price');
-            $table->string('discount');
+            $table->string('discount')->nullable(true);
             $table->double('new_price');
             $table->string('image_url')->nullable(true);
             $table->timestamps();

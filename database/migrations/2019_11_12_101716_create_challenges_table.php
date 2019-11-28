@@ -20,10 +20,10 @@ class CreateChallengesTable extends Migration
             $table->text('content');
             $table->dateTime('start_time');
             $table->dateTime('end_time');
-            $table->text('location_name');
-            $table->text('location_address');
-            $table->decimal('latitude', 10, 7);
-            $table->decimal('longitude', 10, 7);
+            $table->text('location_name')->nullable(true);
+            $table->text('location_address')->nullable(true);
+            $table->decimal('latitude', 10, 7)->nullable(true);
+            $table->decimal('longitude', 10, 7)->nullable(true);
             $table->string('image_url')->nullable(true);
             $table->timestamps();
             $table->softDeletes();
