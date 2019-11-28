@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Challenge;
 use App\ChallengeCategory;
 use App\Http\Controllers\Controller;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use function Psy\debug;
@@ -22,13 +23,13 @@ class ChallengeController extends Controller
         'registration_url' => 'nullable',
         'latitude' => 'nullable',
         'longitude' => 'nullable',
-        'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        'image_url' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         'challenge_category_id' => 'required|numeric|exists:challenge_categories,id',
     ];
 
     public function index()
     {
-        return view('challenge.index', ['challenges' => Challenge::upcoming()->get(), 'categories' => ActionCategory::all(), 'current_category' => null]);
+        return view('challenge.index', ['challenges' => Challenge::upcoming()->get(), 'categories' => ChallengeCategory::all(), 'current_category' => null]);
     }
 
     public function category($name)
@@ -54,8 +55,8 @@ class ChallengeController extends Controller
     public function update($id, Request $request)
     {
         $request->merge(array(
-            'start_time' => ($request->input('start_time_date') . " " . $request->input('start_time_time')),
-            'end_time' => ($request->input('end_time_date') . " " . $request->input('end_time_time')),
+            'start_time' => Carbon::parse($request->input('start_time_date') . " " . $request->input('start_time_time')),
+            'end_time' => Carbon::parse($request->input('end_time_date') . " " . $request->input('end_time_time')),
         ));
 
         $validator = Validator::make($request->all(), self::VALIDATION_RULES);
@@ -134,7 +135,7 @@ class ChallengeController extends Controller
                 'image_url' => $path,
             ]);
 
-            $challenge->category()->associate(ChallengeCategory::find($request->input('challenge_category_id')));
+            $challenge->category()->associate(ChallengeCategory::findOrFail($request->input('challenge_category_id')));
             $challenge->save();
 
             return redirect()
@@ -142,7 +143,8 @@ class ChallengeController extends Controller
         }
     }
 
-    public function destroy($id) {
+    public function destroy($id)
+    {
         Challenge::destroy($id);
         return redirect()
             ->action('ChallengeController@admin');

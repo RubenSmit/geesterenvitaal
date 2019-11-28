@@ -10,7 +10,7 @@
 @component('components.form.input', [
     'name' => 'title',
     'label' => 'Titel',
-    'placeholder' => 'Titel van de actie',
+    'placeholder' => 'Titel van de uitdaging',
     'model' => $challenge,
 ])@endcomponent
 @component('components.form.textarea', [

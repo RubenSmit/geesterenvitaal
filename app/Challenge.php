@@ -26,9 +26,15 @@ class Challenge extends Model
         'latitude',
         'longitude',
         'image_url',
+        'challenge_category_id'
     ];
 
-    protected $with = ['category'];
+    //protected $with = ['category'];
+
+    protected $dates = [
+        'start_time',
+        'end_time',
+    ];
 
     public function category()
     {
