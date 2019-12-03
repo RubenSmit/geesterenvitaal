@@ -9,6 +9,9 @@ $factory->define(Page::class, function (Faker $faker) {
     return [
         'title' => $faker->word,
         'subtitle' => $faker->sentence,
-        'content' => $faker->paragraph
+        'content' => $faker->paragraph,
+        'nav_position' => null,
+        'footer_position' => null,
+        'parent_id' => null,
     ];
 });

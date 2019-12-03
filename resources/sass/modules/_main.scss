@@ -178,6 +178,24 @@ footer {
         margin: 3px 0;
         color: $light;
     }
+
+    .footer-copyright {
+        color: $light;
+        font-size: 10px;
+        text-align: center;
+        width: 100%;
+        margin: 10px auto;
+        display: inline-block;
+
+        a {
+            color: $light;
+        }
+
+        a:hover {
+            color: $light;
+            font-weight: bold;
+        }
+    }
 }
 
 button, .btn {

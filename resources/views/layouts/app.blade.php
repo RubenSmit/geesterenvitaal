@@ -27,27 +27,24 @@
 <footer>
     <div class="footer-container">
         <div class="footer-column">
-            <h5 class="footer-title">Contact</h5>
+            <strong class="footer-title">Contact</strong>
             <p class="footer-text">
-                Straatweg 12<br>
-                Geesteren
+                {{$site_settings["footer_contact"]}}
             </p>
         </div>
         <div class="footer-column">
-            <h5 class="footer-title">Info</h5>
+            <strong class="footer-title">Info</strong>
             <p class="footer-text">
-                Balu des amerco<br>
-                Curabitur fringilla turpis augue
+                {{$site_settings["footer_info"]}}
             </p>
         </div>
         <div class="footer-column">
-            <h5 class="footer-title">Privacy</h5>
-            <p class="footer-text">
-                Duis sed ornare enim<br>
-                Quisque pellentesque porta libero
-            </p>
+            @foreach($site_settings["footer_items"] as $item)
+                <a class="footer-title" href="{{url('/pagina/'.$item->id)}}">{{$item->title}}</a>
+            @endforeach
         </div>
     </div>
+    <span class="footer-copyright">Copyright <a href="http://rubensmit.com" target="_blank" rel="noreferrer">Ruben Smit</a> & Laurens Pelgröm - 2019</span>
 </footer>
 </body>
 </html>
