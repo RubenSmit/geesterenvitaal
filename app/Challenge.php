@@ -39,6 +39,23 @@ class Challenge extends Model
     ];
 
     /**
+     * Get the category that owns the challenge.
+     */
+    public function category()
+    {
+        return $this->belongsTo('App\ChallengeCategory', 'challenge_category_id');
+    }
+
+    /**
+     * Get the challenges by category
+     * @param $query
+     * @return mixed
+     */
+    public function scopeByCategory($query, $name) {
+        return $query->join('challenge_categories', 'challenge_categories.id', '=', 'challenges.challenge_category_id')->where('challenge_categories.name', '=', $name);
+    }
+
+    /**
      * Get the image path.
      *
      * @return string

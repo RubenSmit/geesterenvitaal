@@ -2,10 +2,10 @@
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
 
-use App\ActionCategory;
+use App\ChallengeCategory;
 use Faker\Generator as Faker;
 
-$factory->define(ActionCategory::class, function (Faker $faker) {
+$factory->define(ChallengeCategory::class, function (Faker $faker) {
     return[
         'name' => $faker->word,
     ];

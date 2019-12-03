@@ -1,4 +1,13 @@
 @csrf
+@component('components.form.select', [
+    'name' => 'challenge_category_id',
+    'label' => 'Categorie',
+    'model' => $challenge,
+    'items' => $categories,
+    'item_key' => 'id',
+    'item_value' => 'name',
+])@endcomponent
+
 @component('components.form.input', [
     'name' => 'title',
     'label' => 'Titel',
