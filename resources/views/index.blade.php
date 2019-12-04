@@ -36,20 +36,19 @@
                             </li>
                         @endforeach
                     </ul>
-                    <a href="{{url('/activiteit')}}">Meer activiteiten</a>
+                    <a href="{{url('/activiteit')}}"class="aside-more">Meer activiteiten</a>
                 </aside>
                 <aside class="main-column index-actions">
                     <h2 class="aside-title">spaaracties</h2>
                     <ul>
                         @foreach($actions as $action)
-                            <li>
-                                <img class="action-image" src="{{$action->image_path}}">
-                                <small>Vanaf €{{number_format($action->new_price, 2, ',', '')}}
+                            <li style="background-image: url('{{$action->image_path}}');">
+                                <small class = "floating-text">Vanaf €{{number_format($action->new_price, 2, ',', '')}}
                                     + {{$action->points_required}} punten</small>
                             </li>
                         @endforeach
                     </ul>
-                    <a href="{{url('/actie')}}">Meer spaaracties</a>
+                    <a href="{{url('/actie')}}"class="aside-more">Meer spaaracties</a>
                 </aside>
                 <aside class="main-column index-challenges">
                     <h2 class="aside-title">uitdagingen</h2>
@@ -61,7 +60,7 @@
                             </li>
                         @endforeach
                     </ul>
-                    <a href="{{url('/uitdaging')}}">Meer uitdagingen</a>
+                    <a href="{{url('/uitdaging')}}"class="aside-more">Meer uitdagingen</a>
                 </aside>
             </div>
         </div>
