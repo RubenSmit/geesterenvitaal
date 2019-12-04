@@ -15,10 +15,16 @@
         @endforeach
         @guest
             <a class="nav-item nav-pill" href="https://www.samengezond.nl" target="_blank"
-               rel="noreferrer">SamenGezond</a>
+               rel="noreferrer">
+                <span class="fa fa-chevron-circle-right"></span>
+                SamenGezond
+            </a>
         @else
             <a class="nav-item nav-pill" href="https://www.samengezond.nl" target="_blank"
-               rel="noreferrer">SamenGezond</a>
+               rel="noreferrer">
+                <span class="fa fa-chevron-circle-right"></span>
+                SamenGezond
+            </a>
             <a class="nav-item nav-pill" href="{{url('/admin')}}">Admin</a>
         @endguest
     </div>

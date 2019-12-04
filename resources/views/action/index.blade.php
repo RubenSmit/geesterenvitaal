@@ -6,7 +6,7 @@
     <main>
         <header class="header-narrow" style="background-image: url('{{url('img/banner.jpg')}}')">
             <div class="header-overlay">
-                <h1 class="header-title">acties</h1>
+                <h1 class="header-title"><span class="fa fa-wallet"></span> spaaracties</h1>
             </div>
         </header>
 

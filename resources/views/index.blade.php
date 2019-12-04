@@ -8,7 +8,10 @@
             <div class="header-overlay">
                 <h1 class="header-title">{{$site_settings["site_title"]}}</h1>
                 <p class="header-subtitle">{{$site_settings["site_subtitle"]}}</p>
-                <a class="header-link" href="{{url('/pagina/'.$site_settings["dashboard_header_button_id"])}}">{{$site_settings["dashboard_header_button_text"]}}</a>
+                <a class="header-link" href="{{url('/pagina/'.$site_settings["dashboard_header_button_id"])}}">
+                    <span class="fa fa-chevron-circle-right"></span>
+                    {{$site_settings["dashboard_header_button_text"]}}
+                </a>
             </div>
         </header>
         <aside class="main-highlight">
