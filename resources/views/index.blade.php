@@ -26,44 +26,41 @@
         </aside>
         <div class="container">
             <div class="main-colums">
-                <aside class="main-column">
+                <aside class="main-column index-activities">
                     <h2 class="aside-title">activiteiten</h2>
                     <ul>
                         @foreach($activities as $activity)
                             <li>
-                                <h3>{{$activity->title}}</h3>
-                                <strong>{{$activity->subtitle}}</strong>
-                                <small>{{$activity->start_time->isoFormat('dddd D MMM [om] H:mm')}}</small>
+                                <strong>{{$activity->start_time->isoFormat('D-MM')}}</strong>
+                                <span>{{$activity->title}}</span>
                             </li>
                         @endforeach
                     </ul>
-                    <a href="{{url('/activiteit')}}">Meer activiteiten</a>
+                    <a href="{{url('/activiteit')}}"class="aside-more">Meer activiteiten</a>
                 </aside>
-                <aside class="main-column">
+                <aside class="main-column index-actions">
                     <h2 class="aside-title">spaaracties</h2>
                     <ul>
                         @foreach($actions as $action)
-                            <li>
-                                <h3>{{$action->title}}</h3>
-                                <small>Vanaf €{{number_format($action->new_price, 2, ',', '')}}
+                            <li style="background-image: url('{{$action->image_path}}');">
+                                <small class = "floating-text">Vanaf €{{number_format($action->new_price, 2, ',', '')}}
                                     + {{$action->points_required}} punten</small>
                             </li>
                         @endforeach
                     </ul>
-                    <a href="{{url('/actie')}}">Meer spaaracties</a>
+                    <a href="{{url('/actie')}}"class="aside-more">Meer spaaracties</a>
                 </aside>
-                <aside class="main-column">
+                <aside class="main-column index-challenges">
                     <h2 class="aside-title">uitdagingen</h2>
                     <ul>
                         @foreach($challenges as $challenge)
                             <li>
-                                <h3>{{$challenge->title}}</h3>
-                                <strong>{{$challenge->subtitle}}</strong>
-                                <small>locatie: {{$challenge->location_name}}</small>
+                                <img class="challenge-image" src="{{$challenge->image_path}}">
+                                <span>{{$challenge->title}}</span>
                             </li>
                         @endforeach
                     </ul>
-                    <a href="{{url('/uitdaging')}}">Meer uitdagingen</a>
+                    <a href="{{url('/uitdaging')}}"class="aside-more">Meer uitdagingen</a>
                 </aside>
             </div>
         </div>
