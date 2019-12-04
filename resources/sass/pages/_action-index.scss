@@ -14,7 +14,7 @@
         height: 350px;
         border: solid 3px $brand_primary;
         border-radius: 20px;
-        object-fit: cover;
+        object-fit: contain;
     }
 
     a {
