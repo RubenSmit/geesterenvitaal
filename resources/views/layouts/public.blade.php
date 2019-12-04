@@ -33,3 +33,28 @@
 @section('main')
     @yield('content')
 @endsection
+
+@section('footer')
+    <footer>
+        <div class="footer-container">
+            <div class="footer-column">
+                <strong class="footer-title">Contact</strong>
+                <p class="footer-text">
+                    {{$site_settings["footer_contact"]}}
+                </p>
+            </div>
+            <div class="footer-column">
+                <strong class="footer-title">Info</strong>
+                <p class="footer-text">
+                    {{$site_settings["footer_info"]}}
+                </p>
+            </div>
+            <div class="footer-column">
+                @foreach($site_settings["footer_items"] as $item)
+                    <a class="footer-title" href="{{url('/pagina/'.$item->id)}}">{{$item->title}}</a>
+                @endforeach
+            </div>
+        </div>
+        <span class="footer-copyright">Copyright <a href="http://rubensmit.com" target="_blank" rel="noreferrer">Ruben Smit</a> & Laurens Pelgröm - 2019</span>
+    </footer>
+@endsection
