@@ -11,10 +11,10 @@
 
     a {
         text-decoration: none;
-        color: $dark;
+        color: $light;
 
         &:hover {
-            color: $brand_primary;
+            color: $light;
         }
     }
 
@@ -23,7 +23,18 @@
         height: 350px;
         border: solid 3px $brand_primary;
         border-radius: $border-radius-large;
-        object-fit: cover;
+        background-size: cover;
+        background-position: center;
+        overflow: hidden;
+    }
+
+    .challenge-overlay {
+        background-color: $brand_primary_overlay;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
     }
 
     .challenge-title {
@@ -35,5 +46,6 @@
     .challenge-subtitle {
         padding: 0 20px;
         display: inline-block;
+        margin-bottom: 20px;
     }
 }

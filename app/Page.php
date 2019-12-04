@@ -11,6 +11,13 @@ class Page extends Model
     use SoftDeletes;
 
     /**
+     * The relationships that should always be loaded.
+     *
+     * @var array
+     */
+    protected $with = ['children'];
+
+    /**
      * The attributes that are mass assignable.
      *
      * @var array
@@ -29,5 +36,33 @@ class Page extends Model
         } else {
             return url(Storage::url($this->image_url));
         }
+    }
+
+    /**
+     * Get the upcoming activities
+     * @param $query
+     * @return mixed
+     */
+    public function scopeNavigation($query) {
+        return $query->where('nav_position', '>=', 0)->orderBy('nav_position');
+    }
+
+    /**
+     * Get the upcoming activities
+     * @param $query
+     * @return mixed
+     */
+    public function scopeFooter($query) {
+        return $query->where('footer_position', '>=', 0)->orderBy('footer_position');
+    }
+
+    public function parent()
+    {
+        return $this->belongsTo('App\Page', 'parent_id', 'id');
+    }
+
+    public function children()
+    {
+        return $this->hasMany('App\Page', 'parent_id', 'id');
     }
 }

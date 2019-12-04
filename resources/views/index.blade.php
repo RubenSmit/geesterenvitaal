@@ -6,9 +6,12 @@
     <main>
         <header style="background-image: url('img/banner.jpg')">
             <div class="header-overlay">
-                <h1 class="header-title">Geesteren Vitaal</h1>
-                <p class="header-subtitle">Hier komt een mooie pakkende tekst</p>
-                <a class="header-link" href="{{url('/pagina/1')}}">Meer over vitaal leven</a>
+                <h1 class="header-title">{{$site_settings["site_title"]}}</h1>
+                <p class="header-subtitle">{{$site_settings["site_subtitle"]}}</p>
+                <a class="header-link" href="{{url('/pagina/'.$site_settings["dashboard_header_button_id"])}}">
+                    <span class="fa fa-chevron-circle-right"></span>
+                    {{$site_settings["dashboard_header_button_text"]}}
+                </a>
             </div>
         </header>
         <aside class="main-highlight">

@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use App\Page;
 
 class PagesTableSeeder extends Seeder
 {
@@ -11,6 +12,9 @@ class PagesTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(App\Page::class, 5)->create();
+        factory(Page::class, 1)->create(['nav_position' => 1, 'title' => 'vitaal leven'])->each(function ($homepage) {
+            factory(Page::class, 5)->create(['parent_id' => $homepage->id]);
+        });
+        factory(Page::class, 1)->create(['footer_position' => 1, 'title' => 'privacy']);
     }
 }

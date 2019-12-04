@@ -19,8 +19,8 @@ $factory->define(Challenge::class, function (Faker $faker) {
         'end_time' => $to,
         'location_name' => 'Erve Kampboer',
         'location_address' => 'Kampboerlaan 13, 7678 VV Geesteren, Nederland',
-        'latitude' => 52.4217347,
-        'longitude' => 6.7339456,
+        'latitude' => $faker->latitude(52.410000, 52.440000),
+        'longitude' => $faker->longitude(6.720000, 6.750000),
         'challenge_category_id' => function () {
             return factory(ChallengeCategory::class)->create()->id;
         },
