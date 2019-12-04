@@ -19,6 +19,12 @@ class CreatePagesTable extends Migration
             $table->string('subtitle');
             $table->text('content');
             $table->string('image_url')->nullable(true);
+            $table->boolean('nav_position')->default(null)->nullable(true);
+            $table->boolean('footer_position')->default(null)->nullable(true);
+            $table->unsignedBigInteger('parent_id')->nullable(true);
+            $table->foreign('parent_id')
+                ->references('id')->on('pages')
+                ->onDelete('restrict');
             $table->timestamps();
             $table->softDeletes();
         });

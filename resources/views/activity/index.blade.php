@@ -6,7 +6,7 @@
     <main class="activity-index">
         <header class="header-narrow" style="background-image: url('{{url('img/banner.jpg')}}')">
             <div class="header-overlay">
-                <h1 class="header-title">activiteiten</h1>
+                <h1 class="header-title"><span class="fa fa-heartbeat"></span> activiteiten</h1>
             </div>
         </header>
         <div class="link-bar">

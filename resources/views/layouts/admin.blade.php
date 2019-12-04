@@ -37,3 +37,11 @@
         </div>
     </main>
 @endsection
+
+@section('footer')
+    <footer>
+        <div class="footer-container">
+        </div>
+        <span class="footer-copyright">Copyright <a href="http://rubensmit.com" target="_blank" rel="noreferrer">Ruben Smit</a> & Laurens Pelgröm - 2019</span>
+    </footer>
+@endsection

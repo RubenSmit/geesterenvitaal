@@ -24,30 +24,6 @@
     </div>
 @endif
 @yield('main')
-<footer>
-    <div class="footer-container">
-        <div class="footer-column">
-            <h5 class="footer-title">Contact</h5>
-            <p class="footer-text">
-                Straatweg 12<br>
-                Geesteren
-            </p>
-        </div>
-        <div class="footer-column">
-            <h5 class="footer-title">Info</h5>
-            <p class="footer-text">
-                Balu des amerco<br>
-                Curabitur fringilla turpis augue
-            </p>
-        </div>
-        <div class="footer-column">
-            <h5 class="footer-title">Privacy</h5>
-            <p class="footer-text">
-                Duis sed ornare enim<br>
-                Quisque pellentesque porta libero
-            </p>
-        </div>
-    </div>
-</footer>
+@yield('footer')
 </body>
 </html>

@@ -24,7 +24,8 @@ class PageController extends Controller
 
     public function show($id)
     {
-        return view('page.show', ['page' => Page::findOrFail($id)]);
+        $page = Page::findOrFail($id);
+        return view('page.show', ['page' => $page, 'parent' => ($page->parent()->exists()) ? Page::find($page->parent_id) : null]);
     }
 
     public function edit($id)

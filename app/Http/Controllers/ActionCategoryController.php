@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use function Psy\debug;
 
-class ActionCategoryController extends Controller
+class   ActionCategoryController extends Controller
 {
     const VALIDATION_RULES = [
         'name' => 'required|max:255|min:3',
