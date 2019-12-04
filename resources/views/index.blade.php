@@ -24,7 +24,7 @@
                     </h2>
                     <p class="main-highlight-subtitle">{{$activities->first()->subtitle}}</p>
                 </div>
-                <a class="main-highlight-link" href="/activiteit/{{$activities->first()->id}}">Meer informatie</a>
+                <a class="main-highlight-link" href="/activiteit/{{$activities->first()->id}}">meer informatie</a>
             </div>
         </aside>
         <div class="container">
@@ -39,7 +39,7 @@
                             </li>
                         @endforeach
                     </ul>
-                    <a href="{{url('/activiteit')}}"class="aside-more">Meer activiteiten</a>
+                    <a href="{{url('/activiteit')}}"class="aside-more">meer activiteiten ></a>
                 </aside>
                 <aside class="main-column index-actions">
                     <h2 class="aside-title">spaaracties</h2>
@@ -51,7 +51,7 @@
                             </li>
                         @endforeach
                     </ul>
-                    <a href="{{url('/actie')}}"class="aside-more">Meer spaaracties</a>
+                    <a href="{{url('/actie')}}"class="aside-more">meer spaaracties ></a>
                 </aside>
                 <aside class="main-column index-challenges">
                     <h2 class="aside-title">uitdagingen</h2>
@@ -63,7 +63,7 @@
                             </li>
                         @endforeach
                     </ul>
-                    <a href="{{url('/uitdaging')}}"class="aside-more">Meer uitdagingen</a>
+                    <a href="{{url('/uitdaging')}}"class="aside-more">meer uitdagingen ></a>
                 </aside>
             </div>
         </div>
