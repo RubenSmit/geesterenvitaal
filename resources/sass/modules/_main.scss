@@ -86,6 +86,7 @@ header {
         padding: 0;
         max-width: $content-width;
         text-align: center;
+        font-family: "Bitter", sans-serif;
     }
 
     .header-title {
@@ -105,11 +106,6 @@ header {
         background-color: $light;
         text-decoration: none;
         color: $dark;
-
-        &:hover {
-            color: $light;
-            background-color: $brand_primary;
-        }
 
         &:active {
             color: $dark;
@@ -232,3 +228,4 @@ a, button.link {
         color: $brand_primary_light;
     }
 }
+
