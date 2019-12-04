@@ -61,12 +61,11 @@
                     );
                 var marker = new OpenLayers.Marker(lonLat);
                 markers.addMarker(marker);
-                marker.events.register( 'click', markers, clickMarker);
+                marker.events.register( 'click', markers, function (event) {
+                    window.open("{{url('uitdaging')}}/" + challenge.id);
+                    OpenLayers.Event.stop(event);
+                });
             });
-
-            function clickMarker() {
-                alert('wow, dit werkt nog niet');
-            }
 
             map.setCenter(lonLat, zoom);
         </script>
