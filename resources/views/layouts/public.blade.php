@@ -4,7 +4,7 @@
 
 @section('nav')
     <a href="/">
-        <img class="nav-brand" src="{{url('img/logo.bmp')}}" alt="Geesteren Vitaal - Home"/>
+        <img class="nav-brand" src="{{url('img/Logo_G.png')}}" alt="Geesteren Vitaal - Home"/>
     </a>
     <div class="nav-menu">
         <a class="nav-item {{(Request::is('activiteit') || Request::is('activiteit/*')) ? "active": ""}}" href="{{url('/activiteit')}}">activiteiten</a>
