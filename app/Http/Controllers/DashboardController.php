@@ -15,9 +15,9 @@ class DashboardController extends Controller
     public function index()
     {
         return view('index', [
-            'challenges' => Challenge::inRandomOrder()->take(5)->get(),
-            'actions' => Action::inRandomOrder()->take(3)->get(),
-            'activities' => Activity::upcoming()->take(7)->get()
+            'challenges' => Challenge::inRandomOrder()->take(3)->get(),
+            'actions' => Action::inRandomOrder()->take(2)->get(),
+            'activities' => Activity::upcoming()->take(6)->get()
         ]);
     }
 }
