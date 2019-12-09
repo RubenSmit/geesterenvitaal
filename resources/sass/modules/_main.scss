@@ -45,6 +45,10 @@ nav {
                 color: $dark;
             }
 
+            &.active {
+                color: $brand_primary
+            }
+
             &.nav-pill {
                 background-color: $brand_primary;
                 font-weight: normal;
@@ -182,15 +186,15 @@ footer {
         width: 100%;
         margin: 10px auto;
         display: inline-block;
+    }
 
-        a {
-            color: $light;
-        }
+    a {
+        color: $light;
+    }
 
-        a:hover {
-            color: $light;
-            font-weight: bold;
-        }
+    a:hover {
+        color: $light;
+        font-weight: bold;
     }
 }
 
