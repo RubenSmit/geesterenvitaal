@@ -16,6 +16,7 @@ Route::get('pagina/{id}', 'PageController@show');
 Route::get('activiteit/', 'ActivityController@index');
 Route::get('activiteit/{id}', 'ActivityController@show');
 Route::get('activiteit/categorie/{name}', 'ActivityController@category');
+Route::get('screen/activiteit', 'ActivityController@screen');
 
 Route::get('actie/', 'ActionController@index');
 Route::get('actie/{id}', 'ActionController@show');
@@ -24,6 +25,10 @@ Route::get('actie/categorie/{name}', 'ActionController@category');
 Route::get('uitdaging/', 'ChallengeController@index');
 Route::get('uitdaging/{id}', 'ChallengeController@show');
 Route::get('uitdaging/categorie/{name}', 'ChallengeController@category');
+
+Route::get('screen/activiteit', 'ActivityController@screen');
+Route::get('screen/actie', 'ActionController@screen');
+
 
 Auth::routes(['verify' => true]);
 

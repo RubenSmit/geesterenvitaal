@@ -45,6 +45,11 @@ class ActivityController extends Controller
         return view('activity.show', ['activity' => Activity::findOrFail($id)]);
     }
 
+    public function screen()
+    {
+        return view('screen.activity', ['activity' => Activity::upcoming()->take(1)->get()->first()]);
+    }
+
     public function edit($id)
     {
         return view('admin.activity.edit', ['activity' => Activity::findOrFail($id), 'categories' => ActivityCategory::all()]);

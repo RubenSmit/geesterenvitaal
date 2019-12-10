@@ -42,6 +42,11 @@ class ActionController extends Controller
         return view('action.show', ['action' => Action::findOrFail($id)]);
     }
 
+    public function screen()
+    {
+        return view('screen.action', ['action' => Action::inRandomOrder()->take(1)->get()->first()]);
+    }
+
     public function admin()
     {
         return view('admin.action.index', ['actions' => Action::all(), 'categories' => ActionCategory::all()]);
