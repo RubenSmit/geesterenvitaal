@@ -33,7 +33,6 @@
                     @endif
                     @markdown($page->content)
                 </div>
-                <small class="article-date">Gepubliceerd op {{$page->created_at}}</small>
             </div>
         </article>
     </main>

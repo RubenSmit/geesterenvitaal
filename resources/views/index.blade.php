@@ -3,7 +3,7 @@
 @section('title', 'Home')
 
 @section('content')
-    <main>
+    <main class="dashboard">
         <header style="background-image: url('img/banner.jpg')">
             <div class="header-overlay">
                 <h1 class="header-title">{{$site_settings["site_title"]}}</h1>
@@ -25,7 +25,9 @@
                     </h2>
                     <p class="main-highlight-subtitle">{{$activities->first()->subtitle}}</p>
                 </div>
-                <a class="main-highlight-link" href="/activiteit/{{$activities->first()->id}}">meer informatie</a>
+                <a class="main-highlight-link" href="/activiteit/{{$activities->first()->id}}">
+                    <span class="fa fa-chevron-circle-right"></span> {{$site_settings["dashboard_activity_button_text"]}}
+                </a>
             </div>
         </aside>
         <div class="container">

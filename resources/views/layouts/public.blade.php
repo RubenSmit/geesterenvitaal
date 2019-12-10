@@ -4,7 +4,7 @@
 
 @section('nav')
     <a href="/">
-        <img class="nav-brand" src="{{url('img/logo.bmp')}}" alt="Geesteren Vitaal - Home"/>
+        <img class="nav-brand" src="{{url('img/logo.png')}}" alt="Geesteren Vitaal - Home"/>
     </a>
     <div class="nav-menu">
         @foreach($site_settings["nav_items"] as $item)

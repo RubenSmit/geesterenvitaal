@@ -27,7 +27,6 @@
                     </div>
                     @markdown($activity->content)
                 </div>
-                <small class="article-date">Gepubliceerd op {{$activity->created_at}}</small>
             </div>
         </article>
     </main>

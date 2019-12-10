@@ -21,12 +21,15 @@ class Controller extends BaseController
             'nav_items' => Page::navigation()->get(),
             'footer_items' => Page::footer()->get(),
             'site_title' => 'Geesteren Vitaal',
-            'site_subtitle' => 'Hier komt een mooie pakkende tekst',
-            'dashboard_header_button_text' => 'meer over vitaal leven',
+            'site_subtitle' => 'Pak de fiets, bewandel één van de wandelroutes of sla een balletje met je ‘noaber’.',
+            'dashboard_header_button_text' => 'waarom vitaal leven?',
             'dashboard_header_button_id' => 1,
+            'dashboard_activity_button_text' => 'doe jij mee?',
             'footer_contact' => 'Geesteren Vitaal',
-            'footer_info' => 'Een initiatief van de dorpsraad geesteren.'
-        ];
+            'footer_info' => 'Een initiatief van de dorpsraad geesteren.',
+            'action_header_button_text' => 'hoe spaar ik punten?',
+            'action_header_button_id' => 5,
+            ];
 
         View::share('site_settings', $this->site_settings);
     }

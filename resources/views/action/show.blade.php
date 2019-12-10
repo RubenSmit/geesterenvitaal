@@ -23,7 +23,6 @@
                         <a href="{{$action->samengezond_url}}" class="action-link btn">Bestellen via SamenGezond</a>
                     </div>
                 </div>
-                <small class="article-date">Gepubliceerd op {{$action->created_at}}</small>
             </div>
         </article>
     </main>

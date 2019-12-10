@@ -22,9 +22,10 @@ nav {
     }
 
     .nav-brand {
-        width: 50px;
-        height: 50px;
-        object-fit: cover;
+        width: 35px;
+        height: 35px;
+        object-fit: contain;
+        margin-top: 5px;
     }
 
     .nav-menu {
@@ -90,6 +91,7 @@ header {
         padding: 0;
         max-width: $content-width;
         text-align: center;
+        font-family: "Bitter", sans-serif;
     }
 
     .header-title {
@@ -109,11 +111,6 @@ header {
         background-color: $light;
         text-decoration: none;
         color: $dark;
-
-        &:hover {
-            color: $light;
-            background-color: $brand_primary;
-        }
 
         &:active {
             color: $dark;
@@ -236,3 +233,4 @@ a, button.link {
         color: $brand_primary_light;
     }
 }
+

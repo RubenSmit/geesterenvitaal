@@ -27,7 +27,6 @@
                 <div class="content">
                     @markdown($challenge->content)
                 </div>
-                <small class="article-date">Gepubliceerd op {{$challenge->created_at}}</small>
             </div>
         </article>
     </main>
