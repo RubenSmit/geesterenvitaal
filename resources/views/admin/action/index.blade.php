@@ -17,12 +17,17 @@
                 <th scope="row">{{$category->id}}</th>
                 <td>{{$category->name}}</td>
                 <td>
-                    <a href="/admin/actie-categorie/{{$category->id}}">Bewerken</a>
-                    <form action="/admin/actie-categorie/{{$category->id}}" method="POST">
-                        @method('DELETE')
-                        @csrf
-                        <button type="submit" onclick="return confirm('Weet je zeker dat je de categorie \'{{$category->name}}\' wilt verwijderen?')">Verwijderen</button>
-                    </form>
+                    <a class='btn'href="/admin/actie-categorie/{{$category->id}}">Bewerken</a>
+                    @if($category->actions_count == 0)
+                        <form action="/admin/actie-categorie/{{$category->id}}" method="POST">
+                            @method('DELETE')
+                            @csrf
+                            <button type="submit"
+                                    onclick="return confirm('Weet je zeker dat je de categorie \'{{$category->name}}\' wilt verwijderen?')">
+                                Verwijderen
+                            </button>
+                        </form>
+                    @endif
                 </td>
             </tr>
         @endforeach
@@ -31,7 +36,7 @@
 
     <h1>Acties</h1>
     <a href="/admin/actie/new">Nieuwe actie maken</a>
-        <table>
+    <table>
         <thead>
         <tr>
             <th>Id</th>
@@ -53,11 +58,14 @@
                 <td>{{$action->new_price}}</td>
                 <td>{{$action->points_required}}</td>
                 <td>
-                    <a href="/admin/actie/{{$action->id}}">Bewerken</a>
+                    <a class='btn' href="/admin/actie/{{$action->id}}">Bewerken</a>
                     <form action="/admin/actie/{{$action->id}}" method="POST">
                         @method('DELETE')
                         @csrf
-                        <button type="submit" onclick="return confirm('Weet je zeker dat je de actie \'{{$action->title}}\' wilt verwijderen?')">Verwijderen</button>
+                        <button type="submit"
+                                onclick="return confirm('Weet je zeker dat je de actie \'{{$action->title}}\' wilt verwijderen?')">
+                            Verwijderen
+                        </button>
                     </form>
                 </td>
             </tr>

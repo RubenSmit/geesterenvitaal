@@ -44,7 +44,7 @@ class ActionController extends Controller
 
     public function admin()
     {
-        return view('admin.action.index', ['actions' => Action::all(), 'categories' => ActionCategory::all()]);
+        return view('admin.action.index', ['actions' => Action::all(), 'categories' => ActionCategory::withCount('actions')->get()]);
     }
 
     public function edit($id)

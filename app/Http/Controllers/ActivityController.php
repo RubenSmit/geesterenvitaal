@@ -37,7 +37,7 @@ class ActivityController extends Controller
 
     public function admin()
     {
-        return view('admin.activity.index', ['activities' => Activity::all(), 'categories' => ActivityCategory::all()]);
+        return view('admin.activity.index', ['activities' => Activity::all(), 'categories' => ActivityCategory::withCount('activities')->get()]);
     }
 
     public function show($id)

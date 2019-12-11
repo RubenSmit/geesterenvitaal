@@ -39,14 +39,14 @@ class ChallengeController extends Controller
         return view('challenge.index', ['challenges' => Challenge::byCategory($name)->get(), 'categories' => ChallengeCategory::all(), 'current_category' => $name]);
     }
 
-    public function admin()
-    {
-        return view('admin.challenge.index', ['challenges' => Challenge::all(), 'categories' => ChallengeCategory::all()]);
-    }
-
     public function show($id)
     {
         return view('challenge.show', ['challenge' => Challenge::findOrFail($id)]);
+    }
+
+    public function admin()
+    {
+        return view('admin.challenge.index', ['challenges' => Challenge::all(), 'categories' => ChallengeCategory::withCount('challenges')->get()]);
     }
 
     public function edit($id)
