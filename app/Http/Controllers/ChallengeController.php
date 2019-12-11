@@ -31,7 +31,7 @@ class ChallengeController extends Controller
 
     public function index()
     {
-        return view('challenge.index', ['challenges' => Challenge::all(), 'categories' => ChallengeCategory::all(), 'current_category' => null]);
+        return view('challenge.index', ['challenges' => Challenge::inRandomOrder()->get(), 'categories' => ChallengeCategory::all(), 'current_category' => null]);
     }
 
     public function category($name)

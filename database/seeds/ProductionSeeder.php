@@ -7,6 +7,8 @@ use App\Action;
 use App\Page;
 use App\ActivityCategory;
 use App\Activity;
+use App\ChallengeCategory;
+use App\Challenge;
 
 class ProductionSeeder extends Seeder
 {
@@ -250,6 +252,154 @@ Laat u ook verrassen langs de mooie route. Iedereen is welkom! Tot dan!",
             'image_url' => 'seeds/hester-ras-5qxsSIqLH60-unsplash.jpg',
             'location_name' => 'Sportpark Lutkeberg',
             'activity_category_id' => $moving_category->id,
+        ]);
+
+        $hike_category = factory(ChallengeCategory::class)->create([
+            'name' => 'wandelroutes',
+        ]);
+
+        factory(Challenge::class)->create([
+            'title' => 'Dorpsommetje Geesteren',
+            'image_url' => 'seeds/wandelen.jpg',
+            'content' => "Er zijn vier mooie dorpsommetjes gerealiseerd vanuit het dorp Geesteren met informatie over de cultuurhistorie.",
+            'location_name' => 'Noaberplein bij Erve Kampboer',
+            'challenge_category_id' => $hike_category->id,
+        ]);
+        factory(Challenge::class)->create([
+            'title' => 'Veldhoekroute',
+            'image_url' => 'seeds/wandelen.jpg',
+            'content' => "Langs historische erven met een eeuwenoude geschiedenis.",
+            'location_name' => 'Noaberplein bij Erve Kampboer',
+            'challenge_category_id' => $hike_category->id,
+        ]);
+        factory(Challenge::class)->create([
+            'title' => 'Delmaroute',
+            'image_url' => 'seeds/wandelen.jpg',
+            'content' => "Wandel langs vergezichten, weilanden en akkers.",
+            'location_name' => 'Noaberplein bij Erve Kampboer',
+            'challenge_category_id' => $hike_category->id,
+        ]);
+        factory(Challenge::class)->create([
+            'title' => 'Molenhoekroute',
+            'image_url' => 'seeds/wandelen.jpg',
+            'content' => "Ten noordwesten van Geesteren ligt het dorpsommetje Molenhoek.",
+            'location_name' => 'Noaberplein bij Erve Kampboer',
+            'challenge_category_id' => $hike_category->id,
+        ]);
+        factory(Challenge::class)->create([
+            'title' => 'Vermolenroute',
+            'image_url' => 'seeds/wandelen.jpg',
+            'content' => "Bewandel het langste dorpsommetje! ",
+            'location_name' => 'Noaberplein bij Erve Kampboer',
+            'challenge_category_id' => $hike_category->id,
+        ]);
+        factory(Challenge::class)->create([
+            'title' => 'Huyerensche Veld',
+            'image_url' => 'seeds/wandelen.jpg',
+            'content' => "Wandel langs verschillende weilanden van de Huyerensche",
+            'location_name' => 'Noaberplein bij Erve Kampboer',
+            'challenge_category_id' => $hike_category->id,
+        ]);
+        factory(Challenge::class)->create([
+            'title' => 'Langs de Broekbeek',
+            'image_url' => 'seeds/wandelen.jpg',
+            'content' => "De langste wandelroute in Geesteren is ‘Langs de Broekbeek’.",
+            'location_name' => 'Noaberplein bij Erve Kampboer',
+            'challenge_category_id' => $hike_category->id,
+        ]);
+
+        $mtb_category = factory(ChallengeCategory::class)->create([
+            'name' => 'mountainbiken',
+        ]);
+        factory(Challenge::class)->create([
+            'title' => 'MTB route Hellendoorn',
+            'image_url' => 'seeds/wandelen.jpg',
+            'content' => "Deze MTB-route over de Sallandse Heuvelrug bij Hellendoorn heeft een lengte van 18 kilometer. Het is ook aaneengesloten te rijden met de blauwe route (30 kilometer) in Holten. De route is gemarkeerd met paarse MTB-bewegwijzering (driehoek met daaronder 2 rondjes). www.mtbsallandseheuvelrug.nl",
+            'location_name' => 'Hellendoorn',
+            'location_address' => 'Grotestraat 281, 7441 GS in Nijverdal',
+            'challenge_category_id' => $mtb_category->id,
+            'latitude' => 52.3658568,
+            'longitude' => 6.4414077,
+        ]);
+        factory(Challenge::class)->create([
+            'title' => 'MTB route Holterberg',
+            'image_url' => 'seeds/wandelen.jpg',
+            'content' => "Deze MTB-route tussen Holten en Nijverdal heeft een lengte van 30 kilometer. Het is ook aaneengesloten te rijden met de paarse route (18 kilometer) in Hellendoorn. De route is gemarkeerd met blauwe MTB-bewegwijzering (driehoek met daaronder 2 rondjes). www.mtbsallandseheuvelrug.nl",
+            'location_name' => 'Holten',
+            'location_address' => 'Stationsstraat 12, 7451 BH in Holten',
+            'challenge_category_id' => $mtb_category->id,
+            'latitude' => 52.2840077,
+            'longitude' => 6.419222,
+        ]);
+        factory(Challenge::class)->create([
+            'title' => 'MTB Route Lageveld',
+            'image_url' => 'seeds/wandelen.jpg',
+            'content' => "De MTB-route Lageveld heeft een lengte van 4,3 kilometer en is gemarkeerd met houten palen met in het rood het internationale MTB-teken (driehoek met daaronder 2 rondjes). De route Wierden-Lageveld, gelegen in het bosgebied Het Lageveld, is onderdeel van de mountainbikeroute Wierden.",
+            'location_name' => 'Wierden',
+            'location_address' => 'Vlierdijk, 7641 PB Wierden',
+            'challenge_category_id' => $mtb_category->id,
+            'latitude' => 52.3750974,
+            'longitude' => 6.5849643,
+        ]);
+        factory(Challenge::class)->create([
+            'title' => 'MTB route Lemelerberg',
+            'image_url' => 'seeds/wandelen.jpg',
+            'content' => "De MTB-route op de Lemelerberg heeft een lengte van 13 kilometer. Op deze pittige route kun je er voldoende energie kwijt! De route wordt aangegeven met de zwarte MTB-bewegwijzering. www.mtbsallandseheuvelrug.nl",
+            'location_name' => 'Lemele',
+            'location_address' => 'Kerkweg 32, 8148 PZ, Lemele',
+            'challenge_category_id' => $mtb_category->id,
+            'latitude' => 52.4583452,
+            'longitude' => 6.3949878,
+        ]);
+        factory(Challenge::class)->create([
+            'title' => 'MTB route Reggedal',
+            'image_url' => 'seeds/wandelen.jpg',
+            'content' => "Deze MTB-route Reggedal gaat door het gelijknamige gebied Het Reggedal en bestaat voor een deel uit nieuw aangelegde singletracks. De route is 19 km lang en is een wat vlakkere route, met een paar heuvels in het Duivecatebos. De route is gemarkeerd met groene MTB-bewegwijzering.",
+            'location_name' => 'Nijverdal',
+            'location_address' => 'Sportlaan 6, Nijverdal',
+            'challenge_category_id' => $mtb_category->id,
+            'latitude' => 52.3720438,
+            'longitude' => 6.4631779,
+        ]);
+        factory(Challenge::class)->create([
+            'title' => 'MTB route Rijssen',
+            'image_url' => 'seeds/wandelen.jpg',
+            'content' => "Deze MTB-route bij Rijssen heeft een lengte van 20 kilometer en loopt door het ongeveer 600 hectare grote natuurgebied De Borkeld, gelegen tussen de A1 en Rijssen. De route is gemarkeerd met groene MTB-bewegwijzering. www.mtbsallandseheuvelrug.nl / www.mtbrouterijssen.nl",
+            'location_name' => 'Rijssen',
+            'location_address' => 'Arend Baanstraat 102, 7461 DX, Rijssen',
+            'challenge_category_id' => $mtb_category->id,
+            'latitude' => 52.29538,
+            'longitude' => 6.5161387,
+        ]);
+        factory(Challenge::class)->create([
+            'title' => 'MTB route Wierden',
+            'image_url' => 'seeds/wandelen.jpg',
+            'content' => "De MTB-route Wierden heeft een lengte van 32 kilometer en is gemarkeerd met houten palen met in het rood het internationale MTB-teken (driehoek met daaronder 2 rondjes). De route Wierden bestaat voornamelijk uit singletracks die zijn gelegen in bosrijke gebieden rondom Wierden.",
+            'location_name' => 'Wierden',
+            'location_address' => 'Vriezenveenseweg 57, 7641 PE, Wierden',
+            'challenge_category_id' => $mtb_category->id,
+            'latitude' => 52.3804134,
+            'longitude' => 6.5904855,
+        ]);
+        factory(Challenge::class)->create([
+            'title' => 'MTB route Hellendoorn',
+            'image_url' => 'seeds/wandelen.jpg',
+            'content' => "",
+            'location_name' => 'Hellendoorn',
+            'location_address' => 'Grotestraat 281, 7441 GS in Nijverdal',
+            'challenge_category_id' => $mtb_category->id,
+            'latitude' => 52.3657847,
+            'longitude' => 6.4423197,
+        ]);
+        factory(Challenge::class)->create([
+            'title' => 'MTB-route Sibculo',
+            'image_url' => 'seeds/wandelen.jpg',
+            'content' => "De route rondom Sibculo heeft een lengte van 26 kilometer en is gemarkeerd met in het groen het internationale MTB-teken (driehoek met daaronder 2 rondjes). De mountainbikeroute Zand en Veen is een route met veel afwisseling. De route bevat uitdagende stukken voor meer ervaren mountainbikers.",
+            'location_name' => 'Sibculo',
+            'location_address' => 'Gemeenteweg 8, 7693 PM in Sibculo',
+            'challenge_category_id' => $mtb_category->id,
+            'latitude' => 52.4854412,
+            'longitude' => 6.6399339,
         ]);
     }
 }

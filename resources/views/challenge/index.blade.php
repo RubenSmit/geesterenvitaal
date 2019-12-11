@@ -27,7 +27,7 @@
                         <div class="challenge-image" style="background-image: url('{{$challenge->image_path}}')">
                             <div class="challenge-overlay">
                                 <h2 class="challenge-title">{{$challenge->title}}</h2>
-                                <small class="challenge-subtitle">{{$challenge->subtitle}}</small>
+                                <small class="challenge-subtitle">{{$challenge->category->name}}</small>
                             </div>
                         </div>
                     </a>
@@ -46,7 +46,7 @@
                     map.getProjectionObject() // to Spherical Mercator Projection
                 );
 
-            var zoom = 14;
+            var zoom = 12;
 
             var markers = new OpenLayers.Layer.Markers("Markers");
             map.addLayer(markers);
