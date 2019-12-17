@@ -15,7 +15,7 @@ class ChallengeCategory extends Model
         'name'
     ];
 
-    public function comments()
+    public function challenges()
     {
         return $this->hasMany('App\Challenge', 'challenge_category_id');
     }

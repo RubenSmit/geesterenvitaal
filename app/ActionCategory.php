@@ -15,7 +15,7 @@ class ActionCategory extends Model
         'name'
     ];
 
-    public function comments()
+    public function actions()
     {
         return $this->hasMany('App\Action', 'action_category_id');
     }
