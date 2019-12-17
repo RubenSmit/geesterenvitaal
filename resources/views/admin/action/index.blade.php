@@ -17,7 +17,7 @@
                 <th scope="row">{{$category->id}}</th>
                 <td>{{$category->name}}</td>
                 <td>
-                    <a class='btn'href="/admin/actie-categorie/{{$category->id}}">Bewerken</a>
+                    <a href="/admin/actie-categorie/{{$category->id}}">Bewerken</a>
                     @if($category->actions_count == 0)
                         <form action="/admin/actie-categorie/{{$category->id}}" method="POST">
                             @method('DELETE')
@@ -57,14 +57,13 @@
                 <td>{{$action->old_price}}</td>
                 <td>{{$action->new_price}}</td>
                 <td>{{$action->points_required}}</td>
-                <td>
-                    <a class='btn' href="/admin/actie/{{$action->id}}">Bewerken</a>
-                    <form action="/admin/actie/{{$action->id}}" method="POST">
+                <td class="table-options">
+                    <a href="/admin/actie/{{$action->id}}">Bewerken</a>
+                    <form action="/admin/actie/{{$action->id}}" method="POST" >
                         @method('DELETE')
                         @csrf
                         <button type="submit"
-                                onclick="return confirm('Weet je zeker dat je de actie \'{{$action->title}}\' wilt verwijderen?')">
-                            Verwijderen
+                                onclick="return confirm('Weet je zeker dat je de actie \'{{$action->title}}\' wilt verwijderen?')">Verwijderen
                         </button>
                     </form>
                 </td>

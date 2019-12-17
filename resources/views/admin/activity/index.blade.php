@@ -53,7 +53,7 @@
                 <td>{{$activity->category->name}}</td>
                 <td>{{$activity->start_time}}</td>
                 <td>{{$activity->end_time}}</td>
-                <td>
+                <td class="table-options">
                     <a href="/admin/activiteit/{{$activity->id}}">Bewerken</a>
                     <form action="/admin/activiteit/{{$activity->id}}" method="POST">
                         @method('DELETE')
