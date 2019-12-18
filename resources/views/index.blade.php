@@ -14,6 +14,8 @@
                 </a>
             </div>
         </header>
+
+        @if(count($activities)!=0)
         <aside class="main-highlight">
             <div class="container">
                 <div class="main-highlight-content">
@@ -30,6 +32,8 @@
                 </a>
             </div>
         </aside>
+        @endif
+
         <div class="container">
             <div class="main-columns index-columns">
                 <aside class="main-column index-activities">
