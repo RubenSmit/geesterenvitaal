@@ -172,7 +172,9 @@ In de online webshop vind je een rijk assortiment aan producten zoals huishoudel
 
 Wil je liever voordeel op je verzekering? Ook dat is mogelijk. SamenGezond beloont gezond gedrag met korting op je aanvullende zorgverzekering of reisverzekering. Waardoor je ook met je verzekeringen goedkoper uit bent. Ook kun je ervoor kiezen je punten niet zelf te besteden maar te doneren aan een goed doel. 
 
-Doe ook mee met SamenGezond, ontdek leuke activiteiten, spaar punten en wissel ze in. Download de SamenGezond-app uit de [Apple app store](https://itunes.apple.com/nl/app/menzis-samengezond/id1290297195) of de [Google play store](https://play.google.com/store/apps/details?id=nl.menzis.samengezond.menzis&referrer=utm_source%3Dsamengezond%26utm_medium%3Dwebsite%26utm_term%3Dbutton) en begin vandaag nog met gezonder leven."
+Doe ook mee met SamenGezond, ontdek leuke activiteiten, spaar punten en wissel ze in. Download de SamenGezond-app uit de [Apple app store](https://itunes.apple.com/nl/app/menzis-samengezond/id1290297195) of de [Google play store](https://play.google.com/store/apps/details?id=nl.menzis.samengezond.menzis&referrer=utm_source%3Dsamengezond%26utm_medium%3Dwebsite%26utm_term%3Dbutton) en begin vandaag nog met gezonder leven.  
+
+Vraag je je af hoe je deze app kunt gebruiken, [kijk dan hier](https://www.samengezond.nl/gezondheid-app/)"
             ]);
         });
 
