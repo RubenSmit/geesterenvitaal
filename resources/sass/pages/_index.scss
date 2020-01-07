@@ -1,3 +1,13 @@
+.dashboard {
+    .header-overlay {
+        background-color: $dark_overlay;
+    }
+
+    .header-title {
+        color: $brand_primary;
+    }
+}
+
 .main-highlight {
     background-color: $brand_primary;
 
@@ -52,6 +62,12 @@
 }
 
 .dashboard {
+    .header-subtitle {
+        font-weight: bold;
+        max-width: 800px;
+        margin-bottom: 30px;
+    }
+
     .main-highlight-subtitle {
         font-weight: bold;
     }
@@ -99,6 +115,10 @@
         width: 55px;
         display: inline-block;
         color: $dark;
+    }
+
+    .index-activities-none {
+        color: $brand_primary;
     }
 }
 

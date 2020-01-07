@@ -4,7 +4,7 @@
 
 @section('content')
     <main class="dashboard">
-        <header style="background-image: url('img/banner.jpg')">
+        <header style="background-image: url('img/header.jpg')">
             <div class="header-overlay">
                 <h1 class="header-title">{{$site_settings["site_title"]}}</h1>
                 <p class="header-subtitle">{{$site_settings["site_subtitle"]}}</p>
@@ -14,6 +14,8 @@
                 </a>
             </div>
         </header>
+
+        @if(count($activities)!=0)
         <aside class="main-highlight">
             <div class="container">
                 <div class="main-highlight-content">
@@ -30,12 +32,14 @@
                 </a>
             </div>
         </aside>
+        @endif
+
         <div class="container">
             <div class="main-columns index-columns">
                 <aside class="main-column index-activities">
                     <h2 class="aside-title"><span class="fa fa-heartbeat"></span> activiteiten</h2>
                     <ul>
-                        @foreach($activities as $activity)
+                        @forelse($activities as $activity)
                             <a href="{{url('/activiteit/'.$activity->id)}}">
                                 <li>
                                     <strong
@@ -43,7 +47,9 @@
                                     <span>{{$activity->title}}</span>
                                 </li>
                             </a>
-                        @endforeach
+                        @empty
+                             <small class="index-activities-none">Er zijn de komende tijd geen activiteiten</small>
+                        @endforelse
                     </ul>
                     <a href="{{url('/activiteit')}}" class="aside-more">
                         <span class="fa fa-chevron-circle-right"></span> meer activiteiten
