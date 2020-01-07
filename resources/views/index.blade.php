@@ -4,7 +4,7 @@
 
 @section('content')
     <main class="dashboard">
-        <header style="background-image: url('img/banner.jpg')">
+        <header style="background-image: url('img/header.jpg')">
             <div class="header-overlay">
                 <h1 class="header-title">{{$site_settings["site_title"]}}</h1>
                 <p class="header-subtitle">{{$site_settings["site_subtitle"]}}</p>

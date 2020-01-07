@@ -1,6 +1,10 @@
 .dashboard {
     .header-overlay {
-        background-color: rgb(170, 170, 170, 0.75);
+        background-color: $dark_overlay;
+    }
+
+    .header-title {
+        color: $brand_primary;
     }
 }
 
