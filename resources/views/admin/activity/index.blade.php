@@ -18,11 +18,13 @@
                 <td>{{$category->name}}</td>
                 <td>
                     <a href="/admin/activiteit-categorie/{{$category->id}}">Bewerken</a>
+                    @if($category->activities_count == 0)
                     <form action="/admin/activiteit-categorie/{{$category->id}}" method="POST">
                         @method('DELETE')
                         @csrf
                         <button type="submit" onclick="return confirm('Weet je zeker dat je de categorie \'{{$category->name}}\' wilt verwijderen?')">Verwijderen</button>
                     </form>
+                    @endif
                 </td>
             </tr>
         @endforeach
@@ -51,7 +53,7 @@
                 <td>{{$activity->category->name}}</td>
                 <td>{{$activity->start_time}}</td>
                 <td>{{$activity->end_time}}</td>
-                <td>
+                <td class="table-options">
                     <a href="/admin/activiteit/{{$activity->id}}">Bewerken</a>
                     <form action="/admin/activiteit/{{$activity->id}}" method="POST">
                         @method('DELETE')

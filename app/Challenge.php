@@ -38,6 +38,14 @@ class Challenge extends Model
         'end_time',
     ];
 
+
+    /**
+     * The relationships that should always be loaded.
+     *
+     * @var array
+     */
+    protected $with = ['category'];
+
     /**
      * Get the category that owns the challenge.
      */
