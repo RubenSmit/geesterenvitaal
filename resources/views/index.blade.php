@@ -39,7 +39,7 @@
                 <aside class="main-column index-activities">
                     <h2 class="aside-title"><span class="fa fa-heartbeat"></span> activiteiten</h2>
                     <ul>
-                        @foreach($activities as $activity)
+                        @forelse($activities as $activity)
                             <a href="{{url('/activiteit/'.$activity->id)}}">
                                 <li>
                                     <strong
@@ -47,7 +47,9 @@
                                     <span>{{$activity->title}}</span>
                                 </li>
                             </a>
-                        @endforeach
+                        @empty
+                             <small class="index-activities-none">Er zijn de komende tijd geen activiteiten</small>
+                        @endforelse
                     </ul>
                     <a href="{{url('/activiteit')}}" class="aside-more">
                         <span class="fa fa-chevron-circle-right"></span> meer activiteiten
