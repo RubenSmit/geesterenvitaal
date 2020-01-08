@@ -140,10 +140,10 @@ Er zijn verschillende manieren om met muziek in aanraking te komen. Zingen, het 
             ]);
             factory(Page::class)->create([
                 'parent_id' => $homepage->id,
-                'title' => 'mindfullness',
+                'title' => 'mindfulness',
                 'subtitle' => 'balans van je geest',
                 'image_url' => 'seeds/kyson-dana-t3M5MzqVZAI-unsplash.jpg',
-                'content' => "Vanuit Geesteren vitaal vinden wij het belangrijk dat er ook stil wordt gestaan bij de geest. Mindfullness is een van de methodes om hierbij stil te staan. Bij mindfullness sta je stil bij het hier en nu. Een gezonde geest in een gezond lichaam, dat is het doel. Met dagelijks een paar miniuten aan mindfulness, merk je al een positief effect op je gezondheid. Klik [hier](https://www.samengezond.nl/mindfulness-oefeningen/) voor columns en meer informatie."
+                'content' => "Vanuit Geesteren vitaal vinden wij het belangrijk dat er ook stil wordt gestaan bij de geest. Mindfulness is een van de methodes om hierbij stil te staan. Bij mindfulness sta je stil bij het hier en nu. Een gezonde geest in een gezond lichaam, dat is het doel. Met dagelijks een paar miniuten aan mindfulness, merk je al een positief effect op je gezondheid. Klik [hier](https://www.samengezond.nl/mindfulness-oefeningen/) voor columns en meer informatie."
             ]);
             factory(Page::class)->create([
                 'parent_id' => $homepage->id,
