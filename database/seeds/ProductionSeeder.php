@@ -262,6 +262,7 @@ Laat u ook verrassen langs de mooie route. Iedereen is welkom! Tot dan!",
 
         factory(Challenge::class)->create([
             'title' => 'Dorpsommetje Geesteren',
+            'subtitle' => 'Pakkende ondertitel',
             'image_url' => 'seeds/wandelen.jpg',
             'content' => "Er zijn vier mooie dorpsommetjes gerealiseerd vanuit het dorp Geesteren met informatie over de cultuurhistorie.",
             'location_name' => 'Noaberplein bij Erve Kampboer',
@@ -269,6 +270,7 @@ Laat u ook verrassen langs de mooie route. Iedereen is welkom! Tot dan!",
         ]);
         factory(Challenge::class)->create([
             'title' => 'Veldhoekroute',
+            'subtitle' => 'Pakkende ondertitel',
             'image_url' => 'seeds/wandelen.jpg',
             'content' => "Langs historische erven met een eeuwenoude geschiedenis.",
             'location_name' => 'Noaberplein bij Erve Kampboer',
@@ -276,6 +278,7 @@ Laat u ook verrassen langs de mooie route. Iedereen is welkom! Tot dan!",
         ]);
         factory(Challenge::class)->create([
             'title' => 'Delmaroute',
+            'subtitle' => 'Pakkende ondertitel',
             'image_url' => 'seeds/wandelen.jpg',
             'content' => "Wandel langs vergezichten, weilanden en akkers.",
             'location_name' => 'Noaberplein bij Erve Kampboer',
@@ -283,6 +286,7 @@ Laat u ook verrassen langs de mooie route. Iedereen is welkom! Tot dan!",
         ]);
         factory(Challenge::class)->create([
             'title' => 'Molenhoekroute',
+            'subtitle' => 'Pakkende ondertitel',
             'image_url' => 'seeds/wandelen.jpg',
             'content' => "Ten noordwesten van Geesteren ligt het dorpsommetje Molenhoek.",
             'location_name' => 'Noaberplein bij Erve Kampboer',
@@ -290,6 +294,7 @@ Laat u ook verrassen langs de mooie route. Iedereen is welkom! Tot dan!",
         ]);
         factory(Challenge::class)->create([
             'title' => 'Vermolenroute',
+            'subtitle' => 'Pakkende ondertitel',
             'image_url' => 'seeds/wandelen.jpg',
             'content' => "Bewandel het langste dorpsommetje! ",
             'location_name' => 'Noaberplein bij Erve Kampboer',
@@ -297,6 +302,7 @@ Laat u ook verrassen langs de mooie route. Iedereen is welkom! Tot dan!",
         ]);
         factory(Challenge::class)->create([
             'title' => 'Huyerensche Veld',
+            'subtitle' => 'Pakkende ondertitel',
             'image_url' => 'seeds/wandelen.jpg',
             'content' => "Wandel langs verschillende weilanden van de Huyerensche",
             'location_name' => 'Noaberplein bij Erve Kampboer',
@@ -304,6 +310,7 @@ Laat u ook verrassen langs de mooie route. Iedereen is welkom! Tot dan!",
         ]);
         factory(Challenge::class)->create([
             'title' => 'Langs de Broekbeek',
+            'subtitle' => 'Pakkende ondertitel',
             'image_url' => 'seeds/wandelen.jpg',
             'content' => "De langste wandelroute in Geesteren is ‘Langs de Broekbeek’.",
             'location_name' => 'Noaberplein bij Erve Kampboer',
