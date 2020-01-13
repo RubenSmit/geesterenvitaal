@@ -119,14 +119,14 @@ class ProductionSeeder extends Seeder
             'title' => 'vitaal leven',
             'subtitle' => 'wat is dat nu eigenlijk?',
             'image_url' => 'seeds/patrick-schneider-HkNKkRoiGk8-unsplash.jpg',
-            'content' => "Vitaliteit is een breed begrip. Om een duidelijk beeld te krijgen van wat vitaal leven inhoudt, is er onderscheid gemaakt in vier dimensies:  
+            'content' => "Vitaliteit is een breed begrip. Om een duidelijk beeld te krijgen van wat vitaal leven inhoudt, is er onderscheid gemaakt in vier dimensies:
 + Hoofd: hierbij ligt de focus op de persoonlijke groei en ontwikkeling;
-+ Hart: waarbij het gaat om het zelfbewustzijn en goede samenwerkingsrelaties; 
++ Hart: waarbij het gaat om het zelfbewustzijn en goede samenwerkingsrelaties;
 + Lichaam: waarbij het draait om de balans tussen inspanning en ontspanning;
-+ Ziel: het gaat hierbij om het betekenisvol en nuttig (bezig) zijn.  
++ Ziel: het gaat hierbij om het betekenisvol en nuttig (bezig) zijn.
 
-Deze vier dimensies staan met elkaar in verbinding. Dit wil zeggen dat om vitaal te kunnen leven, je alle vier de dimensies zal moeten aanpakken.  
-Maar, waarom zouden wij vitaal gaan leven?  
+Deze vier dimensies staan met elkaar in verbinding. Dit wil zeggen dat om vitaal te kunnen leven, je alle vier de dimensies zal moeten aanpakken.
+Maar, waarom zouden wij vitaal gaan leven?
 Vitaal leven beschrijft beknopt de balans tussen de mentale en de fysieke gezondheid. Een vitaal mens blijft langer gezond en geniet meer van het leven. Vanuit Geesteren Vitaal worden er verschillende activiteiten en uitdagingen aangeboden, die betrekking hebben bij één of meerdere dimensies die helpen om de mentale en fysieke gezondheid in balans te brengen.",
         ])->each(function ($homepage) {
             factory(Page::class)->create([
@@ -135,15 +135,15 @@ Vitaal leven beschrijft beknopt de balans tussen de mentale en de fysieke gezond
                 'subtitle' => 'inspiratie voor de geest',
                 'image_url' => 'seeds/wes-hicks-MEL-jJnm7RQ-unsplash.jpg',
                 'content' => "Muziek onstpant en inspireert. Het zorgt voor de aanmaak van het gelukshormoon Oxytocine, en activeert hersengebieden die stress en pijn afremmen. Muziek komt binnen in de hersenstam, en daar zitten de meest vitale functies, namelijk de bloeddruk, ademhaling en hartregulatie.
-                 
+
 Er zijn verschillende manieren om met muziek in aanraking te komen. Zingen, het bespelen van een instrument en het luisteren van muziek zijn allemaal verschillende manieren om met muziek bezig te zijn. Vanuit Geesteren vitaal vinden wij het belangrijk om niet alleen met bewegen bezig te zijn, maar juist ook de ontspanning op te zoeken. Dus aarzel niet en kom een keer een kijkje nemen bij de muziekvereniging in Geesteren. Wij hebben als Geesteren Vitaal muzieklijsten voor u beschikbaar met verschillende thema’s om u te motiveren, ontspannen en te ondersteunen tijdens het bewegen. Wij wensen u veel luisterplezier."
             ]);
             factory(Page::class)->create([
                 'parent_id' => $homepage->id,
-                'title' => 'mindfullness',
+                'title' => 'mindfulness',
                 'subtitle' => 'balans van je geest',
                 'image_url' => 'seeds/kyson-dana-t3M5MzqVZAI-unsplash.jpg',
-                'content' => "Vanuit Geesteren vitaal vinden wij het belangrijk dat er ook stil wordt gestaan bij de geest. Mindfullness is een van de methodes om hierbij stil te staan. Bij mindfullness sta je stil bij het hier en nu. Een gezonde geest in een gezond lichaam, dat is het doel. Met dagelijks een paar miniuten aan mindfulness, merk je al een positief effect op je gezondheid. Klik [hier](https://www.samengezond.nl/mindfulness-oefeningen/) voor columns en meer informatie."
+                'content' => "Vanuit Geesteren vitaal vinden wij het belangrijk dat er ook stil wordt gestaan bij de geest. Mindfulness is een van de methodes om hierbij stil te staan. Bij mindfulness sta je stil bij het hier en nu. Een gezonde geest in een gezond lichaam, dat is het doel. Met dagelijks een paar miniuten aan mindfulness, merk je al een positief effect op je gezondheid. Klik [hier](https://www.samengezond.nl/mindfulness-oefeningen/) voor columns en meer informatie."
             ]);
             factory(Page::class)->create([
                 'parent_id' => $homepage->id,
@@ -152,12 +152,12 @@ Er zijn verschillende manieren om met muziek in aanraking te komen. Zingen, het 
                 'image_url' => 'seeds/brooke-lark-jUPOXXRNdcA-unsplash.jpg',
                 'content' => "Voeding vormt de basis van onze gezondheid en vitaliteit. Verse en ooorspronkelijke voeding bevat de meeste levensenergie en deze worden dan ook het meest aangeraden om te concumeren. Hieronder een kort op een rijtje wat onze uitgangspunten van goede en passende voeding.
 
--  Vers en oorspronkelijk 
+-  Vers en oorspronkelijk
 -  Bevat een scala aan voedingsstoffen
--  Is afgestemd op iemands persoonlijke consitutie 
+-  Is afgestemd op iemands persoonlijke consitutie
 -  Biedt een variëteit aan smaken
 -  Kan goed door het lichaam worden verteerd
--  Past bij het seizoen 
+-  Past bij het seizoen
 -  Is klaargemaakt met kruiden die de spijsvertering stimuleren
 
 Om je goed te voelen en een goede gezondheid te behouden, probeer dan overwegend goede en passende voeding te eten. "
@@ -170,9 +170,9 @@ Om je goed te voelen en een goede gezondheid te behouden, probeer dan overwegend
 
 In de online webshop vind je een rijk assortiment aan producten zoals huishoudelijke apparaten, elektronica en sportartikelen en diverse kortingsvouchers. Spaar voor kortingsbonnen voor interessante cursussen als EHBO en reanimatie of wissel je punten in voor een preventieve gezondheidscheck bij een fysiotherapeut of diëtist. Zin in een dagje uit? In de SamenGezond webshop kan je ook kortingsbonnen bestellen voor een dagje uit met korting. Kies bijvoorbeeld voor een bioscoop voucher of ga naar de sauna met korting. Zo ben je altijd voordelig uit simpel door gezond te leven. Speciaal voor Geesteren zullen er ook lokale acties zijn, die vind je hier op de website.
 
-Wil je liever voordeel op je verzekering? Ook dat is mogelijk. SamenGezond beloont gezond gedrag met korting op je aanvullende zorgverzekering of reisverzekering. Waardoor je ook met je verzekeringen goedkoper uit bent. Ook kun je ervoor kiezen je punten niet zelf te besteden maar te doneren aan een goed doel. 
+Wil je liever voordeel op je verzekering? Ook dat is mogelijk. SamenGezond beloont gezond gedrag met korting op je aanvullende zorgverzekering of reisverzekering. Waardoor je ook met je verzekeringen goedkoper uit bent. Ook kun je ervoor kiezen je punten niet zelf te besteden maar te doneren aan een goed doel.
 
-Doe ook mee met SamenGezond, ontdek leuke activiteiten, spaar punten en wissel ze in. Download de SamenGezond-app uit de [Apple app store](https://itunes.apple.com/nl/app/menzis-samengezond/id1290297195) of de [Google play store](https://play.google.com/store/apps/details?id=nl.menzis.samengezond.menzis&referrer=utm_source%3Dsamengezond%26utm_medium%3Dwebsite%26utm_term%3Dbutton) en begin vandaag nog met gezonder leven.  
+Doe ook mee met SamenGezond, ontdek leuke activiteiten, spaar punten en wissel ze in. Download de SamenGezond-app uit de [Apple app store](https://itunes.apple.com/nl/app/menzis-samengezond/id1290297195) of de [Google play store](https://play.google.com/store/apps/details?id=nl.menzis.samengezond.menzis&referrer=utm_source%3Dsamengezond%26utm_medium%3Dwebsite%26utm_term%3Dbutton) en begin vandaag nog met gezonder leven.
 
 Vraag je je af hoe je deze app kunt gebruiken, [kijk dan hier](https://www.samengezond.nl/gezondheid-app/)"
             ]);
@@ -213,7 +213,7 @@ Ook inwoners van buurtdorpen zijn deze avond van harte welkom. Meld je dus snel 
             'subtitle' => 'de invloed van voeding op je dagelijks leven',
             'image_url' => 'seeds/voeding.jpg',
             'content' => " Margret geeft uitleg over de invloed van voeding op je dagelijkse leven en hoe je een passend eetpatroon kunt aannemen voor meer energie en een fit lichaam.
-            
+
 De entree is gratis en aanmelden kan via de knop hierboven",
             'activity_category_id' => $talks_category->id,
         ]);
@@ -242,7 +242,7 @@ De entree is gratis en aanmelden kan via de knop hierboven",
             'title' => 'wandeltocht',
             'subtitle' => 'met het hele dorp op stap',
             'image_url' => 'seeds/wandelen.jpg',
-            'content' => "We vertrekken weer vanaf De Peuverweide.  
+            'content' => "We vertrekken weer vanaf De Peuverweide.
 Laat u ook verrassen langs de mooie route. Iedereen is welkom! Tot dan!",
             'location_name' => 'De Peuverweide',
             'activity_category_id' => $moving_category->id,
@@ -262,6 +262,7 @@ Laat u ook verrassen langs de mooie route. Iedereen is welkom! Tot dan!",
 
         factory(Challenge::class)->create([
             'title' => 'Dorpsommetje Geesteren',
+            'subtitle' => 'Pakkende ondertitel',
             'image_url' => 'seeds/wandelen.jpg',
             'content' => "Er zijn vier mooie dorpsommetjes gerealiseerd vanuit het dorp Geesteren met informatie over de cultuurhistorie.",
             'location_name' => 'Noaberplein bij Erve Kampboer',
@@ -269,6 +270,7 @@ Laat u ook verrassen langs de mooie route. Iedereen is welkom! Tot dan!",
         ]);
         factory(Challenge::class)->create([
             'title' => 'Veldhoekroute',
+            'subtitle' => 'Pakkende ondertitel',
             'image_url' => 'seeds/wandelen.jpg',
             'content' => "Langs historische erven met een eeuwenoude geschiedenis.",
             'location_name' => 'Noaberplein bij Erve Kampboer',
@@ -276,6 +278,7 @@ Laat u ook verrassen langs de mooie route. Iedereen is welkom! Tot dan!",
         ]);
         factory(Challenge::class)->create([
             'title' => 'Delmaroute',
+            'subtitle' => 'Pakkende ondertitel',
             'image_url' => 'seeds/wandelen.jpg',
             'content' => "Wandel langs vergezichten, weilanden en akkers.",
             'location_name' => 'Noaberplein bij Erve Kampboer',
@@ -283,6 +286,7 @@ Laat u ook verrassen langs de mooie route. Iedereen is welkom! Tot dan!",
         ]);
         factory(Challenge::class)->create([
             'title' => 'Molenhoekroute',
+            'subtitle' => 'Pakkende ondertitel',
             'image_url' => 'seeds/wandelen.jpg',
             'content' => "Ten noordwesten van Geesteren ligt het dorpsommetje Molenhoek.",
             'location_name' => 'Noaberplein bij Erve Kampboer',
@@ -290,6 +294,7 @@ Laat u ook verrassen langs de mooie route. Iedereen is welkom! Tot dan!",
         ]);
         factory(Challenge::class)->create([
             'title' => 'Vermolenroute',
+            'subtitle' => 'Pakkende ondertitel',
             'image_url' => 'seeds/wandelen.jpg',
             'content' => "Bewandel het langste dorpsommetje! ",
             'location_name' => 'Noaberplein bij Erve Kampboer',
@@ -297,6 +302,7 @@ Laat u ook verrassen langs de mooie route. Iedereen is welkom! Tot dan!",
         ]);
         factory(Challenge::class)->create([
             'title' => 'Huyerensche Veld',
+            'subtitle' => 'Pakkende ondertitel',
             'image_url' => 'seeds/wandelen.jpg',
             'content' => "Wandel langs verschillende weilanden van de Huyerensche",
             'location_name' => 'Noaberplein bij Erve Kampboer',
@@ -304,6 +310,7 @@ Laat u ook verrassen langs de mooie route. Iedereen is welkom! Tot dan!",
         ]);
         factory(Challenge::class)->create([
             'title' => 'Langs de Broekbeek',
+            'subtitle' => 'Pakkende ondertitel',
             'image_url' => 'seeds/wandelen.jpg',
             'content' => "De langste wandelroute in Geesteren is ‘Langs de Broekbeek’.",
             'location_name' => 'Noaberplein bij Erve Kampboer',
@@ -402,6 +409,100 @@ Laat u ook verrassen langs de mooie route. Iedereen is welkom! Tot dan!",
             'challenge_category_id' => $mtb_category->id,
             'latitude' => 52.4854412,
             'longitude' => 6.6399339,
+        ]);
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+        $cycling_category = factory(ChallengeCategory::class)->create([
+            'name' => 'fietsroutes',
+        ]);
+        factory(Challenge::class)->create([
+            'title' => 'Noordoost-Twenteroute',
+            'subtitle' => 'De kroonjuwelen van Twente',
+            'image_url' => 'seeds/noordoosttwenteroute.jpg',
+            'content' => "Fietsen door een fraai landschap met de kroonjuwelen van Twente: bossen, lanen, landgoederen, akkers, weilanden en moerassen!",
+            'location_name' => 'Ootmarsum',
+            'location_address' => 'Oldenzaalsestraat, 7631 CT in Ootmarsum',
+            'challenge_category_id' => $cycling_category->id,
+            'latitude' => 52.404637,
+            'longitude' => 6.896019,
+        ]);
+        factory(Challenge::class)->create([
+            'title' => 'Ontdek de Reggestreek',
+            'subtitle' => 'Het Reggedal is veelzijdig en afwisselend',
+            'image_url' => 'seeds/reggestreek.jpg',
+            'content' => "Een stukje paradijs op aarde! Het Reggedal is veelzijdig en afwisselend. Het biedt weiden (omzoomd met de zo typische Twentse houtwallen), onontgonnen veengebied, bossen en fraaie heidevelden.",
+            'location_name' => 'Enter',
+            'location_address' => 'Dorpsstraat 42, 7468 CL in Enter',
+            'challenge_category_id' => $cycling_category->id,
+            'latitude' => 52.296960,
+            'longitude' => 6.577478,
+        ]);
+        factory(Challenge::class)->create([
+            'title' => 'Rondje Borne - fietsen',
+            'subtitle' => 'Rondje Borne: een prachtige fietsroute',
+            'image_url' => 'seeds/rondjeborne.jpg',
+            'content' => "Rondje Borne is een erg mooie fietsroute die loopt door het fraaie en veelzijdige buitengebied van Borne.",
+            'location_name' => 'Borne',
+            'location_address' => 'Burenweg, 7622 GM in Borne',
+            'challenge_category_id' => $cycling_category->id,
+            'latitude' => 52.287422,
+            'longitude' => 6.752778,
+        ]);
+        factory(Challenge::class)->create([
+            'title' => 'Rondje in het Veen',
+            'subtitle' => 'Deze fietsroute neemt je mee naar vervlogen tijden',
+            'image_url' => 'seeds/rondjeveen.jpg',
+            'content' => "Deze fietsroute neemt je mee naar vervlogen tijden. Je fietst langs het bijzondere natuurgebied “De Engbertsdijksvenen” ten oosten van Westerhaar-Vriezenveensewijk, in een driehoek met de dorpjes Bruinehaar en De Pollen.",
+            'location_name' => 'Vriezeveen',
+            'location_address' => 'Westeinde, 7671 CN in Vriezenveen ',
+            'challenge_category_id' => $cycling_category->id,
+            'latitude' => 52.408359,
+            'longitude' => 6.614279,
+        ]);
+        factory(Challenge::class)->create([
+            'title' => 'Rondje Regge en Heuvelrug 175 km',
+            'subtitle' => 'Route voor de vijf-daagse fietsvakantie Rondje Regge en Heuvelrug',
+            'image_url' => 'seeds/rondjereggeheuvelrug.jpg',
+            'content' => "Route voor de 5 daagse fietsvakantie Rondje Regge en Heuvelrug",
+            'location_name' => 'Regge & de heuvelrug',
+            'location_address' => 'Zwolseweg 13, 7731 BC in Ommen',
+            'challenge_category_id' => $cycling_category->id,
+            'latitude' => 52.516100,
+            'longitude' => 6.414284,
+        ]);
+        factory(Challenge::class)->create([
+            'title' => 'Smaak en Vermaak Notter - Zuna',
+            'subtitle' => 'Maak kennis met de rivier de Regge',
+            'image_url' => 'seeds/smaakenvermaaknotter.jpg',
+            'content' => "Maak kennis met de rivier de Regge. Een mooie fietsroute over het afwisselende platteland met knusse boerderijen, de vele streekproducenten, het open coulisselandschap en de dorpen Rijssen en Enter. Een route langs buurtschappen met namen als Notter, Zuna, Rectum en IJpelo.",
+            'location_name' => 'Notter',
+            'location_address' => 'Klokkendijk 14, 7467 PD in Notter',
+            'challenge_category_id' => $cycling_category->id,
+            'latitude' => 52.326773,
+            'longitude' => 6.529041,
+        ]);
+        factory(Challenge::class)->create([
+            'title' => 'Stift fietsroute',
+            'subtitle' => 'Historische plekken in de omgeving van Weerselo en Tubbergen',
+            'image_url' => 'seeds/stiftfietsroute.jpg',
+            'content' => "Middels deze fietsroute laten we u graag kennis maken met een aantal historische plekken in de omgeving van Weerselo en Tubbergen, schilderachtige watermolens en de prachtige natuur in de omgeving van Ootmarsum. Klik op de knop route downloaden voor de pdf van de route.",
+            'location_name' => 'Ootmarsum',
+            'location_address' => 'Markt 9, 7631 BW in Ootmarsum',
+            'challenge_category_id' => $cycling_category->id,
+            'latitude' => 52.408114,
+            'longitude' => 6.897335,
+        ]);
+        factory(Challenge::class)->create([
+            'title' => 'Twentse hooilandenroute',
+            'subtitle' => 'Tussen Drenthe en Twente, ligt een verborgen juweel',
+            'image_url' => 'seeds/twentsehooilandenroute.jpg',
+            'content' => "Tussen Drenthe en Twente, ligt een verborgen juweel. Waar de geur van vers gemaaid hooi warme herinneringen oproept aan lang vervlogen zomers en waar u nog in alle rust kunt genieten van de gemoedelijke sfeer van Twente.",
+            'location_name' => 'Den Ham',
+            'location_address' => '<> Brink 4, 7683 BP in Den Ham',
+            'challenge_category_id' => $cycling_category->id,
+            'latitude' => 52.464246,
+            'longitude' => 6.494988,
         ]);
     }
 }
